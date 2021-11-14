@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'back.dart';
 import 'decroation/boxfile.dart';
+import 'biomat/bio_main.dart';
 
 class home_page extends StatefulWidget {
   home_page({Key? key}) : super(key: key);
@@ -17,13 +19,41 @@ class _home_pageState extends State<home_page> {
   ScrollController sidem = ScrollController();
   ScrollController midm = ScrollController();
   List<List> image_list1 = [
-    ["ast/2.png", "Bio-Material", "Bio+Material=Future"],
-    ["ast/3.png", "Data & Computation", "Matls Student can also handle code!"],
+    [
+      "ast/2.png",
+      "Bio-Material",
+      "Bio+Material=Future",
+      "Go Bio",
+      FontAwesomeIcons.biohazard,
+      bio_main()
+    ],
+    [
+      "ast/3.png",
+      "Data & Computation",
+      "Matls Student can also handle code!",
+      "Go Code!",
+      FontAwesomeIcons.laptopCode,
+      bio_main()
+    ],
   ];
 
-  List<String> image_list2 = [
-    "ast/4.png",
-    "ast/5.png",
+  List<List> image_list2 = [
+    [
+      "ast/4.png",
+      "Manufacturing",
+      "Opportunity in manufacutring system",
+      "Go Making!",
+      FontAwesomeIcons.industry,
+      bio_main()
+    ],
+    [
+      "ast/5.png",
+      "Smart Material",
+      "Fancy Material",
+      "Go Smart",
+      FontAwesomeIcons.atom,
+      bio_main()
+    ],
   ];
   @override
   void didChangeDependencies() {
@@ -79,26 +109,41 @@ class _home_pageState extends State<home_page> {
                       img: image_list1[index][0],
                       height: _screenH / 2.5,
                       width: _screenWidth / 3.5,
-                      content: image_list1[index][1],
-                      title: image_list1[index][2])
+                      content: image_list1[index][2],
+                      labelName: image_list1[index][3],
+                      pageto: image_list1[index][5],
+                      buttonIcon: Icon(image_list1[index][4]),
+                      title: image_list1[index][1])
               ],
             ),
           ),
+          Positioned(
+              left: _screenWidth / 3,
+              top: _screenH / 2,
+              child: box_file(
+                  img: "ast/1.png",
+                  buttonIcon: Icon(FontAwesomeIcons.flask),
+                  labelName: "Go Research!",
+                  pageto: bio_main(),
+                  height: _screenH / 3,
+                  width: _screenWidth / 3,
+                  content: "Explore research opportuinty in MSE",
+                  title: "Research")),
           Positioned(
             left: _screenWidth / 1.4,
             top: _screenH / 6.5,
             child: Column(
               children: [
                 for (var index = 0; index < image_list1.length; index++)
-                  Container(
-                    height: _screenH / 2.5,
-                    width: _screenWidth / 3.5,
-                    margin: EdgeInsets.only(top: 20),
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            fit: BoxFit.fitHeight,
-                            image: AssetImage(image_list2[index]))),
-                  )
+                  box_file(
+                      img: image_list2[index][0],
+                      height: _screenH / 2.5,
+                      width: _screenWidth / 3.5,
+                      content: image_list2[index][2],
+                      labelName: image_list2[index][3],
+                      pageto: image_list2[index][5],
+                      buttonIcon: Icon(image_list2[index][4]),
+                      title: image_list2[index][1])
               ],
             ),
           ),

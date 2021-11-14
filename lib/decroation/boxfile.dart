@@ -9,8 +9,14 @@ class box_file extends StatefulWidget {
   final String? content;
   final double? width;
   final double? height;
+  final String? labelName;
+  final Widget? pageto;
+  final Icon? buttonIcon;
   box_file(
       {@required this.img,
+      @required this.buttonIcon,
+      @required this.labelName,
+      @required this.pageto,
       @required this.height,
       @required this.width,
       @required this.content,
@@ -51,6 +57,7 @@ class _box_fileState extends State<box_file> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(top: _screenH / 30),
       width: widget.width,
       height: widget.height,
       child: MouseRegion(
@@ -70,22 +77,41 @@ class _box_fileState extends State<box_file> {
                       widget.title!,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: _screenH / 20),
+                          fontWeight: FontWeight.bold, fontSize: _screenH / 30),
                     ),
                     SizedBox(
                       height: _screenH / 30,
                     ),
                     Text(
-                      widget.title!,
+                      widget.content!,
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: _screenH / 30),
+                      style: TextStyle(fontSize: _screenH / 40),
                     ),
+                    SizedBox(
+                      height: _screenH / 30,
+                    ),
+                    ElevatedButton.icon(
+                        icon: widget.buttonIcon!,
+                        label: Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: _screenH / 30,
+                              horizontal: _screenWidth / 15),
+                          child: Text(widget.labelName!),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType.fade,
+                                  duration: const Duration(milliseconds: 500),
+                                  child: widget.pageto!));
+                        })
                   ],
                 ),
               ))),
       decoration: BoxDecoration(
           image: DecorationImage(
-              fit: BoxFit.fitHeight, image: AssetImage(widget.img!))),
+              fit: BoxFit.cover, image: AssetImage(widget.img!))),
     );
   }
 }
