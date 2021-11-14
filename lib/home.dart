@@ -16,9 +16,9 @@ class _home_pageState extends State<home_page> {
 
   ScrollController sidem = ScrollController();
   ScrollController midm = ScrollController();
-  List<String> image_list1 = [
-    "ast/2.png",
-    "ast/3.png",
+  List<List> image_list1 = [
+    ["ast/2.png", "Bio-Material", "Bio+Material=Future"],
+    ["ast/3.png", "Data & Computation", "Matls Student can also handle code!"],
   ];
 
   List<String> image_list2 = [
@@ -75,15 +75,12 @@ class _home_pageState extends State<home_page> {
             child: Column(
               children: [
                 for (var index = 0; index < image_list1.length; index++)
-                  Container(
-                    height: _screenH / 2.5,
-                    width: _screenWidth / 3.5,
-                    margin: EdgeInsets.only(top: 20),
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            fit: BoxFit.fitHeight,
-                            image: AssetImage(image_list1[index]))),
-                  )
+                  box_file(
+                      img: image_list1[index][0],
+                      height: _screenH / 2.5,
+                      width: _screenWidth / 3.5,
+                      content: image_list1[index][1],
+                      title: image_list1[index][2])
               ],
             ),
           ),

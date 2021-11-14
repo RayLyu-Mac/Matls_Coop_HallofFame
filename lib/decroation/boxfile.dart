@@ -7,8 +7,12 @@ class box_file extends StatefulWidget {
   final String? img;
   final String? title;
   final String? content;
+  final double? width;
+  final double? height;
   box_file(
       {@required this.img,
+      @required this.height,
+      @required this.width,
       @required this.content,
       @required this.title,
       Key? key})
@@ -47,6 +51,8 @@ class _box_fileState extends State<box_file> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: widget.width,
+      height: widget.height,
       child: MouseRegion(
           onEnter: (e) => _mouseEnter(true),
           onExit: (e) => _mouseEnter(false),
