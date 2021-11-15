@@ -18,6 +18,7 @@ class backGroundPic extends StatefulWidget {
 class _backGroundPicState extends State<backGroundPic> {
   double _screenWidth = 0;
   double _screenH = 0;
+  ScrollController controller = ScrollController();
 
   @override
   void didChangeDependencies() {
@@ -29,16 +30,19 @@ class _backGroundPicState extends State<backGroundPic> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: _screenWidth,
-        height: _screenH * 1.1,
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                colorFilter: ColorFilter.mode(
-                    Colors.white.withOpacity(widget.transp ?? 0.8),
-                    BlendMode.dstATop),
-                image: AssetImage(widget.pic!),
-                fit: BoxFit.cover)),
-        child: widget.child);
+    return SingleChildScrollView(
+      controller: controller,
+      child: Container(
+          width: _screenWidth,
+          height: _screenH * 1.5,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  colorFilter: ColorFilter.mode(
+                      Colors.white.withOpacity(widget.transp ?? 0.8),
+                      BlendMode.dstATop),
+                  image: AssetImage(widget.pic!),
+                  fit: BoxFit.cover)),
+          child: widget.child),
+    );
   }
 }

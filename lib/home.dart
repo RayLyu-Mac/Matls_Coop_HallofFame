@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'back.dart';
@@ -83,31 +84,48 @@ class _home_pageState extends State<home_page> {
       child: Stack(
         children: [
           Positioned(
-              top: 0,
-              left: 0,
-              child: SingleChildScrollView(
-                controller: midm,
-                child: Container(
-                  height: _screenH / 1.05,
-                  width: _screenWidth / 20 * 18,
-                  margin: EdgeInsets.symmetric(
-                      horizontal: _screenWidth / 20, vertical: _screenH / 20),
-                  decoration:
-                      BoxDecoration(color: Colors.white10.withOpacity(0.9)),
-                  child: Column(
-                    children: [Text("MATLS Coop Hall of Fame")],
-                  ),
-                ),
-              )),
+            top: 0,
+            left: 0,
+            child: Container(
+                height: _screenH * 1.2,
+                width: _screenWidth / 20 * 18,
+                margin: EdgeInsets.symmetric(
+                    horizontal: _screenWidth / 20, vertical: _screenH / 20),
+                decoration:
+                    BoxDecoration(color: Colors.white10.withOpacity(0.9)),
+                child: Stack(
+                  children: [
+                    Positioned(
+                        top: _screenH / 25,
+                        left: _screenWidth / 10,
+                        child: Image(
+                          fit: BoxFit.fitWidth,
+                          height: _screenH / 15,
+                          width: _screenWidth / 5,
+                          image: NetworkImage(
+                              "https://github.com/RayLyu-Mac/MMA_MaterialScienceEng/blob/main/assest/logocolor.png?raw=true"),
+                        )),
+                    Positioned(
+                        left: _screenWidth / 10,
+                        top: _screenH / 8,
+                        child: Text(
+                          "MATLS Co-op Hall of Fame",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: _screenH / 15),
+                        ))
+                  ],
+                )),
+          ),
           Positioned(
             left: 0,
-            top: _screenH / 6.5,
+            top: _screenH / 3.5,
             child: Column(
               children: [
                 for (var index = 0; index < image_list1.length; index++)
                   box_file(
                       img: image_list1[index][0],
-                      height: _screenH / 2.5,
+                      height: _screenH / 1.7,
                       width: _screenWidth / 3.5,
                       content: image_list1[index][2],
                       labelName: image_list1[index][3],
@@ -125,19 +143,19 @@ class _home_pageState extends State<home_page> {
                   buttonIcon: Icon(FontAwesomeIcons.flask),
                   labelName: "Go Research!",
                   pageto: bio_main(),
-                  height: _screenH / 3,
+                  height: _screenH / 1.7,
                   width: _screenWidth / 3,
                   content: "Explore research opportuinty in MSE",
                   title: "Research")),
           Positioned(
             left: _screenWidth / 1.4,
-            top: _screenH / 6.5,
+            top: _screenH / 3.5,
             child: Column(
               children: [
                 for (var index = 0; index < image_list1.length; index++)
                   box_file(
                       img: image_list2[index][0],
-                      height: _screenH / 2.5,
+                      height: _screenH / 1.7,
                       width: _screenWidth / 3.5,
                       content: image_list2[index][2],
                       labelName: image_list2[index][3],

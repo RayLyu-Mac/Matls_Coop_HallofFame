@@ -39,6 +39,9 @@ dependencies:
   sprung: ^3.0.0
   font_awesome_flutter: ^9.1.0
   page_transition: ^2.0.4
+  csv: ^5.0.0
+  web_scraper: ^0.1.4
+  url_launcher: ^6.0.12
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +76,12 @@ flutter:
     - ast/6.png
     - ast/7.png
     - ast/8.png
+    - ast/csv/bio.csv
+    - ast/csv/code.csv
+    - ast/csv/manu.csv
+    - ast/csv/res.csv
+    - ast/csv/smart.csv
+
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
