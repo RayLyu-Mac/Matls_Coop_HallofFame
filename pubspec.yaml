@@ -42,6 +42,7 @@ dependencies:
   csv: ^5.0.0
   web_scraper: ^0.1.4
   url_launcher: ^6.0.12
+  loading_animations: ^2.2.0
 
 dev_dependencies:
   flutter_test:
