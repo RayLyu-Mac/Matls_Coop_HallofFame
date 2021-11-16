@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
-import 'package:coop_hall_of_fame/biomat/bio_main.dart';
+import 'biomat/bio_header.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: bio_main(),
+      home: Bio_header(),
     );
   }
 }

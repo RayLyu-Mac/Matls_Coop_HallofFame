@@ -77,6 +77,8 @@ flutter:
     - ast/6.png
     - ast/7.png
     - ast/8.png
+    - ast/9.png
+
     - ast/csv/bio.csv
     - ast/csv/code.csv
     - ast/csv/manu.csv
