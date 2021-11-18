@@ -42,7 +42,7 @@ dependencies:
   csv: ^5.0.0
   web_scraper: ^0.1.4
   url_launcher: ^6.0.12
-  loading_animations: ^2.2.0
+  animations: ^2.0.2
 
 dev_dependencies:
   flutter_test:
@@ -78,6 +78,15 @@ flutter:
     - ast/7.png
     - ast/8.png
     - ast/9.png
+    - ast/10.png
+    - ast/11.png
+    - ast/b1.png
+    - ast/bu1.png
+    - ast/d1.png
+    - ast/d2.png
+    - ast/d4.png
+    - ast/s1.png
+    
 
     - ast/csv/bio.csv
     - ast/csv/code.csv

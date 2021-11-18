@@ -32,4 +32,4 @@ Future load_code() async {
   return _listData;
 }
 
-Map<String, String> fieldPic = {"Phar": "ast/6.png"};
+Map<String, String> fieldPic = {"Phar": "ast/6.png", "Drug": "ast/10.png"};

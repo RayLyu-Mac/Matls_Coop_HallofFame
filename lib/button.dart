@@ -6,16 +6,20 @@ class Button extends StatefulWidget {
   Button(
       {@required this.buttonIcon,
       @required this.pageTo,
+      @optionalTypeArgs this.dia,
       @required this.title,
+      @optionalTypeArgs this.dialog,
       @required this.titleColor,
       @optionalTypeArgs this.fontSize,
       Key? key})
       : super(key: key);
   final Widget? pageTo;
   final String? title;
+  final List<Widget>? dia;
   final IconData? buttonIcon;
   final Color? titleColor;
   final double? fontSize;
+  final bool? dialog;
 
   @override
   _ButtonState createState() => _ButtonState();
@@ -54,12 +58,38 @@ class _ButtonState extends State<Button> {
         onExit: (e) => _mouseEnter(false),
         child: FlatButton.icon(
             onPressed: () {
-              Navigator.push(
-                  context,
-                  PageTransition(
-                      duration: const Duration(milliseconds: 500),
-                      child: widget.pageTo!,
-                      type: PageTransitionType.rightToLeft));
+              widget.dialog != null
+                  ? showGeneralDialog(
+                      barrierColor: Colors.black.withOpacity(0.5),
+                      transitionDuration: Duration(milliseconds: 300),
+                      barrierDismissible: true,
+                      barrierLabel: '',
+                      context: context,
+                      pageBuilder: (context, animation, secondaryAnimation) {
+                        return Container();
+                      },
+                      transitionBuilder: (context, a1, a2, widgets) {
+                        return Transform.scale(
+                            scale: a1.value,
+                            child: Opacity(
+                                opacity: a1.value,
+                                child: SimpleDialog(
+                                  children: widget.dia,
+                                  shape: Border.all(
+                                    width: 4,
+                                    style: BorderStyle.solid,
+                                    color: Colors.white,
+                                  ),
+                                  contentPadding:
+                                      EdgeInsets.fromLTRB(20, 15, 25, 35),
+                                )));
+                      })
+                  : Navigator.push(
+                      context,
+                      PageTransition(
+                          duration: const Duration(milliseconds: 500),
+                          child: widget.pageTo!,
+                          type: PageTransitionType.rightToLeft));
             },
             icon: Icon(widget.buttonIcon!),
             label: Text(

@@ -56,12 +56,12 @@ class _bio_mainState extends State<bio_main> {
         ),
         body: GridView.count(
             crossAxisCount: 2,
-            crossAxisSpacing: 5,
-            mainAxisSpacing: 5,
+            crossAxisSpacing: 40,
+            mainAxisSpacing: 40,
             childAspectRatio: (_screenH * 3.4 / _screenWidth),
             padding: EdgeInsets.symmetric(
                 horizontal: _screenWidth / 40, vertical: _screenH / 40),
-            children: List.generate(1, (index) {
+            children: List.generate(2, (index) {
               return AnimationConfiguration.staggeredGrid(
                   position: index,
                   duration: const Duration(milliseconds: 800),
@@ -73,8 +73,7 @@ class _bio_mainState extends State<bio_main> {
                               "Company: ${data[index + 1][4]} \n${data[index + 1][5]}",
                           name: data[index + 1][1],
                           typ: data[index + 1][7],
-                          profile_img:
-                              "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/r.jpg?raw=true")));
+                          profile_img: data[index + 1][6])));
             })));
   }
 }

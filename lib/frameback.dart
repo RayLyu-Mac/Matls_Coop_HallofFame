@@ -31,8 +31,7 @@ class _framepicState extends State<framepic> {
         image: DecorationImage(
             scale: 0.8,
             fit: BoxFit.fitHeight,
-            image: NetworkImage(
-                "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/r.jpg?raw=true")),
+            image: NetworkImage(widget.profile!)),
       ),
     );
   }
