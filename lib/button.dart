@@ -6,7 +6,6 @@ class Button extends StatefulWidget {
   Button(
       {@required this.buttonIcon,
       @required this.pageTo,
-      @optionalTypeArgs this.dia,
       @required this.title,
       @optionalTypeArgs this.dialog,
       @required this.titleColor,
@@ -15,7 +14,6 @@ class Button extends StatefulWidget {
       : super(key: key);
   final Widget? pageTo;
   final String? title;
-  final List<Widget>? dia;
   final IconData? buttonIcon;
   final Color? titleColor;
   final double? fontSize;
@@ -72,17 +70,7 @@ class _ButtonState extends State<Button> {
                         return Transform.scale(
                             scale: a1.value,
                             child: Opacity(
-                                opacity: a1.value,
-                                child: SimpleDialog(
-                                  children: widget.dia,
-                                  shape: Border.all(
-                                    width: 4,
-                                    style: BorderStyle.solid,
-                                    color: Colors.white,
-                                  ),
-                                  contentPadding:
-                                      EdgeInsets.fromLTRB(20, 15, 25, 35),
-                                )));
+                                opacity: a1.value, child: widget.pageTo));
                       })
                   : Navigator.push(
                       context,

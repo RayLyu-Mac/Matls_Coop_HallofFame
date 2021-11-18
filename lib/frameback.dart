@@ -23,8 +23,8 @@ class _framepicState extends State<framepic> {
   Widget build(BuildContext context) {
     return Container(
       child: Image(
-          height: _screenH / 3.7,
-          width: _screenWidth / 6.5,
+          height: _screenH / 3.7 * 1.6,
+          width: _screenWidth / 6.5 * 1.6,
           fit: BoxFit.cover,
           image: AssetImage("ast/frame.png")),
       decoration: BoxDecoration(

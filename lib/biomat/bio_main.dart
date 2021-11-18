@@ -30,9 +30,11 @@ class _bio_mainState extends State<bio_main> {
   List<List> phar = [];
   void load_bio() async {
     final bio_data = await rootBundle.loadString("ast/csv/bio.csv");
-    List<List<dynamic>> _listData = CsvToListConverter().convert(bio_data);
+    List<List<dynamic>> _listData =
+        CsvToListConverter().convert(bio_data).sublist(1);
     setState(() {
       data = _listData;
+      print(data);
     });
   }
 
@@ -45,11 +47,6 @@ class _bio_mainState extends State<bio_main> {
 
   @override
   Widget build(BuildContext context) {
-    for (var i = 0; i < data.length; i++) {
-      if (data[i][7] == "Phar") {
-        phar.add(data[i]);
-      }
-    }
     return Scaffold(
         appBar: AppBar(
           title: Text("Biomaterial"),
@@ -68,12 +65,15 @@ class _bio_mainState extends State<bio_main> {
                   columnCount: 1,
                   child: ScaleAnimation(
                       child: Person_back(
-                          border_c: Colors.blue,
+                          border_c: Colors.blue.shade200,
                           info:
-                              "Company: ${data[index + 1][4]} \n${data[index + 1][5]}",
-                          name: data[index + 1][1],
-                          typ: data[index + 1][7],
-                          profile_img: data[index + 1][6])));
+                              "Company: ${data[index][4]} \n${data[index][5]}",
+                          name: data[index][1],
+                          typ: data[index][7],
+                          join_date: "11/17/21",
+                          contactType: data[index][2].toString().split(","),
+                          contactInfo: data[index][3].toString().split(","),
+                          profile_img: data[index][6])));
             })));
   }
 }

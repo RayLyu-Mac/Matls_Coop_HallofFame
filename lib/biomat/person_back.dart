@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:coop_hall_of_fame/data_load/data_main.dart';
 import 'package:coop_hall_of_fame/button.dart';
+import 'package:flutter/painting.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:coop_hall_of_fame/frameback.dart';
 
@@ -13,8 +14,12 @@ class Person_back extends StatefulWidget {
   final Widget? pagetTo;
   final String? typ;
   final String? join_date;
+  final List? contactType;
+  final List? contactInfo;
   Person_back(
       {@required this.border_c,
+      @required this.contactType,
+      @required this.contactInfo,
       @required this.join_date,
       @required this.pagetTo,
       @required this.info,
@@ -90,27 +95,94 @@ class _Person_backState extends State<Person_back> {
                 Button(
                     buttonIcon: FontAwesomeIcons.ad,
                     dialog: true,
-                    dia: [
-                      Row(
+                    pageTo: SimpleDialog(
+                      shape: RoundedRectangleBorder(
+                          side:
+                              BorderSide(width: 8, color: Colors.grey.shade200),
+                          borderRadius: BorderRadius.circular(35)),
+                      clipBehavior: Clip.hardEdge,
+                      backgroundColor: widget.border_c!.withOpacity(0.8),
+                      contentPadding: EdgeInsets.symmetric(
+                          horizontal: _screenWidth / 18,
+                          vertical: _screenH / 18),
+                      alignment: Alignment.center,
+                      title: Row(
                         children: [
-                          framepic(profile: widget.profile_img),
-                          SizedBox(
-                            width: _screenWidth / 30,
-                          ),
-                          Column(
-                            children: [
-                              Container(
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: NetworkImage(
-                                              fieldPic[widget.typ]!))))
-                            ],
-                          )
+                          Icon(FontAwesomeIcons.medal),
+                          Text(" MATLS Co-op Hall of Fame Honor ")
                         ],
-                      )
-                    ],
-                    pageTo: widget.pagetTo,
-                    title: "Learn More About Me",
+                      ),
+                      children: [
+                        Row(
+                          children: [
+                            framepic(profile: widget.profile_img),
+                            SizedBox(
+                              width: _screenWidth / 30,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(FontAwesomeIcons.star),
+                                    Text(
+                                      "  ${widget.name!}  ",
+                                      style: TextStyle(
+                                          fontSize: _screenH / 20,
+                                          fontFamily: "k1"),
+                                    ),
+                                    Icon(FontAwesomeIcons.star),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: _screenH / 30,
+                                ),
+                                Text(
+                                    "Joined Hall of Fame @ ${widget.join_date}\n${widget.info}",
+                                    style: TextStyle(
+                                      fontSize: _screenH / 30,
+                                    )),
+                                for (var i = 0;
+                                    i < widget.contactType!.length;
+                                    i++)
+                                  Text(
+                                    "${widget.contactType![i]}: ${widget.contactInfo![i]}",
+                                    style: TextStyle(
+                                      fontSize: _screenH / 30,
+                                    ),
+                                  ),
+                                SizedBox(
+                                  height: _screenH / 45,
+                                ),
+                                RotationTransition(
+                                  turns: AlwaysStoppedAnimation(340 / 360),
+                                  child: Container(
+                                    padding: EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(15),
+                                        border: Border.all(
+                                            width: 5,
+                                            color:
+                                                Colors.black.withOpacity(0.6))),
+                                    child: Text(
+                                      "Coop Hall Of Fame",
+                                      style: TextStyle(
+                                          fontFamily: "t1",
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: _screenH / 25,
+                                          color: Colors.black.withOpacity(0.6)),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                    fontSize: _screenH / 50,
+                    title: "More Info",
                     titleColor: widget.border_c)
               ],
             ),
