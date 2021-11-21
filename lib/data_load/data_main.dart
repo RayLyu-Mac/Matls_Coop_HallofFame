@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 import 'package:csv/csv.dart';
@@ -33,3 +34,29 @@ Future load_code() async {
 }
 
 Map<String, String> fieldPic = {"Phar": "ast/6.png", "Drug": "ast/10.png"};
+
+List<String> fonts = [
+  "c1",
+  "d",
+  "e1",
+  "f1",
+  "g1",
+  "l1",
+  "o1",
+  "p1",
+  "s",
+  "s1",
+  "s2",
+  "s3",
+  "t"
+];
+
+Map<String, Color> colorL = {
+  "Blue": Colors.blue.shade200,
+  "White": Colors.white,
+  "Green": Colors.green.shade200,
+  "Red": Colors.red.shade200,
+  "Purple": Colors.purple.shade200,
+  "Orange": Colors.purple.shade200,
+  "Indigo": Colors.indigo.shade100
+};

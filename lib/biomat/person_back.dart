@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:coop_hall_of_fame/data_load/data_main.dart';
 import 'package:coop_hall_of_fame/button.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:coop_hall_of_fame/frameback.dart';
+import 'dart:math';
 
 class Person_back extends StatefulWidget {
   final Color? border_c;
@@ -16,8 +18,10 @@ class Person_back extends StatefulWidget {
   final String? join_date;
   final List? contactType;
   final List? contactInfo;
+  final String? nameFont;
   Person_back(
       {@required this.border_c,
+      @required this.nameFont,
       @required this.contactType,
       @required this.contactInfo,
       @required this.join_date,
@@ -71,7 +75,7 @@ class _Person_backState extends State<Person_back> {
             width: _screenWidth / 6.6,
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                border: Border.all(width: 6, color: Colors.grey.shade300),
+                border: Border.all(width: 6, color: widget.border_c!),
                 image:
                     DecorationImage(image: NetworkImage(widget.profile_img!))),
           ),
@@ -97,8 +101,7 @@ class _Person_backState extends State<Person_back> {
                     dialog: true,
                     pageTo: SimpleDialog(
                       shape: RoundedRectangleBorder(
-                          side:
-                              BorderSide(width: 8, color: Colors.grey.shade200),
+                          side: BorderSide(width: 8, color: widget.border_c!),
                           borderRadius: BorderRadius.circular(35)),
                       clipBehavior: Clip.hardEdge,
                       backgroundColor: widget.border_c!.withOpacity(0.8),
@@ -109,7 +112,14 @@ class _Person_backState extends State<Person_back> {
                       title: Row(
                         children: [
                           Icon(FontAwesomeIcons.medal),
-                          Text(" MATLS Co-op Hall of Fame Honor ")
+                          Text(
+                            " MATLS Co-op Hall of Fame Honor ",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: _screenH / 25,
+                                fontFamily:
+                                    fonts[Random().nextInt(fonts.length)]),
+                          )
                         ],
                       ),
                       children: [
@@ -130,7 +140,7 @@ class _Person_backState extends State<Person_back> {
                                       "  ${widget.name!}  ",
                                       style: TextStyle(
                                           fontSize: _screenH / 20,
-                                          fontFamily: "k1"),
+                                          fontFamily: widget.nameFont),
                                     ),
                                     Icon(FontAwesomeIcons.star),
                                   ],
@@ -164,14 +174,14 @@ class _Person_backState extends State<Person_back> {
                                         border: Border.all(
                                             width: 5,
                                             color:
-                                                Colors.black.withOpacity(0.6))),
+                                                Colors.black.withOpacity(0.4))),
                                     child: Text(
                                       "Coop Hall Of Fame",
                                       style: TextStyle(
-                                          fontFamily: "t1",
+                                          fontFamily: "s2",
                                           fontWeight: FontWeight.bold,
                                           fontSize: _screenH / 25,
-                                          color: Colors.black.withOpacity(0.6)),
+                                          color: Colors.black.withOpacity(0.4)),
                                     ),
                                   ),
                                 )

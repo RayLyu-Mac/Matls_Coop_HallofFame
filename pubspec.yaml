@@ -86,6 +86,7 @@ flutter:
     - ast/d2.png
     - ast/d4.png
     - ast/s1.png
+    - ast/res.jpg
     
 
     - ast/csv/bio.csv
@@ -114,15 +115,41 @@ flutter:
     - family:          d1
       fonts:
       - asset:        ast/ft/d.ttf
-    - family:          k1
-      fonts:
-      - asset:        ast/ft/d.ttf
     - family:          s1
       fonts:
-      - asset:        ast/ft/d.ttf
+      - asset:        ast/ft/s.ttf
     - family:          t1
       fonts:
-      - asset:        ast/ft/d.ttf
+      - asset:        ast/ft/t.ttf
+    - family:          o1
+      fonts:
+      - asset:        ast/ft/o1.ttf
+    - family:          p1
+      fonts:
+      - asset:        ast/ft/p1.ttf
+    - family:          s2
+      fonts:
+      - asset:        ast/ft/s1.ttf
+    - family:          c1
+      fonts:
+      - asset:        ast/ft/c1.ttf
+    - family:          g1
+      fonts:
+      - asset:        ast/ft/g1.ttf
+    - family:          f1
+      fonts:
+      - asset:        ast/ft/f1.ttf
+    - family:          s3
+      fonts:
+      - asset:        ast/ft/s2.ttf
+    - family:          l1
+      fonts:
+      - asset:        ast/ft/l1.ttf
+    - family:          e1
+      fonts:
+      - asset:        ast/ft/e1.ttf
+  
+   
   # fonts:
   #   - family: Schyler
   #     fonts:

@@ -65,7 +65,8 @@ class _bio_mainState extends State<bio_main> {
                   columnCount: 1,
                   child: ScaleAnimation(
                       child: Person_back(
-                          border_c: Colors.blue.shade200,
+                          border_c: colorL[data[index][9]],
+                          nameFont: data[index][8],
                           info:
                               "Company: ${data[index][4]} \n${data[index][5]}",
                           name: data[index][1],

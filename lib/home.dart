@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'back.dart';
 import 'decroation/boxfile.dart';
-import 'biomat/bio_main.dart';
+import 'biomat/bio_header.dart';
+import 'biomat/indi_detaio.dart';
 
 class home_page extends StatefulWidget {
   home_page({Key? key}) : super(key: key);
@@ -26,7 +27,7 @@ class _home_pageState extends State<home_page> {
       "Bio+Material=Future",
       "Go Bio",
       FontAwesomeIcons.biohazard,
-      bio_main()
+      bio_page()
     ],
     [
       "ast/3.png",
@@ -34,7 +35,7 @@ class _home_pageState extends State<home_page> {
       "Matls Student can also handle code!",
       "Go Code!",
       FontAwesomeIcons.laptopCode,
-      bio_main()
+      Bio_header()
     ],
   ];
 
@@ -45,7 +46,7 @@ class _home_pageState extends State<home_page> {
       "Opportunity in manufacutring system",
       "Go Making!",
       FontAwesomeIcons.industry,
-      bio_main()
+      Bio_header()
     ],
     [
       "ast/5.png",
@@ -53,7 +54,7 @@ class _home_pageState extends State<home_page> {
       "Fancy Material",
       "Go Smart",
       FontAwesomeIcons.atom,
-      bio_main()
+      Bio_header()
     ],
   ];
   @override
@@ -142,7 +143,7 @@ class _home_pageState extends State<home_page> {
                   img: "ast/1.png",
                   buttonIcon: Icon(FontAwesomeIcons.flask),
                   labelName: "Go Research!",
-                  pageto: bio_main(),
+                  pageto: Bio_header(),
                   height: _screenH / 1.7,
                   width: _screenWidth / 3,
                   content: "Explore research opportuinty in MSE",
