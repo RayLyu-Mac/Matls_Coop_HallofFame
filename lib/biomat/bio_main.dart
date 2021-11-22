@@ -5,6 +5,7 @@ import 'package:csv/csv.dart';
 import 'package:coop_hall_of_fame/data_load/data_main.dart';
 import 'package:coop_hall_of_fame/frameback.dart';
 import 'person_back.dart';
+import 'dart:math';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:coop_hall_of_fame/search/search_mode.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
@@ -30,6 +31,9 @@ class _bio_mainState extends State<bio_main> {
 
   List<List<dynamic>> data = [];
   List<String> hash = [];
+  Color b = colorL[
+      colorL.keys.toList()[Random().nextInt(colorL.keys.toList().length)]]!;
+
   TextEditingController controller = new TextEditingController();
   void load_bio() async {
     final bio_data = await rootBundle.loadString("ast/csv/bio.csv");
@@ -62,21 +66,46 @@ class _bio_mainState extends State<bio_main> {
           actions: [
             IconButton(
                 onPressed: () {
-                  showDialog(
+                  showGeneralDialog(
+                      barrierColor: Colors.black.withOpacity(0.5),
+                      transitionDuration: Duration(milliseconds: 300),
+                      barrierDismissible: true,
+                      barrierLabel: '',
                       context: context,
-                      builder: (BuildContext context) {
-                        return SimpleDialog(
-                          children: [
-                            Container(
-                              width: _screenWidth / 1.5,
-                              height: _screenH / 1.5,
-                              child: search_main(
-                                  controller: controller,
-                                  searchS: hash,
-                                  whole: data),
-                            )
-                          ],
-                        );
+                      pageBuilder: (context, animation, secondaryAnimation) {
+                        return Container();
+                      },
+                      transitionBuilder: (context, a1, a2, widget) {
+                        return Transform.scale(
+                            scale: a1.value,
+                            child: Opacity(
+                                opacity: a1.value,
+                                child: SimpleDialog(
+                                  shape: RoundedRectangleBorder(
+                                      side: BorderSide(width: 8, color: b),
+                                      borderRadius: BorderRadius.circular(35)),
+                                  clipBehavior: Clip.hardEdge,
+                                  backgroundColor: b.withOpacity(0.8),
+                                  contentPadding: EdgeInsets.symmetric(
+                                      horizontal: _screenWidth / 15,
+                                      vertical: _screenH / 10),
+                                  title: Text(
+                                    "Search for Hash Tag",
+                                    style:
+                                        TextStyle(color: Colors.grey.shade100),
+                                  ),
+                                  children: [
+                                    Container(
+                                      width: _screenWidth / 1.5,
+                                      height: _screenH / 1.5,
+                                      child: search_main(
+                                          border: b,
+                                          controller: controller,
+                                          searchS: hash,
+                                          whole: data),
+                                    )
+                                  ],
+                                )));
                       });
                 },
                 icon: Icon(Icons.search))
