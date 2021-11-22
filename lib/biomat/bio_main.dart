@@ -6,6 +6,8 @@ import 'package:coop_hall_of_fame/data_load/data_main.dart';
 import 'package:coop_hall_of_fame/frameback.dart';
 import 'person_back.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:coop_hall_of_fame/search/search_mode.dart';
+import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 
 class bio_main extends StatefulWidget {
   bio_main({Key? key}) : super(key: key);
@@ -27,21 +29,26 @@ class _bio_mainState extends State<bio_main> {
   }
 
   List<List<dynamic>> data = [];
-  List<List> phar = [];
+  List<String> hash = [];
+  TextEditingController controller = new TextEditingController();
   void load_bio() async {
     final bio_data = await rootBundle.loadString("ast/csv/bio.csv");
     List<List<dynamic>> _listData =
         CsvToListConverter().convert(bio_data).sublist(1);
     setState(() {
       data = _listData;
-      print(data);
+      for (var i = 0; i < data.length; i++) {
+        hash.add(data[i][5]);
+      }
     });
   }
 
+  //search_main(controller: controller, searchS: hash, whole: data)
   @override
   void initState() {
     // TODO: implement initState
     load_bio();
+    print(hash);
     super.initState();
   }
 
@@ -49,7 +56,31 @@ class _bio_mainState extends State<bio_main> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Biomaterial"),
+          title: Text(
+            "Biomaterial",
+          ),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return SimpleDialog(
+                          children: [
+                            Container(
+                              width: _screenWidth / 1.5,
+                              height: _screenH / 1.5,
+                              child: search_main(
+                                  controller: controller,
+                                  searchS: hash,
+                                  whole: data),
+                            )
+                          ],
+                        );
+                      });
+                },
+                icon: Icon(Icons.search))
+          ],
         ),
         body: GridView.count(
             crossAxisCount: 2,
@@ -65,6 +96,8 @@ class _bio_mainState extends State<bio_main> {
                   columnCount: 1,
                   child: ScaleAnimation(
                       child: Person_back(
+                          heigt: 0,
+                          width: 0,
                           border_c: colorL[data[index][9]],
                           nameFont: data[index][8],
                           info:

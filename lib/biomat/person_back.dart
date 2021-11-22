@@ -13,19 +13,21 @@ class Person_back extends StatefulWidget {
   final String? name;
   final String? info;
   final String? profile_img;
-  final Widget? pagetTo;
   final String? typ;
   final String? join_date;
   final List? contactType;
   final List? contactInfo;
   final String? nameFont;
+  final double? width;
+  final double? heigt;
   Person_back(
       {@required this.border_c,
+      @optionalTypeArgs this.width,
+      @optionalTypeArgs this.heigt,
       @required this.nameFont,
       @required this.contactType,
       @required this.contactInfo,
       @required this.join_date,
-      @required this.pagetTo,
       @required this.info,
       @required this.name,
       @required this.typ,
@@ -52,7 +54,8 @@ class _Person_backState extends State<Person_back> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: _screenH / 10,
+      margin: EdgeInsets.symmetric(
+          horizontal: widget.width!, vertical: widget.heigt!),
       decoration: BoxDecoration(
           image: DecorationImage(
               colorFilter: ColorFilter.mode(
