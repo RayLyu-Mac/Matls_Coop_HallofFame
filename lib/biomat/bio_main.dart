@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:coop_hall_of_fame/data_load/data_main.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:csv/csv.dart';
-import 'package:coop_hall_of_fame/data_load/data_main.dart';
-import 'package:coop_hall_of_fame/frameback.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'person_back.dart';
 import 'dart:math';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:coop_hall_of_fame/search/search_mode.dart';
-import 'package:material_floating_search_bar/material_floating_search_bar.dart';
+import 'package:coop_hall_of_fame/genmode.dart';
 
 class bio_main extends StatefulWidget {
   bio_main({Key? key}) : super(key: key);
@@ -31,6 +30,7 @@ class _bio_mainState extends State<bio_main> {
 
   List<List<dynamic>> data = [];
   List<String> hash = [];
+  List<RotateAnimatedText> typ = [];
   Color b = colorL[
       colorL.keys.toList()[Random().nextInt(colorL.keys.toList().length)]]!;
 
@@ -43,6 +43,7 @@ class _bio_mainState extends State<bio_main> {
       data = _listData;
       for (var i = 0; i < data.length; i++) {
         hash.add(data[i][5]);
+        typ.add(RotateAnimatedText(data[i][5]));
       }
     });
   }
@@ -52,91 +53,12 @@ class _bio_mainState extends State<bio_main> {
   void initState() {
     // TODO: implement initState
     load_bio();
-    print(hash);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Biomaterial",
-          ),
-          actions: [
-            IconButton(
-                onPressed: () {
-                  showGeneralDialog(
-                      barrierColor: Colors.black.withOpacity(0.5),
-                      transitionDuration: Duration(milliseconds: 300),
-                      barrierDismissible: true,
-                      barrierLabel: '',
-                      context: context,
-                      pageBuilder: (context, animation, secondaryAnimation) {
-                        return Container();
-                      },
-                      transitionBuilder: (context, a1, a2, widget) {
-                        return Transform.scale(
-                            scale: a1.value,
-                            child: Opacity(
-                                opacity: a1.value,
-                                child: SimpleDialog(
-                                  shape: RoundedRectangleBorder(
-                                      side: BorderSide(width: 8, color: b),
-                                      borderRadius: BorderRadius.circular(35)),
-                                  clipBehavior: Clip.hardEdge,
-                                  backgroundColor: b.withOpacity(0.8),
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: _screenWidth / 15,
-                                      vertical: _screenH / 10),
-                                  title: Text(
-                                    "Search for Hash Tag",
-                                    style:
-                                        TextStyle(color: Colors.grey.shade100),
-                                  ),
-                                  children: [
-                                    Container(
-                                      width: _screenWidth / 1.5,
-                                      height: _screenH / 1.5,
-                                      child: search_main(
-                                          border: b,
-                                          controller: controller,
-                                          searchS: hash,
-                                          whole: data),
-                                    )
-                                  ],
-                                )));
-                      });
-                },
-                icon: Icon(Icons.search))
-          ],
-        ),
-        body: GridView.count(
-            crossAxisCount: 2,
-            crossAxisSpacing: 40,
-            mainAxisSpacing: 40,
-            childAspectRatio: (_screenH * 3.4 / _screenWidth),
-            padding: EdgeInsets.symmetric(
-                horizontal: _screenWidth / 40, vertical: _screenH / 40),
-            children: List.generate(2, (index) {
-              return AnimationConfiguration.staggeredGrid(
-                  position: index,
-                  duration: const Duration(milliseconds: 800),
-                  columnCount: 1,
-                  child: ScaleAnimation(
-                      child: Person_back(
-                          heigt: 0,
-                          width: 0,
-                          border_c: colorL[data[index][9]],
-                          nameFont: data[index][8],
-                          info:
-                              "Company: ${data[index][4]} \n${data[index][5]}",
-                          name: data[index][1],
-                          typ: data[index][7],
-                          join_date: "11/17/21",
-                          contactType: data[index][2].toString().split(","),
-                          contactInfo: data[index][3].toString().split(","),
-                          profile_img: data[index][6])));
-            })));
+    return gen_mode(
+        appTitle: "Biomaterial", b: b, data: data, hash: hash, typ: typ);
   }
 }
