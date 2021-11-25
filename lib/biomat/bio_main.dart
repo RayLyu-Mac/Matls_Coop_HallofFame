@@ -30,6 +30,7 @@ class _bio_mainState extends State<bio_main> {
 
   List<List<dynamic>> data = [];
   List<String> hash = [];
+  List<String> comp = [];
   List<RotateAnimatedText> typ = [];
   Color b = colorL[
       colorL.keys.toList()[Random().nextInt(colorL.keys.toList().length)]]!;
@@ -43,7 +44,9 @@ class _bio_mainState extends State<bio_main> {
       data = _listData;
       for (var i = 0; i < data.length; i++) {
         hash.add(data[i][5]);
+        comp.add(data[i][4].toString().split(",")[0]);
         typ.add(RotateAnimatedText(data[i][5]));
+        typ.add(RotateAnimatedText(data[i][4]));
       }
     });
   }
@@ -59,6 +62,12 @@ class _bio_mainState extends State<bio_main> {
   @override
   Widget build(BuildContext context) {
     return gen_mode(
-        appTitle: "Biomaterial", b: b, data: data, hash: hash, typ: typ);
+      appTitle: "Biomaterial",
+      b: b,
+      data: data,
+      hash: hash,
+      typ: typ,
+      comp: comp,
+    );
   }
 }

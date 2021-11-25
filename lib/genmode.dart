@@ -9,6 +9,7 @@ class gen_mode extends StatefulWidget {
   final String? appTitle;
   final Color? b;
   final List<String>? hash;
+  final List<String>? comp;
   final List<List<dynamic>>? data;
   final List<RotateAnimatedText>? typ;
 
@@ -17,6 +18,7 @@ class gen_mode extends StatefulWidget {
       @required this.b,
       @required this.data,
       @required this.hash,
+      @required this.comp,
       @required this.typ,
       Key? key})
       : super(key: key);
@@ -89,6 +91,7 @@ class _gen_modeState extends State<gen_mode> {
                                       child: search_main(
                                           border: widget.b,
                                           controller: controller,
+                                          compName: widget.comp,
                                           searchS: widget.hash,
                                           whole: widget.data),
                                     )
