@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:coop_hall_of_fame/data_load/data_main.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'biomat/person_back.dart';
+import 'person_back.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:coop_hall_of_fame/search/search_mode.dart';
 

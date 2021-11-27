@@ -13,9 +13,11 @@ class header extends StatefulWidget {
   final String? cont;
   final Widget? pageTo;
   final String? buttonName;
+  final String? right;
   header(
       {@required this.back_pic,
       @required this.buttonName,
+      @optionalTypeArgs this.right,
       @required this.cont,
       @required this.pageTo,
       @required this.title,
@@ -65,7 +67,9 @@ class _headerState extends State<header> {
           ),
           Container(
             width: _screenWidth / 2.9,
-            margin: EdgeInsets.only(right: _screenWidth / 1.8),
+            margin: widget.right != null
+                ? EdgeInsets.only(right: _screenWidth / 1.8)
+                : EdgeInsets.only(left: _screenWidth / 1.8),
             padding: EdgeInsets.all(_screenWidth / 35),
             decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.4),

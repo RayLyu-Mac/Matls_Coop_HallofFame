@@ -3,10 +3,7 @@ import 'package:coop_hall_of_fame/data_load/data_main.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:csv/csv.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'person_back.dart';
 import 'dart:math';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:coop_hall_of_fame/search/search_mode.dart';
 import 'package:coop_hall_of_fame/genmode.dart';
 
 class bio_main extends StatefulWidget {

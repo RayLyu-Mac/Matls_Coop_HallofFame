@@ -5,6 +5,7 @@ import 'back.dart';
 import 'decroation/boxfile.dart';
 import 'biomat/bio_header.dart';
 import 'biomat/indi_detaio.dart';
+import 'research/Assemble.dart';
 
 class home_page extends StatefulWidget {
   home_page({Key? key}) : super(key: key);
@@ -143,7 +144,7 @@ class _home_pageState extends State<home_page> {
                   img: "ast/1.png",
                   buttonIcon: Icon(FontAwesomeIcons.flask),
                   labelName: "Go Research!",
-                  pageto: Bio_header(),
+                  pageto: res_assemble(),
                   height: _screenH / 1.7,
                   width: _screenWidth / 3,
                   content: "Explore research opportuinty in MSE",

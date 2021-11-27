@@ -10,16 +10,6 @@ class Bio_header extends StatefulWidget {
 }
 
 class _Bio_headerState extends State<Bio_header> {
-  double _screenWidth = 0;
-  double _screenH = 0;
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-
-    _screenH = MediaQuery.of(context).size.height;
-    _screenWidth = MediaQuery.of(context).size.width;
-  }
-
   @override
   Widget build(BuildContext context) {
     return header(
