@@ -40,8 +40,7 @@ dependencies:
   font_awesome_flutter: ^9.1.0
   page_transition: ^2.0.4
   csv: ^5.0.0
-  web_scraper: ^0.1.4
-  url_launcher: ^6.0.12
+  loading_animations: "^2.1.0"
   animations: ^2.0.2
   animated_text_kit: ^4.2.1
 

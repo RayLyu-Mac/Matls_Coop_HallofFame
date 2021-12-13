@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'bio_header.dart';
-import 'bio_main.dart';
+import 'package:coop_hall_of_fame/header_mode.dart';
+import 'package:coop_hall_of_fame/gen_mode.dart';
 
 class bio_page extends StatefulWidget {
   bio_page({Key? key}) : super(key: key);
@@ -10,13 +10,34 @@ class bio_page extends StatefulWidget {
 }
 
 class _bio_pageState extends State<bio_page> {
-  PageController controller = PageController();
+  List<List<dynamic>> datas = [];
+  PageController controller = PageController(initialPage: 0);
+  void load_res() async {
+    controller.animateTo(500,
+        duration: const Duration(microseconds: 300), curve: Curves.easeInOut);
+  }
+
   @override
   Widget build(BuildContext context) {
     return PageView(
       controller: controller,
       scrollDirection: Axis.vertical,
-      children: [Bio_header(), bio_main()],
+      children: [
+        header(
+            back_pic: "ast/9.png",
+            buttonName: "Explore Biomaterials",
+            cont:
+                "OOO growing and offers many opportunities for Materials Engineers to put their problem solving skills to work to improve materials used in a range of health applications.",
+            pageTo: ElevatedButton(
+              child: Text("Go Bio!"),
+              onPressed: load_res,
+            ),
+            title: "Biomaterials"),
+        gen_mode(
+          appTitle: "Biomaterial",
+          fileName: "ast/csv/bio.csv",
+        )
+      ],
     );
   }
 }

@@ -31,8 +31,8 @@ class _search_mainState extends State<search_main> {
     Icon(FontAwesomeIcons.industry),
   ];
   List<Color> tc = [
-    Colors.red.shade300,
-    Colors.grey.shade400,
+    Colors.red.shade200,
+    Colors.grey.shade300,
   ];
   double _screenWidth = 0;
   double _screenH = 0;
@@ -40,6 +40,7 @@ class _search_mainState extends State<search_main> {
   Icon icon = new Icon(
     Icons.search,
     color: Colors.grey.shade700,
+    size: 42,
   );
   List<List> sresult = [];
 
@@ -60,7 +61,7 @@ class _search_mainState extends State<search_main> {
           decoration: BoxDecoration(
               border: Border.all(width: 12, color: Colors.grey.shade100),
               borderRadius: BorderRadius.circular(15),
-              color: widget.border!.withOpacity(0.9)),
+              color: widget.border!.withOpacity(0.6)),
           child: TextField(
             controller: widget.controller,
             style: TextStyle(
@@ -97,7 +98,7 @@ class _search_mainState extends State<search_main> {
                             EdgeInsets.symmetric(vertical: _screenWidth / 75),
                         margin: EdgeInsets.only(top: _screenH / 65),
                         decoration: BoxDecoration(
-                            color: tc[sresult[index][1]].withOpacity(0.6),
+                            color: tc[sresult[index][1]],
                             borderRadius: BorderRadius.circular(15),
                             border: Border.all(
                                 width: 5, color: tc[sresult[index][1]])),
@@ -113,8 +114,8 @@ class _search_mainState extends State<search_main> {
                                         shape: BoxShape.circle,
                                         border: Border.all(
                                             width: 3,
-                                            color:
-                                                colorL[sresult[index][0][9]]!),
+                                            color: tc[sresult[index][1]]
+                                                .withOpacity(0.6)),
                                         image: DecorationImage(
                                             fit: BoxFit.cover,
                                             image: NetworkImage(

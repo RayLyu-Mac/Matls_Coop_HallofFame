@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:coop_hall_of_fame/header_mode.dart';
 import 'package:coop_hall_of_fame/gen_mode.dart';
 
-class manu_page extends StatefulWidget {
-  manu_page({Key? key}) : super(key: key);
+class code_page extends StatefulWidget {
+  code_page({Key? key}) : super(key: key);
 
   @override
-  _manu_pageState createState() => _manu_pageState();
+  _code_pageState createState() => _code_pageState();
 }
 
-class _manu_pageState extends State<manu_page> {
+class _code_pageState extends State<code_page> {
   List<List<dynamic>> datas = [];
   PageController controller = PageController(initialPage: 0);
   void load_res() async {
@@ -35,7 +35,7 @@ class _manu_pageState extends State<manu_page> {
             title: "Biomaterials"),
         gen_mode(
           appTitle: "Biomaterial",
-          fileName: "ast/csv/manu.csv",
+          fileName: "ast/csv/code.csv",
         )
       ],
     );

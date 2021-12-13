@@ -72,18 +72,19 @@ class _Person_backState extends State<Person_back> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            width: _screenWidth / 12,
+            width: _screenWidth / 15,
           ),
           Container(
-            width: _screenWidth / 6.6,
+            width: _screenWidth / 6.9,
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                border: Border.all(width: 6, color: widget.border_c!),
+                border: Border.all(
+                    width: 4, color: widget.border_c!.withOpacity(0.7)),
                 image:
                     DecorationImage(image: NetworkImage(widget.profile_img!))),
           ),
           SizedBox(
-            width: _screenWidth / 13,
+            width: _screenWidth / 11,
           ),
           Container(
             width: _screenWidth / 5,

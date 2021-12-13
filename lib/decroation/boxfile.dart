@@ -68,7 +68,7 @@ class _box_fileState extends State<box_file> {
               curve: Sprung.overDamped,
               transform: _hovering ? hoverTransform : nonHoverTransform,
               child: Container(
-                decoration: BoxDecoration(color: Colors.white.withOpacity(0.7)),
+                decoration: BoxDecoration(color: Colors.white.withOpacity(0.6)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -110,6 +110,8 @@ class _box_fileState extends State<box_file> {
                 ),
               ))),
       decoration: BoxDecoration(
+          border: Border.all(width: 5, color: Colors.white.withOpacity(0.7)),
+          borderRadius: BorderRadius.circular(15),
           image: DecorationImage(
               fit: BoxFit.cover, image: AssetImage(widget.img!))),
     );

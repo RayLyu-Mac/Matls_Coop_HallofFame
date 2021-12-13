@@ -52,11 +52,11 @@ List<String> fonts = [
 ];
 
 Map<String, Color> colorL = {
-  "Blue": Colors.blue.shade200,
-  "White": Colors.white,
-  "Green": Colors.green.shade200,
-  "Red": Colors.red.shade200,
-  "Purple": Colors.purple.shade200,
-  "Orange": Colors.purple.shade200,
-  "Indigo": Colors.indigo.shade100
+  "blue": Colors.blue.shade200,
+  "white": Colors.white,
+  "green": Colors.green.shade200,
+  "red": Colors.red.shade200,
+  "purple": Colors.purple.shade100,
+  "orange": Colors.purple.shade200,
+  "indigo": Colors.indigo.shade100
 };

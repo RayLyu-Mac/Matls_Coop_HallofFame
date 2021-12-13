@@ -1,11 +1,11 @@
+import 'package:coop_hall_of_fame/biomat/indi_detaio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'back.dart';
 import 'decroation/boxfile.dart';
-import 'biomat/bio_header.dart';
-import 'biomat/indi_detaio.dart';
-import 'research/Assemble.dart';
+
+import 'manufact/manu_assemble.dart';
 
 class home_page extends StatefulWidget {
   home_page({Key? key}) : super(key: key);
@@ -36,7 +36,7 @@ class _home_pageState extends State<home_page> {
       "Matls Student can also handle code!",
       "Go Code!",
       FontAwesomeIcons.laptopCode,
-      Bio_header()
+      bio_page()
     ],
   ];
 
@@ -47,7 +47,7 @@ class _home_pageState extends State<home_page> {
       "Opportunity in manufacutring system",
       "Go Making!",
       FontAwesomeIcons.industry,
-      Bio_header()
+      manu_page()
     ],
     [
       "ast/5.png",
@@ -55,7 +55,7 @@ class _home_pageState extends State<home_page> {
       "Fancy Material",
       "Go Smart",
       FontAwesomeIcons.atom,
-      Bio_header()
+      bio_page()
     ],
   ];
   @override
@@ -144,7 +144,7 @@ class _home_pageState extends State<home_page> {
                   img: "ast/1.png",
                   buttonIcon: Icon(FontAwesomeIcons.flask),
                   labelName: "Go Research!",
-                  pageto: res_assemble(),
+                  pageto: bio_page(),
                   height: _screenH / 1.7,
                   width: _screenWidth / 3,
                   content: "Explore research opportuinty in MSE",

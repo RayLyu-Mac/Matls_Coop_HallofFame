@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
-import 'biomat/bio_main.dart';
 import 'search/test.dart';
+import 'test.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.

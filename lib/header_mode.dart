@@ -14,6 +14,7 @@ class header extends StatefulWidget {
   final Widget? pageTo;
   final String? buttonName;
   final String? right;
+
   header(
       {@required this.back_pic,
       @required this.buttonName,
@@ -109,12 +110,7 @@ class _headerState extends State<header> {
                       SizedBox(
                         height: _screenH / 35,
                       ),
-                      Button(
-                          buttonIcon: FontAwesomeIcons.clinicMedical,
-                          pageTo: widget.pageTo,
-                          title: widget.buttonName,
-                          fontSize: _screenH / 40,
-                          titleColor: Colors.blueAccent)
+                      widget.pageTo!
                     ])),
           )
         ]),
