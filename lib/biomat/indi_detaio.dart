@@ -24,6 +24,7 @@ class _bio_pageState extends State<bio_page> {
       scrollDirection: Axis.vertical,
       children: [
         header(
+            right: "true",
             back_pic: "ast/9.png",
             buttonName: "Explore Biomaterials",
             cont:

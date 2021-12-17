@@ -12,6 +12,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:csv/csv.dart';
 import 'dart:math';
 import 'frameback.dart';
+import 'package:flip_card/flip_card.dart';
 
 class gen_mode extends StatefulWidget {
   final String? appTitle;
@@ -68,6 +69,7 @@ class _gen_modeState extends State<gen_mode> {
   List<String> hash = [];
   List<String> join_time = [];
   List<String> contact = [];
+  List<String> cols = [];
   List<String> contactD = [];
   Color b = colorL[
       colorL.keys.toList()[Random().nextInt(colorL.keys.toList().length)]]!;
@@ -88,6 +90,7 @@ class _gen_modeState extends State<gen_mode> {
       }
       for (var o = 0; o < data.length; o++) {
         imgs.add(data[o][8].toString().replaceAll(" ", ""));
+        cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
         comp.add(data[o][4]);
       }
     });
@@ -109,6 +112,8 @@ class _gen_modeState extends State<gen_mode> {
     setState(() {
       for (var o = 0; o < data.length; o++) {
         imgs.add(data[o][8].toString().replaceAll(" ", ""));
+        cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
+
         comp.add(data[o][4]);
         typ.add(RotateAnimatedText(data[o][5]));
         typ.add(RotateAnimatedText(data[o][4]));
@@ -119,10 +124,6 @@ class _gen_modeState extends State<gen_mode> {
 
   @override
   Widget build(BuildContext context) {
-    bool check =
-        "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/r.jpg?raw=true" ==
-            imgs[0];
-
     if (data.isNotEmpty) {
       return Scaffold(
           appBar: AppBar(
@@ -199,19 +200,54 @@ class _gen_modeState extends State<gen_mode> {
                     duration: const Duration(milliseconds: 800),
                     columnCount: 1,
                     child: ScaleAnimation(
-                        child: Person_back(
-                            width: 0,
-                            heigt: 0,
-                            border_c: colorL[
-                                data[index][11].toString().toLowerCase()],
-                            nameFont: data[index][10].toString(),
-                            contactType: data[index][2].toString().split("+"),
-                            contactInfo: data[index][3].toString().split("+"),
-                            join_date: data[index][0].toString(),
-                            info: "Company: ${comp[index]}",
-                            name: data[index][1].toString(),
-                            typ: "Drug",
-                            profile_img: imgs[index])));
+                        child: FlipCard(
+                            fill: Fill.fillBack,
+                            direction: FlipDirection.HORIZONTAL,
+                            front: Person_back(
+                                width: 0,
+                                heigt: 0,
+                                border_c: colorL[cols[index]],
+                                nameFont: data[index][10].toString(),
+                                contactType:
+                                    data[index][2].toString().split("+"),
+                                contactInfo:
+                                    data[index][3].toString().split("+"),
+                                join_date: data[index][0].toString(),
+                                info: "Company: ${comp[index]}",
+                                name: data[index][1].toString(),
+                                typ: "Drug",
+                                profile_img: imgs[index]),
+                            back: Container(
+                              decoration: BoxDecoration(
+                                  color: colorL[cols[index]]!.withOpacity(0.9),
+                                  borderRadius: BorderRadius.circular(25),
+                                  border: Border.all(
+                                    width: 5,
+                                    color: colorL[cols[index]]!,
+                                  )),
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                        "MSE Coop Hall of Fame: ${widget.appTitle}",
+                                        style: TextStyle(
+                                            fontFamily: "s2",
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: _screenH / 25,
+                                            color:
+                                                Colors.black.withOpacity(0.4))),
+                                    Text("Joined @${data[index][0].toString()}",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: _screenH / 25,
+                                            color:
+                                                Colors.black.withOpacity(0.4)))
+                                  ],
+                                ),
+                              ),
+                            ))));
               })));
     } else {
       return Container(

@@ -143,18 +143,27 @@ class _search_mainState extends State<search_main> {
                             ),
                           ),
                           onTap: () {
+                            print(
+                              sresult[index][0][11]
+                                  .toString()
+                                  .toLowerCase()
+                                  .replaceAll(" ", ""),
+                            );
                             showDialog(
                                 context: context,
                                 builder: (BuildContext context) {
                                   return Person_back(
                                       width: _screenWidth / 4,
                                       heigt: _screenH / 4,
-                                      border_c: colorL[sresult[index][0][9]],
-                                      nameFont: sresult[index][0][8],
+                                      border_c: colorL[sresult[index][0][11]
+                                          .toString()
+                                          .toLowerCase()
+                                          .replaceAll(" ", "")],
+                                      nameFont: sresult[index][0][10],
                                       info:
                                           "Company: ${sresult[index][0][4]} \n${sresult[index][0][5]}",
                                       name: sresult[index][0][1],
-                                      typ: sresult[index][0][7],
+                                      typ: sresult[index][0][9],
                                       join_date: "11/17/21",
                                       contactType: sresult[index][0][2]
                                           .toString()
@@ -162,7 +171,7 @@ class _search_mainState extends State<search_main> {
                                       contactInfo: sresult[index][0][3]
                                           .toString()
                                           .split(","),
-                                      profile_img: sresult[index][0][6]);
+                                      profile_img: sresult[index][0][8]);
                                 });
                           },
                         ),

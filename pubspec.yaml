@@ -43,6 +43,7 @@ dependencies:
   loading_animations: "^2.1.0"
   animations: ^2.0.2
   animated_text_kit: ^4.2.1
+  flip_card: ^0.6.0
 
 
 dev_dependencies:

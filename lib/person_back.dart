@@ -152,8 +152,7 @@ class _Person_backState extends State<Person_back> {
                                 SizedBox(
                                   height: _screenH / 30,
                                 ),
-                                Text(
-                                    "Joined Hall of Fame @ ${widget.join_date}\n${widget.info}",
+                                Text("${widget.info}",
                                     style: TextStyle(
                                       fontSize: _screenH / 30,
                                     )),
@@ -169,26 +168,26 @@ class _Person_backState extends State<Person_back> {
                                 SizedBox(
                                   height: _screenH / 45,
                                 ),
-                                RotationTransition(
-                                  turns: AlwaysStoppedAnimation(340 / 360),
-                                  child: Container(
-                                    padding: EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(15),
-                                        border: Border.all(
-                                            width: 5,
-                                            color:
-                                                Colors.black.withOpacity(0.4))),
-                                    child: Text(
-                                      "Coop Hall Of Fame",
-                                      style: TextStyle(
-                                          fontFamily: "s2",
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: _screenH / 25,
-                                          color: Colors.black.withOpacity(0.4)),
-                                    ),
-                                  ),
-                                )
+                                // RotationTransition(
+                                //   turns: AlwaysStoppedAnimation(340 / 360),
+                                //   child: Container(
+                                //     padding: EdgeInsets.all(10),
+                                //     decoration: BoxDecoration(
+                                //         borderRadius: BorderRadius.circular(15),
+                                //         border: Border.all(
+                                //             width: 5,
+                                //             color:
+                                //                 Colors.black.withOpacity(0.4))),
+                                //     child: Text(
+                                //       "Coop Hall Of Fame",
+                                //       style: TextStyle(
+                                //           fontFamily: "s2",
+                                //           fontWeight: FontWeight.bold,
+                                //           fontSize: _screenH / 25,
+                                //           color: Colors.black.withOpacity(0.4)),
+                                //     ),
+                                //   ),
+                                // )
                               ],
                             )
                           ],

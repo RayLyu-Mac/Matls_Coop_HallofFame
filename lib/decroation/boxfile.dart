@@ -91,6 +91,13 @@ class _box_fileState extends State<box_file> {
                       height: _screenH / 30,
                     ),
                     ElevatedButton.icon(
+                        style: ButtonStyle(
+                          elevation: _hovering
+                              ? MaterialStateProperty.resolveWith(
+                                  (states) => 5.0)
+                              : MaterialStateProperty.resolveWith(
+                                  (states) => 25.0),
+                        ),
                         icon: widget.buttonIcon!,
                         label: Padding(
                           padding: EdgeInsets.symmetric(
