@@ -17,14 +17,18 @@ class Person_back extends StatefulWidget {
   final String? join_date;
   final List? contactType;
   final List? contactInfo;
+  final String? has_tag;
   final String? nameFont;
   final double? width;
   final double? heigt;
+  final String? spec;
   Person_back(
       {@required this.border_c,
       @optionalTypeArgs this.width,
       @optionalTypeArgs this.heigt,
       @required this.nameFont,
+      @required this.spec,
+      @required this.has_tag,
       @required this.contactType,
       @required this.contactInfo,
       @required this.join_date,
@@ -59,7 +63,7 @@ class _Person_backState extends State<Person_back> {
       decoration: BoxDecoration(
           image: DecorationImage(
               colorFilter: ColorFilter.mode(
-                  Colors.white.withOpacity(0.5), BlendMode.dstATop),
+                  Colors.white.withOpacity(0.4), BlendMode.dstATop),
               fit: BoxFit.cover,
               image: AssetImage(fieldPic[widget.typ]!)),
           border: Border.all(
@@ -72,10 +76,10 @@ class _Person_backState extends State<Person_back> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            width: _screenWidth / 15,
+            width: _screenWidth / 30,
           ),
           Container(
-            width: _screenWidth / 6.9,
+            width: _screenWidth / 7.3,
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
@@ -84,10 +88,10 @@ class _Person_backState extends State<Person_back> {
                     DecorationImage(image: NetworkImage(widget.profile_img!))),
           ),
           SizedBox(
-            width: _screenWidth / 11,
+            width: _screenWidth / 15,
           ),
           Container(
-            width: _screenWidth / 5,
+            width: _screenWidth / 4.2,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,11 +99,29 @@ class _Person_backState extends State<Person_back> {
                 Text(widget.name!,
                     textAlign: TextAlign.left,
                     style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: _screenH / 35)),
+                        fontWeight: FontWeight.bold,
+                        fontSize: _screenH / 23,
+                        fontFamily: "b1")),
                 SizedBox(
-                  height: _screenH / 40,
+                  height: _screenH / 45,
                 ),
-                Text(widget.info!),
+                Text(
+                  widget.info!,
+                  style: TextStyle(
+                    fontFamily: "b1",
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: _screenH / 45,
+                ),
+                Text(
+                  "# " + widget.has_tag!,
+                  style: TextStyle(
+                    fontFamily: "b1",
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 Button(
                     buttonIcon: FontAwesomeIcons.ad,
                     dialog: true,
@@ -110,7 +132,7 @@ class _Person_backState extends State<Person_back> {
                       clipBehavior: Clip.hardEdge,
                       backgroundColor: widget.border_c!.withOpacity(0.8),
                       contentPadding: EdgeInsets.symmetric(
-                          horizontal: _screenWidth / 18,
+                          horizontal: _screenWidth / 28,
                           vertical: _screenH / 18),
                       alignment: Alignment.center,
                       title: Row(
@@ -131,7 +153,7 @@ class _Person_backState extends State<Person_back> {
                           children: [
                             framepic(profile: widget.profile_img),
                             SizedBox(
-                              width: _screenWidth / 30,
+                              width: _screenWidth / 35,
                             ),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -152,19 +174,33 @@ class _Person_backState extends State<Person_back> {
                                 SizedBox(
                                   height: _screenH / 30,
                                 ),
-                                Text("${widget.info}",
-                                    style: TextStyle(
-                                      fontSize: _screenH / 30,
-                                    )),
+                                SelectableText(
+                                  "${widget.info}",
+                                  style: TextStyle(
+                                    fontFamily: "b1",
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
                                 for (var i = 0;
                                     i < widget.contactType!.length;
                                     i++)
-                                  Text(
+                                  SelectableText(
                                     "${widget.contactType![i]}: ${widget.contactInfo![i]}",
                                     style: TextStyle(
-                                      fontSize: _screenH / 30,
+                                      fontFamily: "b1",
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
+                                SizedBox(
+                                  height: _screenH / 45,
+                                ),
+                                SelectableText(
+                                  widget.spec!,
+                                  style: TextStyle(
+                                    fontFamily: "b1",
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
                                 SizedBox(
                                   height: _screenH / 45,
                                 ),
@@ -194,7 +230,7 @@ class _Person_backState extends State<Person_back> {
                         )
                       ],
                     ),
-                    fontSize: _screenH / 50,
+                    fontSize: _screenH / 40,
                     title: "More Info",
                     titleColor: widget.border_c)
               ],

@@ -44,8 +44,7 @@ class _ButtonState extends State<Button> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
-          vertical: _screenH / 50, horizontal: _screenWidth / 50),
+      padding: EdgeInsets.symmetric(vertical: _screenH / 50),
       decoration: BoxDecoration(
         color:
             _hovering ? Colors.grey.shade300.withAlpha(85) : Colors.transparent,
@@ -87,7 +86,7 @@ class _ButtonState extends State<Button> {
                   color: _hovering ? widget.titleColor! : Colors.grey.shade800,
                   fontWeight: FontWeight.bold,
                   fontSize: widget.fontSize ?? _screenH / 20,
-                  fontFamily: "show"),
+                  fontFamily: "b1"),
             )),
       ),
     );

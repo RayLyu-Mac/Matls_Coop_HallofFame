@@ -48,7 +48,10 @@ List<String> fonts = [
   "s1",
   "s2",
   "s3",
-  "t"
+  "t",
+  "a1",
+  "s3",
+  "g2"
 ];
 
 Map<String, Color> colorL = {

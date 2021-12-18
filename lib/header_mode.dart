@@ -94,6 +94,7 @@ class _headerState extends State<header> {
                           textAlign: TextAlign.left,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
+                              fontFamily: "b1",
                               fontSize: _screenH / 20),
                         ),
                       ),

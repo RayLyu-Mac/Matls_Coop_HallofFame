@@ -127,7 +127,10 @@ class _gen_modeState extends State<gen_mode> {
     if (data.isNotEmpty) {
       return Scaffold(
           appBar: AppBar(
-            title: SelectableText(widget.appTitle!),
+            title: SelectableText(
+              widget.appTitle!,
+              style: TextStyle(fontFamily: "b1"),
+            ),
             actions: [
               IconButton(
                   onPressed: () {
@@ -206,7 +209,9 @@ class _gen_modeState extends State<gen_mode> {
                             front: Person_back(
                                 width: 0,
                                 heigt: 0,
+                                spec: data[index][13].toString(),
                                 border_c: colorL[cols[index]],
+                                has_tag: hash[index].toString(),
                                 nameFont: data[index][10].toString(),
                                 contactType:
                                     data[index][2].toString().split("+"),

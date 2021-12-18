@@ -150,6 +150,22 @@ flutter:
     - family:          e1
       fonts:
       - asset:        ast/ft/e1.ttf
+    - family:          a1
+      fonts:
+      - asset:        ast/ft/a1.ttf
+    - family:          s3
+      fonts:
+      - asset:        ast/ft/s3.ttf
+    - family:          b1
+      fonts:
+      - asset:        ast/ft/b1.ttf
+    - family:          g2
+      fonts:
+      - asset:        ast/ft/g2.ttf
+
+  
+  
+  
   
    
   # fonts:

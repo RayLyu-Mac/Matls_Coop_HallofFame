@@ -47,6 +47,7 @@ class _Gen_headerState extends State<Gen_header> {
               "  Co-op Hall of Fame",
               textAlign: TextAlign.center,
               style: TextStyle(
+                  fontFamily: "b1",
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                   fontSize: _screenH / 36),
