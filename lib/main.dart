@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'home.dart';
 import 'search/test.dart';
 import 'test.dart';
-import 'home_page_s2.dart';
 import 'package:coop_hall_of_fame/biomat/indi_detaio.dart';
 
 void main() {
@@ -30,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: bio_page(),
+      home: home_page(),
     );
   }
 }

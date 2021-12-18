@@ -34,7 +34,7 @@ class _manu_pageState extends State<manu_page> {
             ),
             title: "Biomaterials"),
         gen_mode(
-          appTitle: "Biomaterial",
+          appTitle: "Manufacturing",
           fileName: "ast/csv/manu.csv",
         )
       ],
