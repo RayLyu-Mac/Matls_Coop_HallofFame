@@ -239,7 +239,7 @@ class _gen_modeState extends State<gen_mode> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Text(
-                                        "MSE Coop Hall of Fame: ${widget.appTitle}",
+                                        "Co-op Hall of Fame: ${widget.appTitle}",
                                         style: TextStyle(
                                             fontFamily: "s2",
                                             fontWeight: FontWeight.bold,
