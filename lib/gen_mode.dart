@@ -47,19 +47,19 @@ class _gen_modeState extends State<gen_mode> {
     ],
     [
       "11/21/2021",
-      "ZiHan Lyu",
+      "Kevin Lassel ",
       "Email",
-      "lyuz11@mcmaster.ca",
-      "Hp",
-      "2rd",
-      "10 month",
-      "Computer",
-      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/r.jpg?raw=true",
-      "Drug",
+      "@mcmaster.ca",
+      "ArcelorMittal Dofasco",
+      "3rd year",
+      "16 months",
+      "Innovative+Welcoming ",
+      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/kl.png?raw=true",
+      "steel",
       "l1",
-      "Green",
+      "orange",
       "ZXC",
-      "qqq"
+      "I work on the development of new products either collecting analyzing and organizing data within excel or through preparing and imaging samples using various techniques."
     ]
   ];
   List<String> comp = [];
@@ -67,6 +67,7 @@ class _gen_modeState extends State<gen_mode> {
   List<RotateAnimatedText> typ = [];
   List<String> imgs = [];
   List<String> hash = [];
+  List<String> back_pics = [];
   List<String> join_time = [];
   List<String> contact = [];
   List<String> cols = [];
@@ -80,7 +81,7 @@ class _gen_modeState extends State<gen_mode> {
   TextEditingController controller = TextEditingController();
 
   load() async {
-    final bio_data = await rootBundle.loadString("ast/csv/bio.csv");
+    final bio_data = await rootBundle.loadString(widget.fileName!);
     setState(() {
       datas = const CsvToListConverter().convert(bio_data);
 
@@ -113,6 +114,7 @@ class _gen_modeState extends State<gen_mode> {
       for (var o = 0; o < data.length; o++) {
         imgs.add(data[o][8].toString().replaceAll(" ", ""));
         cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
+        back_pics.add(data[o][9].toString().toLowerCase().replaceAll(" ", ""));
 
         comp.add(data[o][4]);
         typ.add(RotateAnimatedText(data[o][5]));
@@ -209,6 +211,7 @@ class _gen_modeState extends State<gen_mode> {
                             front: Person_back(
                                 width: 0,
                                 heigt: 0,
+                                year: data[index][5].toString(),
                                 spec: data[index][13].toString(),
                                 border_c: colorL[cols[index]],
                                 has_tag: hash[index].toString(),
@@ -220,7 +223,7 @@ class _gen_modeState extends State<gen_mode> {
                                 join_date: data[index][0].toString(),
                                 info: "Company: ${comp[index]}",
                                 name: data[index][1].toString(),
-                                typ: "Drug",
+                                typ: back_pics[index],
                                 profile_img: imgs[index]),
                             back: Container(
                               decoration: BoxDecoration(

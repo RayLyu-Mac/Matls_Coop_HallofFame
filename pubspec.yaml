@@ -162,6 +162,10 @@ flutter:
     - family:          g2
       fonts:
       - asset:        ast/ft/g2.ttf
+    - family:          cu1
+      fonts:
+      - asset:        ast/ft/cu1.ttf
+    
 
   
   

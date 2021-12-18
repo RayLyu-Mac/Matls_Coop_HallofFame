@@ -34,8 +34,8 @@ Future load_code() async {
 }
 
 Map<String, String> fieldPic = {
-  "Phar": "ast/6.png",
-  "Drug": "ast/10.png",
+  "phar": "ast/6.png",
+  "drug": "ast/10.png",
   "steel": "ast/7.png"
 };
 
@@ -64,6 +64,6 @@ Map<String, Color> colorL = {
   "green": Colors.green.shade200,
   "red": Colors.red.shade200,
   "purple": Colors.purple.shade100,
-  "orange": Colors.purple.shade200,
+  "orange": Colors.orange.shade50,
   "indigo": Colors.indigo.shade100
 };

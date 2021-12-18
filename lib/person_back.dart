@@ -21,6 +21,7 @@ class Person_back extends StatefulWidget {
   final String? nameFont;
   final double? width;
   final double? heigt;
+  final String? year;
   final String? spec;
   Person_back(
       {@required this.border_c,
@@ -30,6 +31,7 @@ class Person_back extends StatefulWidget {
       @required this.spec,
       @required this.has_tag,
       @required this.contactType,
+      @required this.year,
       @required this.contactInfo,
       @required this.join_date,
       @required this.info,
@@ -165,17 +167,25 @@ class _Person_backState extends State<Person_back> {
                                     Text(
                                       "  ${widget.name!}  ",
                                       style: TextStyle(
-                                          fontSize: _screenH / 20,
+                                          fontSize: _screenH / 18,
                                           fontFamily: widget.nameFont),
                                     ),
                                     Icon(FontAwesomeIcons.star),
                                   ],
                                 ),
                                 SizedBox(
-                                  height: _screenH / 30,
+                                  height: _screenH / 45,
                                 ),
                                 SelectableText(
                                   "${widget.info}",
+                                  style: TextStyle(
+                                    fontFamily: "b1",
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+
+                                Text(
+                                  "Got this Co-op @${widget.year}",
                                   style: TextStyle(
                                     fontFamily: "b1",
                                     fontWeight: FontWeight.bold,
@@ -186,19 +196,36 @@ class _Person_backState extends State<Person_back> {
                                     i++)
                                   SelectableText(
                                     "${widget.contactType![i]}: ${widget.contactInfo![i]}",
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontFamily: "b1",
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 SizedBox(
+                                  height: _screenH / 30,
+                                ),
+
+                                Text(
+                                  "Highlight",
+                                  style: TextStyle(
+                                    fontFamily: "cu1",
+                                    fontSize: _screenH / 26,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(
                                   height: _screenH / 45,
                                 ),
-                                SelectableText(
-                                  widget.spec!,
-                                  style: TextStyle(
-                                    fontFamily: "b1",
-                                    fontWeight: FontWeight.bold,
+                                SingleChildScrollView(
+                                  child: Container(
+                                    width: _screenWidth / 3,
+                                    child: Text(
+                                      widget.spec!,
+                                      style: const TextStyle(
+                                        fontFamily: "b1",
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
