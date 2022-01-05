@@ -76,6 +76,22 @@ class _gen_modeState extends State<gen_mode> {
       "indigo",
       "X",
       " 1. Utilized statistical methods for determining performance of various image registration algorithms on SEM images. \n2. Developed excel based model of SEM hardware for cost estimation based on various hardware specifications."
+    ],
+    [
+      "01/04/2022",
+      "Vaytiere Iglesias",
+      "Email",
+      "Vay_tiere@hotmail.com",
+      "Centre for Automotive Materials and Corrosion",
+      "2nd & 3rd year",
+      "4 + 4 months",
+      "Unique",
+      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/vl.jpeg?raw=true",
+      "unique",
+      "e1",
+      "purple",
+      "X",
+      "- Worked with 3G advanced high steels to find the properties in bending\n- trained on optical microscopy equipment to observe the microstructure (SEM and optical microscopes!)\n- worked in a learning filled environment with many experts in their fields of metallurgy ",
     ]
   ];
   List<String> comp = [];
