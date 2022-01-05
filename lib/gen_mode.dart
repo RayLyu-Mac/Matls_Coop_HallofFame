@@ -60,6 +60,22 @@ class _gen_modeState extends State<gen_mode> {
       "orange",
       "ZXC",
       "I work on the development of new products either collecting analyzing and organizing data within excel or through preparing and imaging samples using various techniques."
+    ],
+    [
+      "01/04/2022",
+      "Jeremy Wilson",
+      "Email",
+      "jeremywilsonudd@gmail.com",
+      "Fibics Inc",
+      "3rd year",
+      "4 months",
+      "Demystifiying",
+      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/jw.jpg?raw=true",
+      "demystifying",
+      "g1",
+      "indigo",
+      "X",
+      " 1. Utilized statistical methods for determining performance of various image registration algorithms on SEM images. \n2. Developed excel based model of SEM hardware for cost estimation based on various hardware specifications."
     ]
   ];
   List<String> comp = [];
