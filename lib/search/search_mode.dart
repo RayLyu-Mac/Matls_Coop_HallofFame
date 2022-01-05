@@ -143,12 +143,7 @@ class _search_mainState extends State<search_main> {
                             ),
                           ),
                           onTap: () {
-                            print(
-                              sresult[index][0][11]
-                                  .toString()
-                                  .toLowerCase()
-                                  .replaceAll(" ", ""),
-                            );
+                            
                             showDialog(
                                 context: context,
                                 builder: (BuildContext context) {

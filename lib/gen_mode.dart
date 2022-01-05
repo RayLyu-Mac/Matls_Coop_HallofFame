@@ -93,6 +93,10 @@ class _gen_modeState extends State<gen_mode> {
         imgs.add(data[o][8].toString().replaceAll(" ", ""));
         cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
         comp.add(data[o][4]);
+        back_pics.add(data[o][9].toString().toLowerCase().replaceAll(" ", ""));
+        typ.add(RotateAnimatedText(data[o][5]));
+        typ.add(RotateAnimatedText(data[o][4]));
+        hash.add(data[o][7]);
       }
     });
   }
