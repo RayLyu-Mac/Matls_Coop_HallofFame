@@ -108,6 +108,16 @@ class _gen_modeState extends State<gen_mode> {
       "indigo",
       "X",
       "1. Key member of the research focused division.\n2.Responsible for creating comprehensive reports and aid in the development of specialized products. \n3.Conducted a variety of mechanical and metallurgical tests"
+    ],
+    [
+      "01/08/2022",
+      "Alexi Buenaventura",
+      "Email",
+      "Email: buenavea@mcmaster.ca",
+      "Kinectrics",
+      "3rd year",
+      "16 months",
+      "hands-on + experiential + active mentorship + unconventional"
     ]
   ];
   List<String> comp = [];
