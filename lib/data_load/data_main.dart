@@ -5,7 +5,8 @@ Map<String, String> fieldPic = {
   "drug": "ast/10.png",
   "steel": "ast/7.png",
   "demystifying": "ast/d1.jpg",
-  "unique": "ast/u1.jpg"
+  "unique": "ast/u1.jpg",
+  "additive": "ast/d2.png"
 };
 
 List<String> fonts = [

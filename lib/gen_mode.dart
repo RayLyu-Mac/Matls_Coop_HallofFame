@@ -92,6 +92,22 @@ class _gen_modeState extends State<gen_mode> {
       "purple",
       "X",
       "- Worked with 3G advanced high steels to find the properties in bending\n- trained on optical microscopy equipment to observe the microstructure (SEM and optical microscopes!)\n- worked in a learning filled environment with many experts in their fields of metallurgy ",
+    ],
+    [
+      "01/08/2022",
+      "Arthur Carvalho",
+      "Email",
+      "arthur@sinistro.com.br",
+      "Stackpole Internation",
+      "3rd year",
+      "15 Months",
+      "Specialized+demanding",
+      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/ac.jpg?raw=true",
+      "additive",
+      "o1",
+      "indigo",
+      "X",
+      "1. Key member of the research focused division.\n2.Responsible for creating comprehensive reports and aid in the development of specialized products. \n3.Conducted a variety of mechanical and metallurgical tests"
     ]
   ];
   List<String> comp = [];
