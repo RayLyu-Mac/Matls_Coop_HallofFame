@@ -48,6 +48,7 @@ class Person_back extends StatefulWidget {
 class _Person_backState extends State<Person_back> {
   double _screenWidth = 0;
   double _screenH = 0;
+  double mainInfoFS = 35;
 
   @override
   void didChangeDependencies() {
@@ -161,68 +162,74 @@ class _Person_backState extends State<Person_back> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Row(
-                                  children: [
-                                    Icon(FontAwesomeIcons.star),
-                                    Text(
-                                      "  ${widget.name!}  ",
-                                      style: TextStyle(
-                                          fontSize: _screenH / 18,
-                                          fontFamily: widget.nameFont),
-                                    ),
-                                    Icon(FontAwesomeIcons.star),
-                                  ],
+                                Text(
+                                  widget.name!,
+                                  style: TextStyle(
+                                      fontSize: widget.nameFont != "o1"
+                                          ? _screenH / 15
+                                          : _screenH / 22,
+                                      fontFamily: widget.nameFont),
                                 ),
+
                                 SizedBox(
-                                  height: _screenH / 45,
+                                  height: _screenH / 40,
                                 ),
                                 SelectableText(
                                   "${widget.info}",
                                   style: TextStyle(
                                     fontFamily: "b1",
+                                    fontSize: _screenH / mainInfoFS,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-
+                                SizedBox(
+                                  height: _screenH / 70,
+                                ),
                                 Text(
                                   "Got this Co-op @${widget.year}",
                                   style: TextStyle(
                                     fontFamily: "b1",
+                                    fontSize: _screenH / mainInfoFS,
                                     fontWeight: FontWeight.bold,
                                   ),
+                                ),
+                                SizedBox(
+                                  height: _screenH / 70,
                                 ),
                                 for (var i = 0;
                                     i < widget.contactType!.length;
                                     i++)
                                   SelectableText(
                                     "${widget.contactType![i]}: ${widget.contactInfo![i]}",
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontFamily: "b1",
+                                      fontSize: _screenH / mainInfoFS,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 SizedBox(
-                                  height: _screenH / 30,
+                                  height: _screenH / 25,
                                 ),
 
-                                Text(
-                                  "Highlight",
-                                  style: TextStyle(
-                                    fontFamily: "cu1",
-                                    fontSize: _screenH / 26,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
+                                Text("Highlight",
+                                    style: TextStyle(
+                                        fontSize: widget.nameFont != "o1"
+                                            ? _screenH / 17
+                                            : _screenH / 24,
+                                        fontFamily: widget.nameFont)),
                                 SizedBox(
                                   height: _screenH / 45,
                                 ),
                                 SingleChildScrollView(
+                                  scrollDirection: Axis.vertical,
                                   child: Container(
-                                    width: _screenWidth / 3,
+                                    height: _screenH / 5.7,
+                                    width: _screenWidth / 2.8,
                                     child: Text(
                                       widget.spec!,
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                         fontFamily: "b1",
+                                        fontSize: _screenH / (mainInfoFS + 8),
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -252,7 +259,7 @@ class _Person_backState extends State<Person_back> {
                                 //   ),
                                 // )
                               ],
-                            )
+                            ),
                           ],
                         )
                       ],
