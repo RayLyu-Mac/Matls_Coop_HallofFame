@@ -117,7 +117,13 @@ class _gen_modeState extends State<gen_mode> {
       "Kinectrics",
       "3rd year",
       "16 months",
-      "hands-on + experiential + active mentorship + unconventional"
+      "hands-on + experiential + active mentorship + unconventional",
+      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/ab.jpg?raw=true",
+      "handson",
+      'f1',
+      "indigo",
+      "X",
+      "•	Provide support to engineers by performing project management duties such as ressourcing allocation, tracking financials, and develping test programs and/or systems in the electricty and nuclear industry \n•	Provide technical lab support by performing a variety of activies such as strain gauging, mechanical testing, monitoring and operation of different systems and more\n•    Orange Badge, Strain Gauge, Working at Heights, Incoming Inspector qualified "
     ]
   ];
   List<String> comp = [];
@@ -138,26 +144,26 @@ class _gen_modeState extends State<gen_mode> {
   double _screenH = 0;
   TextEditingController controller = TextEditingController();
 
-  load() async {
-    final bio_data = await rootBundle.loadString(widget.fileName!);
-    setState(() {
-      datas = const CsvToListConverter().convert(bio_data);
+  // load() async {
+  //   final bio_data = await rootBundle.loadString(widget.fileName!);
+  //   setState(() {
+  //     datas = const CsvToListConverter().convert(bio_data);
 
-      datasplit = datas[0].toString().split("*");
-      for (var k = 1; k < datasplit.length - 1; k++) {
-        data.add(datasplit[k].toString().split(","));
-      }
-      for (var o = 0; o < data.length; o++) {
-        imgs.add(data[o][8].toString().replaceAll(" ", ""));
-        cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
-        comp.add(data[o][4]);
-        back_pics.add(data[o][9].toString().toLowerCase().replaceAll(" ", ""));
-        typ.add(RotateAnimatedText(data[o][5]));
-        typ.add(RotateAnimatedText(data[o][4]));
-        hash.add(data[o][7]);
-      }
-    });
-  }
+  //     datasplit = datas[0].toString().split("*");
+  //     for (var k = 1; k < datasplit.length - 1; k++) {
+  //       data.add(datasplit[k].toString().split(","));
+  //     }
+  //     for (var o = 0; o < data.length; o++) {
+  //       imgs.add(data[o][8].toString().replaceAll(" ", ""));
+  //       cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
+  //       comp.add(data[o][4]);
+  //       back_pics.add(data[o][9].toString().toLowerCase().replaceAll(" ", ""));
+  //       typ.add(RotateAnimatedText(data[o][5]));
+  //       typ.add(RotateAnimatedText(data[o][4]));
+  //       hash.add(data[o][7]);
+  //     }
+  //   });
+  // }
 
   @override
   void didChangeDependencies() {
@@ -170,7 +176,7 @@ class _gen_modeState extends State<gen_mode> {
   @override
   void initState() {
     // TODO: implement initState
-    load();
+    //load();
     super.initState();
     setState(() {
       for (var o = 0; o < data.length; o++) {

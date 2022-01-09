@@ -8,7 +8,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:coop_hall_of_fame/frameback.dart';
 import 'dart:math';
 
-#restore
 class Person_back extends StatefulWidget {
   final Color? border_c;
   final String? name;
