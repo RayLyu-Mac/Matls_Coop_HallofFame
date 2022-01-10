@@ -140,6 +140,17 @@ class _gen_modeState extends State<gen_mode> {
       "green",
       "X",
       "1. Metallurgical Sample Preparation\n2.Defect Analysis"
+    ],
+    [
+      "01/10/2022",
+      "Chiara Choi",
+      "Email",
+      "choic14@mcmaster.ca",
+      "IESO",
+      "3rd year",
+      "8 month",
+      "Innovative+Business-oriented",
+      ""
     ]
   ];
   List<String> comp = [];
