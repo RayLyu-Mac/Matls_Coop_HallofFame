@@ -82,7 +82,7 @@ class _Person_backState extends State<Person_back> {
             width: _screenWidth / 30,
           ),
           Container(
-            width: _screenWidth / 7.3,
+            width: _screenWidth / 6.8,
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
