@@ -27,9 +27,9 @@ class _manu_pageState extends State<manu_page> {
             back_pic: "ast/9.png",
             buttonName: "Explore Biomaterials",
             cont:
-                "OOO growing and offers many opportunities for Materials Engineers to put their problem solving skills to work to improve materials used in a range of health applications.",
+                "Materials Engineers are able to connect processing, microstructures and properties. This allows materials engineers to modify the microstructure of a material to make it easier to form and shape.  The skill to carefully manipulate the materials at the smallest scale is key to maintaining a competitive manufacturing sector and a robust infrastructure.",
             pageTo: ElevatedButton(
-              child: Text("Go Bio!"),
+              child: Text("Go Manufacturing!"),
               onPressed: load_res,
             ),
             title: "Biomaterials"),

@@ -28,7 +28,7 @@ class _bio_pageState extends State<bio_page> {
             back_pic: "ast/9.png",
             buttonName: "Explore Biomaterials",
             cont:
-                "OOO growing and offers many opportunities for Materials Engineers to put their problem solving skills to work to improve materials used in a range of health applications.",
+                "The fundamental understanding of material structure, particularly at the nano- and micro-scale, allow us to modify materials to control interactions at biointerfaces, develop advanced characterization tools and create new biofunctional materials. The area of Biomaterials is rapidly growing and offers many opportunities for Materials Engineers to put their problem solving skills to work to improve materials used in a range of health applications.",
             pageTo: ElevatedButton(
               child: Text("Go Bio!"),
               onPressed: load_res,

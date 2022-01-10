@@ -48,7 +48,7 @@ class Person_back extends StatefulWidget {
 class _Person_backState extends State<Person_back> {
   double _screenWidth = 0;
   double _screenH = 0;
-  double mainInfoFS = 35;
+  double mainInfoFS = 34;
 
   @override
   void didChangeDependencies() {
@@ -66,7 +66,7 @@ class _Person_backState extends State<Person_back> {
       decoration: BoxDecoration(
           image: DecorationImage(
               colorFilter: ColorFilter.mode(
-                  Colors.white.withOpacity(0.4), BlendMode.dstATop),
+                  Colors.white.withOpacity(0.3), BlendMode.dstATop),
               fit: BoxFit.cover,
               image: AssetImage(fieldPic[widget.typ]!)),
           border: Border.all(
@@ -108,11 +108,14 @@ class _Person_backState extends State<Person_back> {
                 SizedBox(
                   height: _screenH / 45,
                 ),
-                Text(
-                  widget.info!,
-                  style: TextStyle(
-                    fontFamily: "b1",
-                    fontWeight: FontWeight.bold,
+                Container(
+                  width: _screenWidth / 2.8,
+                  child: Text(
+                    widget.info!,
+                    style: TextStyle(
+                      fontFamily: "b1",
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -174,14 +177,19 @@ class _Person_backState extends State<Person_back> {
                                 SizedBox(
                                   height: _screenH / 40,
                                 ),
-                                SelectableText(
-                                  "${widget.info}",
-                                  style: TextStyle(
-                                    fontFamily: "b1",
-                                    fontSize: _screenH / mainInfoFS,
-                                    fontWeight: FontWeight.bold,
+
+                                Container(
+                                  width: _screenWidth / 2.8,
+                                  child: SelectableText(
+                                    "${widget.info}",
+                                    style: TextStyle(
+                                      fontFamily: "b1",
+                                      fontSize: _screenH / mainInfoFS,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
+
                                 SizedBox(
                                   height: _screenH / 70,
                                 ),
@@ -210,31 +218,33 @@ class _Person_backState extends State<Person_back> {
                                 SizedBox(
                                   height: _screenH / 25,
                                 ),
+                                Row(
+                                  children: [
+                                    Text("Highlight  ",
+                                        style: TextStyle(
+                                            fontSize: widget.nameFont != "o1"
+                                                ? _screenH / 17
+                                                : _screenH / 24,
+                                            fontFamily: widget.nameFont)),
+                                    Icon(FontAwesomeIcons.meteor)
+                                  ],
+                                ),
 
-                                Text("Highlight",
-                                    style: TextStyle(
-                                        fontSize: widget.nameFont != "o1"
-                                            ? _screenH / 17
-                                            : _screenH / 24,
-                                        fontFamily: widget.nameFont)),
                                 SizedBox(
                                   height: _screenH / 45,
                                 ),
-                                SingleChildScrollView(
-                                  scrollDirection: Axis.vertical,
-                                  child: Container(
-                                    height: _screenH / 5.7,
-                                    width: _screenWidth / 2.8,
-                                    child: Text(
-                                      widget.spec!,
-                                      style: TextStyle(
-                                        fontFamily: "b1",
-                                        fontSize: _screenH / (mainInfoFS + 8),
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                Container(
+                                  width: _screenWidth / 2.8,
+                                  child: Text(
+                                    widget.spec!,
+                                    style: TextStyle(
+                                      fontFamily: "b1",
+                                      fontSize: _screenH / (mainInfoFS + 8),
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
+
                                 SizedBox(
                                   height: _screenH / 45,
                                 ),
