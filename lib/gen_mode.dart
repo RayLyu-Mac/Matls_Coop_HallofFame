@@ -113,7 +113,7 @@ class _gen_modeState extends State<gen_mode> {
       "01/08/2022",
       "Alexi Buenaventura",
       "Email",
-      "Email: buenavea@mcmaster.ca",
+      "buenavea@mcmaster.ca",
       "Kinectrics",
       "3rd year",
       "16 months",
@@ -124,6 +124,22 @@ class _gen_modeState extends State<gen_mode> {
       "indigo",
       "X",
       "•	Provide support to engineers by performing project management duties such as ressourcing allocation, tracking financials, and develping test programs and/or systems in the electricty and nuclear industry \n•	Provide technical lab support by performing a variety of activies such as strain gauging, mechanical testing, monitoring and operation of different systems and more\n•    Orange Badge, Strain Gauge, Working at Heights, Incoming Inspector qualified "
+    ],
+    [
+      "01/08/2022",
+      "Savannah Letendre",
+      "Email",
+      "savannahletendree@gmail.com",
+      "ArcelorMittal Dofasco",
+      "3rd year",
+      "16 month",
+      "Hands on+Experiential",
+      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/sl.jpg?raw=true",
+      "rd",
+      "l1",
+      "green",
+      "X",
+      "1. Metallurgical Sample Preparation\n2.Defect Analysis"
     ]
   ];
   List<String> comp = [];
