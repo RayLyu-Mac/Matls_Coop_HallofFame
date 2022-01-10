@@ -24,7 +24,7 @@ class _manu_pageState extends State<manu_page> {
       scrollDirection: Axis.vertical,
       children: [
         header(
-            back_pic: "ast/9.png",
+            back_pic: "ast/4.png",
             buttonName: "Explore Biomaterials",
             cont:
                 "Materials Engineers are able to connect processing, microstructures and properties. This allows materials engineers to modify the microstructure of a material to make it easier to form and shape.  The skill to carefully manipulate the materials at the smallest scale is key to maintaining a competitive manufacturing sector and a robust infrastructure.",
@@ -32,7 +32,7 @@ class _manu_pageState extends State<manu_page> {
               child: Text("Go Manufacturing!"),
               onPressed: load_res,
             ),
-            title: "Biomaterials"),
+            title: "Manufacturing"),
         gen_mode(
           appTitle: "Manufacturing",
           fileName: "ast/csv/manu.csv",

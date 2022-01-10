@@ -333,6 +333,7 @@ class _gen_modeState extends State<gen_mode> {
                                     Text("Joined @${data[index][0].toString()}",
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
+                                            fontFamily: "c1",
                                             fontSize: _screenH / 25,
                                             color:
                                                 Colors.black.withOpacity(0.4)))
