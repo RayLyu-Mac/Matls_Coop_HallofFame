@@ -28,152 +28,153 @@ class gen_mode extends StatefulWidget {
 
 class _gen_modeState extends State<gen_mode> {
   List<List> datas = [];
-  List<List> data = [
-    [
-      "11/21/2021",
-      "Ray Lyu",
-      "Email",
-      "lyuz11@mcmaster.ca",
-      "Apotex",
-      "3rd",
-      "12 month",
-      "Manufacutirng+Pharmeutical",
-      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/r.jpg?raw=true",
-      "Phar",
-      "g1",
-      "Indigo",
-      "ZXC",
-      "qqq"
-    ],
-    [
-      "11/21/2021",
-      "Kevin Lassel ",
-      "Email",
-      "@mcmaster.ca",
-      "ArcelorMittal Dofasco",
-      "3rd year",
-      "16 months",
-      "Innovative+Welcoming ",
-      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/kl.png?raw=true",
-      "steel",
-      "l1",
-      "orange",
-      "ZXC",
-      "I work on the development of new products either collecting analyzing and organizing data within excel or through preparing and imaging samples using various techniques."
-    ],
-    [
-      "01/04/2022",
-      "Jeremy Wilson",
-      "Email",
-      "jeremywilsonudd@gmail.com",
-      "Fibics Inc",
-      "3rd year",
-      "4 months",
-      "Demystifiying",
-      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/jw.jpg?raw=true",
-      "demystifying",
-      "g1",
-      "indigo",
-      "X",
-      " 1. Utilized statistical methods for determining performance of various image registration algorithms on SEM images. \n2. Developed excel based model of SEM hardware for cost estimation based on various hardware specifications."
-    ],
-    [
-      "01/04/2022",
-      "Vaytiere Iglesias",
-      "Email+LinkedIn+Discord+person",
-      "Vay_tiere@hotmail.com+https://www.linkedin.com/in/vaytiereiglesias+DarthVader+Meet me in person",
-      "Centre for Automotive Materials and Corrosion",
-      "2nd & 3rd year",
-      "4 + 4 months",
-      "Unique",
-      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/vl.jpeg?raw=true",
-      "unique",
-      "e1",
-      "purple",
-      "X",
-      "- Worked with 3G advanced high steels to find the properties in bending\n- trained on optical microscopy equipment to observe the microstructure (SEM and optical microscopes!)\n- worked in a learning filled environment with many experts in their fields of metallurgy ",
-    ],
-    [
-      "01/08/2022",
-      "Arthur Carvalho",
-      "Email",
-      "arthur@sinistro.com.br",
-      "Stackpole Internation",
-      "3rd year",
-      "15 Months",
-      "Specialized+demanding",
-      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/ac.jpg?raw=true",
-      "additive",
-      "o1",
-      "indigo",
-      "X",
-      "1. Key member of the research focused division.\n2.Responsible for creating comprehensive reports and aid in the development of specialized products. \n3.Conducted a variety of mechanical and metallurgical tests"
-    ],
-    [
-      "01/08/2022",
-      "Alexi Buenaventura",
-      "Email",
-      "buenavea@mcmaster.ca",
-      "Kinectrics",
-      "3rd year",
-      "16 months",
-      "hands-on + experiential + active mentorship + unconventional",
-      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/ab.jpg?raw=true",
-      "handson",
-      'f1',
-      "indigo",
-      "X",
-      "•	Provide support to engineers by performing project management duties such as ressourcing allocation, tracking financials, and develping test programs and/or systems in the electricty and nuclear industry \n•	Provide technical lab support by performing a variety of activies such as strain gauging, mechanical testing, monitoring and operation of different systems and more\n•    Orange Badge, Strain Gauge, Working at Heights, Incoming Inspector qualified "
-    ],
-    [
-      "01/08/2022",
-      "Savannah Letendre",
-      "Email",
-      "savannahletendree@gmail.com",
-      "ArcelorMittal Dofasco",
-      "3rd year",
-      "16 month",
-      "Hands on+Experiential",
-      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/sl.jpg?raw=true",
-      "rd",
-      "l1",
-      "green",
-      "X",
-      "1. Metallurgical Sample Preparation\n2.Defect Analysis"
-    ],
-    [
-      "01/10/2022",
-      "Chiara Choi",
-      "Email",
-      "choic14@mcmaster.ca",
-      "IESO",
-      "3rd year",
-      "8 month",
-      "Innovative+Business-oriented",
-      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/cc.jpg?raw=true",
-      "business",
-      "e1",
-      "purple",
-      "X",
-      "1. Supported in managing 9.5M annual capital portfolio of the IESO’s Grid Innovation Fund.\n2. Assisted in managing the active portfolio of 43 pilots, as well as supported in the development of the 2021 Joint Targeted Call: DER Integration between the IESO and Ontario Energy Board."
-    ],
-    [
-      "01/10/2022",
-      "Zayaan Khan",
-      "Email+LinkedIn+person",
-      "zayaankhan444@gmail.com+https://www.facebook.com/profile.php?id=100017888445615+Person",
-      "Stackpole Inc",
-      "3rd year",
-      "16 month",
-      "Technical+Hands On",
-      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/zk.jpg?raw=true",
-      "powder",
-      "g1",
-      "green",
-      "X",
-      "1. Failure Analysis of Failed Rotor Parts \n2. Analysis of Heat Treatments Cycles on Powder Metals \n3. Material Development for Automotive Applications "
-    ]
-  ];
+  List<List> data = [];
+  // List<List> data = [
+  //   [
+  //     "11/21/2021",
+  //     "Ray Lyu",
+  //     "Email",
+  //     "lyuz11@mcmaster.ca",
+  //     "Apotex",
+  //     "3rd",
+  //     "12 month",
+  //     "Manufacutirng+Pharmeutical",
+  //     "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/r.jpg?raw=true",
+  //     "Phar",
+  //     "g1",
+  //     "Indigo",
+  //     "ZXC",
+  //     "qqq"
+  //   ],
+  //   [
+  //     "11/21/2021",
+  //     "Kevin Lassel ",
+  //     "Email",
+  //     "@mcmaster.ca",
+  //     "ArcelorMittal Dofasco",
+  //     "3rd year",
+  //     "16 months",
+  //     "Innovative+Welcoming ",
+  //     "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/kl.png?raw=true",
+  //     "steel",
+  //     "l1",
+  //     "orange",
+  //     "ZXC",
+  //     "I work on the development of new products either collecting analyzing and organizing data within excel or through preparing and imaging samples using various techniques."
+  //   ],
+  //   [
+  //     "01/04/2022",
+  //     "Jeremy Wilson",
+  //     "Email+person+LinkedIn+Facebook",
+  //     "jeremywilsonudd@gmail.com+person+https://www.linkedin.com/in/jeremy-w-711002134/+https://www.facebook.com/jeremywilsonudd",
+  //     "Fibics Inc",
+  //     "3rd year",
+  //     "4 months",
+  //     "Demystifiying",
+  //     "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/jw.jpg?raw=true",
+  //     "demystifying",
+  //     "g1",
+  //     "indigo",
+  //     "X",
+  //     " 1. Utilized statistical methods for determining performance of various image registration algorithms on SEM images. \n2. Developed excel based model of SEM hardware for cost estimation based on various hardware specifications."
+  //   ],
+  //   [
+  //     "01/04/2022",
+  //     "Vaytiere Iglesias",
+  //     "Email+LinkedIn+Discord+person",
+  //     "Vay_tiere@hotmail.com+https://www.linkedin.com/in/vaytiereiglesias+DarthVader+Meet me in person",
+  //     "Centre for Automotive Materials and Corrosion",
+  //     "2nd & 3rd year",
+  //     "4 + 4 months",
+  //     "Unique",
+  //     "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/vl.jpeg?raw=true",
+  //     "unique",
+  //     "e1",
+  //     "purple",
+  //     "X",
+  //     "- Worked with 3G advanced high steels to find the properties in bending\n- trained on optical microscopy equipment to observe the microstructure (SEM and optical microscopes!)\n- worked in a learning filled environment with many experts in their fields of metallurgy ",
+  //   ],
+  //   [
+  //     "01/08/2022",
+  //     "Arthur Carvalho",
+  //     "Email",
+  //     "arthur@sinistro.com.br",
+  //     "Stackpole Internation",
+  //     "3rd year",
+  //     "15 Months",
+  //     "Specialized+demanding",
+  //     "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/ac.jpg?raw=true",
+  //     "additive",
+  //     "o1",
+  //     "indigo",
+  //     "X",
+  //     "1. Key member of the research focused division.\n2.Responsible for creating comprehensive reports and aid in the development of specialized products. \n3.Conducted a variety of mechanical and metallurgical tests"
+  //   ],
+  //   [
+  //     "01/08/2022",
+  //     "Alexi Buenaventura",
+  //     "Email",
+  //     "buenavea@mcmaster.ca",
+  //     "Kinectrics",
+  //     "3rd year",
+  //     "16 months",
+  //     "hands-on + experiential + active mentorship + unconventional",
+  //     "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/ab.jpg?raw=true",
+  //     "handson",
+  //     'f1',
+  //     "indigo",
+  //     "X",
+  //     "•	Provide support to engineers by performing project management duties such as ressourcing allocation, tracking financials, and develping test programs and/or systems in the electricty and nuclear industry \n•	Provide technical lab support by performing a variety of activies such as strain gauging, mechanical testing, monitoring and operation of different systems and more\n•    Orange Badge, Strain Gauge, Working at Heights, Incoming Inspector qualified "
+  //   ],
+  //   [
+  //     "01/08/2022",
+  //     "Savannah Letendre",
+  //     "Email",
+  //     "savannahletendree@gmail.com",
+  //     "ArcelorMittal Dofasco",
+  //     "3rd year",
+  //     "16 month",
+  //     "Hands on+Experiential",
+  //     "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/sl.jpg?raw=true",
+  //     "rd",
+  //     "l1",
+  //     "green",
+  //     "X",
+  //     "1. Metallurgical Sample Preparation\n2.Defect Analysis"
+  //   ],
+  //   [
+  //     "01/10/2022",
+  //     "Chiara Choi",
+  //     "Email",
+  //     "choic14@mcmaster.ca",
+  //     "IESO",
+  //     "3rd year",
+  //     "8 month",
+  //     "Innovative+Business-oriented",
+  //     "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/cc.jpg?raw=true",
+  //     "business",
+  //     "e1",
+  //     "purple",
+  //     "X",
+  //     "1. Supported in managing 9.5M annual capital portfolio of the IESO’s Grid Innovation Fund.\n2. Assisted in managing the active portfolio of 43 pilots, as well as supported in the development of the 2021 Joint Targeted Call: DER Integration between the IESO and Ontario Energy Board."
+  //   ],
+  //   [
+  //     "01/10/2022",
+  //     "Zayaan Khan",
+  //     "Email+LinkedIn+person",
+  //     "zayaankhan444@gmail.com+https://www.facebook.com/profile.php?id=100017888445615+Person",
+  //     "Stackpole Inc",
+  //     "3rd year",
+  //     "16 month",
+  //     "Technical+Hands On",
+  //     "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/zk.jpg?raw=true",
+  //     "powder",
+  //     "g1",
+  //     "green",
+  //     "X",
+  //     "1. Failure Analysis of Failed Rotor Parts \n2. Analysis of Heat Treatments Cycles on Powder Metals \n3. Material Development for Automotive Applications "
+  //   ]
+  // ];
   List<String> comp = [];
   List<String> datasplit = [];
   List<RotateAnimatedText> typ = [];
@@ -193,26 +194,26 @@ class _gen_modeState extends State<gen_mode> {
   double _screenH = 0;
   TextEditingController controller = TextEditingController();
 
-  // load() async {
-  //   final bio_data = await rootBundle.loadString(widget.fileName!);
-  //   setState(() {
-  //     datas = const CsvToListConverter().convert(bio_data);
+  load() async {
+    final bio_data = await rootBundle.loadString(widget.fileName!);
+    setState(() {
+      datas = const CsvToListConverter().convert(bio_data);
 
-  //     datasplit = datas[0].toString().split("*");
-  //     for (var k = 1; k < datasplit.length - 1; k++) {
-  //       data.add(datasplit[k].toString().split(","));
-  //     }
-  //     for (var o = 0; o < data.length; o++) {
-  //       imgs.add(data[o][8].toString().replaceAll(" ", ""));
-  //       cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
-  //       comp.add(data[o][4]);
-  //       back_pics.add(data[o][9].toString().toLowerCase().replaceAll(" ", ""));
-  //       typ.add(RotateAnimatedText(data[o][5]));
-  //       typ.add(RotateAnimatedText(data[o][4]));
-  //       hash.add(data[o][7]);
-  //     }
-  //   });
-  // }
+      datasplit = datas[0].toString().split("*");
+      for (var k = 1; k < datasplit.length - 1; k++) {
+        data.add(datasplit[k].toString().split(","));
+      }
+      for (var o = 0; o < data.length; o++) {
+        imgs.add(data[o][8].toString().replaceAll(" ", ""));
+        cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
+        comp.add(data[o][4]);
+        back_pics.add(data[o][9].toString().toLowerCase().replaceAll(" ", ""));
+        typ.add(RotateAnimatedText(data[o][5]));
+        typ.add(RotateAnimatedText(data[o][4]));
+        hash.add(data[o][7]);
+      }
+    });
+  }
 
   @override
   void didChangeDependencies() {
@@ -225,7 +226,7 @@ class _gen_modeState extends State<gen_mode> {
   @override
   void initState() {
     // TODO: implement initState
-    //load();
+    load();
     super.initState();
     setState(() {
       for (var o = 0; o < data.length; o++) {
