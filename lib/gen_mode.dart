@@ -329,6 +329,7 @@ class _gen_modeState extends State<gen_mode> {
                                 width: 0,
                                 heigt: 0,
                                 year: data[index][5].toString(),
+                                length: data[index][6].toString(),
                                 spec: data[index][13].toString(),
                                 border_c: colorL[cols[index]],
                                 has_tag: hash[index].toString(),

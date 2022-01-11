@@ -24,6 +24,7 @@ class Person_back extends StatefulWidget {
   final double? width;
   final double? heigt;
   final String? year;
+  final String? length;
   final String? spec;
   Person_back(
       {@required this.border_c,
@@ -34,6 +35,7 @@ class Person_back extends StatefulWidget {
       @required this.has_tag,
       @required this.contactType,
       @required this.year,
+      @required this.length,
       @required this.contactInfo,
       @required this.join_date,
       @required this.info,
@@ -196,7 +198,7 @@ class _Person_backState extends State<Person_back> {
                                   height: _screenH / 70,
                                 ),
                                 Text(
-                                  "Got this Co-op @${widget.year}",
+                                  "Got this Co-op @${widget.year}\nFor ${widget.length}",
                                   style: TextStyle(
                                     fontFamily: "b1",
                                     fontSize: _screenH / mainInfoFS,
