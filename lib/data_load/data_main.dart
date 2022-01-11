@@ -10,7 +10,8 @@ Map<String, String> fieldPic = {
   "additive": "ast/d2.png",
   "handson": "ast/d4.png",
   "rd": "ast/rd.jpg",
-  "business": "ast/bu1.png"
+  "business": "ast/bu1.png",
+  "powder": "ast/p1.jpg"
 };
 
 Map<String, List> contact = {

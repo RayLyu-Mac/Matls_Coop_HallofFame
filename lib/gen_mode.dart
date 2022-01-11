@@ -156,6 +156,22 @@ class _gen_modeState extends State<gen_mode> {
       "purple",
       "X",
       "1. Supported in managing 9.5M annual capital portfolio of the IESO’s Grid Innovation Fund.\n2. Assisted in managing the active portfolio of 43 pilots, as well as supported in the development of the 2021 Joint Targeted Call: DER Integration between the IESO and Ontario Energy Board."
+    ],
+    [
+      "01/10/2022",
+      "Zayaan Khan",
+      "Email+LinkedIn+person",
+      "zayaankhan444@gmail.com+https://www.facebook.com/profile.php?id=100017888445615+Person",
+      "Stackpole Inc",
+      "3rd year",
+      "16 month",
+      "Technical+Hands On",
+      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/zk.jpg?raw=true",
+      "powder",
+      "g1",
+      "green",
+      "X",
+      "1. Failure Analysis of Failed Rotor Parts \n2. Analysis of Heat Treatments Cycles on Powder Metals \n3. Material Development for Automotive Applications "
     ]
   ];
   List<String> comp = [];
