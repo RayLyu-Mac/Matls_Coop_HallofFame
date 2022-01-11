@@ -7,6 +7,8 @@ import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:coop_hall_of_fame/frameback.dart';
 import 'dart:math';
+import 'data_load/data_main.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Person_back extends StatefulWidget {
   final Color? border_c;
@@ -204,17 +206,72 @@ class _Person_backState extends State<Person_back> {
                                 SizedBox(
                                   height: _screenH / 70,
                                 ),
-                                for (var i = 0;
-                                    i < widget.contactType!.length;
-                                    i++)
-                                  SelectableText(
-                                    "${widget.contactType![i]}: ${widget.contactInfo![i]}",
-                                    style: TextStyle(
-                                      fontFamily: "b1",
-                                      fontSize: _screenH / mainInfoFS,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
+                                Row(
+                                  children: [
+                                    for (var i = 0;
+                                        i < widget.contactType!.length;
+                                        i++)
+                                      IconButton(
+                                          tooltip: contact[widget
+                                              .contactType![i]
+                                              .toString()
+                                              .toLowerCase()]![1],
+                                          onPressed: () {
+                                            if (widget.contactType![i]
+                                                        .toString()
+                                                        .toLowerCase() ==
+                                                    "linkedin" ||
+                                                widget.contactType![i]
+                                                        .toString()
+                                                        .toLowerCase() ==
+                                                    "facebook") {
+                                              launch(widget.contactInfo![i]);
+                                            } else {
+                                              showGeneralDialog(
+                                                  barrierColor: Colors.black
+                                                      .withOpacity(0.5),
+                                                  transitionDuration: Duration(
+                                                      milliseconds: 300),
+                                                  barrierDismissible: true,
+                                                  barrierLabel: '',
+                                                  context: context,
+                                                  pageBuilder: (context,
+                                                      animation,
+                                                      secondaryAnimation) {
+                                                    return Container();
+                                                  },
+                                                  transitionBuilder: (context,
+                                                      a1, a2, widgets) {
+                                                    return Transform.scale(
+                                                        scale: a1.value,
+                                                        child: Opacity(
+                                                            opacity: a1.value,
+                                                            child: SimpleDialog(
+                                                              title: Text(
+                                                                  "Contact me through email!"),
+                                                              children: [
+                                                                SelectableText(
+                                                                    widget.contactInfo![
+                                                                        i])
+                                                              ],
+                                                            )));
+                                                  });
+                                            }
+                                          },
+                                          icon: Icon(contact[widget
+                                              .contactType![i]
+                                              .toString()
+                                              .toLowerCase()]![0]))
+                                  ],
+                                ),
+                                // SelectableText(
+                                //   "${widget.contactType![i]}: ${widget.contactInfo![i]}",
+                                //   style: TextStyle(
+                                //     fontFamily: "b1",
+                                //     fontSize: _screenH / mainInfoFS,
+                                //     fontWeight: FontWeight.bold,
+                                //   ),
+                                // ),
                                 SizedBox(
                                   height: _screenH / 25,
                                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 Map<String, String> fieldPic = {
   "phar": "ast/6.png",
@@ -10,6 +11,14 @@ Map<String, String> fieldPic = {
   "handson": "ast/d4.png",
   "rd": "ast/rd.jpg",
   "business": "ast/bu1.png"
+};
+
+Map<String, List> contact = {
+  "email": [Icons.email, "Contact Through Email"],
+  "discord": [FontAwesomeIcons.discord, "Find me on Discord!"],
+  "linkedin": [FontAwesomeIcons.linkedinIn, "Contact me through LinkedIn"],
+  "person": [Icons.chat, "Hey, Lets meet up in person!"],
+  "messenger": [FontAwesomeIcons.facebook, "Chat me through facebook!"]
 };
 
 List<String> fonts = [

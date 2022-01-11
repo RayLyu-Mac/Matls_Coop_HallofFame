@@ -80,8 +80,8 @@ class _gen_modeState extends State<gen_mode> {
     [
       "01/04/2022",
       "Vaytiere Iglesias",
-      "Email",
-      "Vay_tiere@hotmail.com",
+      "Email+LinkedIn+Discord+person",
+      "Vay_tiere@hotmail.com+https://www.linkedin.com/in/vaytiereiglesias+DarthVader+Meet me in person",
       "Centre for Automotive Materials and Corrosion",
       "2nd & 3rd year",
       "4 + 4 months",
@@ -150,13 +150,19 @@ class _gen_modeState extends State<gen_mode> {
       "3rd year",
       "8 month",
       "Innovative+Business-oriented",
-      ""
+      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/cc.jpg?raw=true",
+      "business",
+      "e1",
+      "purple",
+      "X",
+      "1. Supported in managing 9.5M annual capital portfolio of the IESO’s Grid Innovation Fund.\n2. Assisted in managing the active portfolio of 43 pilots, as well as supported in the development of the 2021 Joint Targeted Call: DER Integration between the IESO and Ontario Energy Board."
     ]
   ];
   List<String> comp = [];
   List<String> datasplit = [];
   List<RotateAnimatedText> typ = [];
   List<String> imgs = [];
+
   List<String> hash = [];
   List<String> back_pics = [];
   List<String> join_time = [];
