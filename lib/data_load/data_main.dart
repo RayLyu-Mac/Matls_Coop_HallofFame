@@ -11,7 +11,15 @@ Map<String, String> fieldPic = {
   "handson": "ast/d4.png",
   "rd": "ast/rd.jpg",
   "business": "ast/bu1.png",
-  "powder": "ast/p1.jpg"
+  "powder": "ast/p1.jpg",
+  "corrosion": "ast/bg/c1.png",
+  "comput1": "ast/bg/c2.png",
+  "industry": "ast/bg/i1.png",
+  "manufact1": "ast/bg/m1.jpg",
+  "qa": "ast/bg/q1.png",
+  "steel1": "ast/bg/s1.png",
+  "steel2": "ast/bg/s2.png",
+  "cpu": "ast/s1.png"
 };
 
 Map<String, List> contact = {
@@ -19,8 +27,9 @@ Map<String, List> contact = {
   "discord": [FontAwesomeIcons.discord, "Find me on Discord!", "ast/di.png"],
   "linkedin": [FontAwesomeIcons.linkedinIn, "Contact me through LinkedIn"],
   "person": [Icons.chat, "Hey, Lets meet up in person!", "ast/me.png"],
+  "facebook": [FontAwesomeIcons.facebookF, "Find My info on facebook page"],
   "messenger": [
-    FontAwesomeIcons.facebook,
+    FontAwesomeIcons.facebookMessenger,
     "Chat me through facebook!",
     "ast/fb.png"
   ]
