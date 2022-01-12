@@ -176,7 +176,10 @@ class _Person_backState extends State<Person_back> {
                                       fontSize: widget.nameFont != "o1"
                                           ? _screenH / 15
                                           : _screenH / 22,
-                                      fontFamily: widget.nameFont),
+                                      fontFamily: widget.nameFont
+                                          .toString()
+                                          .toLowerCase()
+                                          .replaceAll(" ", "")),
                                 ),
 
                                 SizedBox(
@@ -343,7 +346,10 @@ class _Person_backState extends State<Person_back> {
                                             fontSize: widget.nameFont != "o1"
                                                 ? _screenH / 17
                                                 : _screenH / 24,
-                                            fontFamily: widget.nameFont)),
+                                            fontFamily: widget.nameFont
+                                                .toString()
+                                                .toLowerCase()
+                                                .replaceAll(" ", ""))),
                                     Icon(FontAwesomeIcons.meteor)
                                   ],
                                 ),
