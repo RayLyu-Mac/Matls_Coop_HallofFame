@@ -64,16 +64,16 @@ class _headerState extends State<header> {
                       ),
                   children: [Gen_header(pageTo: home_page())])),
           SizedBox(
-            height: _screenH / 8,
+            height: _screenH / 9,
           ),
           Container(
-            width: _screenWidth / 2.9,
+            width: _screenWidth / 2.5,
             margin: widget.right != null
                 ? EdgeInsets.only(right: _screenWidth / 1.8)
                 : EdgeInsets.only(left: _screenWidth / 1.8),
             padding: EdgeInsets.all(_screenWidth / 35),
             decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.4),
+                color: Colors.white.withOpacity(0.6),
                 borderRadius: BorderRadius.circular(25)),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,

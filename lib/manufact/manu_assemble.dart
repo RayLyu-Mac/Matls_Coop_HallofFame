@@ -27,7 +27,7 @@ class _manu_pageState extends State<manu_page> {
             back_pic: "ast/4.png",
             buttonName: "Explore Biomaterials",
             cont:
-                "Materials Engineers are able to connect processing, microstructures and properties. This allows materials engineers to modify the microstructure of a material to make it easier to form and shape.  The skill to carefully manipulate the materials at the smallest scale is key to maintaining a competitive manufacturing sector and a robust infrastructure.",
+                "Materials Engineers are pushing the envelope in how we change manufacturing to optimize for efficiency, and to increase the quality of products used in industry and infrastructure. They are tackling unique challenges with 3D printing, industry 4.0, and clean energy. McMaster Materials Engineering students have completed co-ops on topics including material production, processing and heat-treating, manufacturing, failure and forensic analysis, and more!",
             pageTo: ElevatedButton(
               child: Text("Go Manufacturing!"),
               onPressed: load_res,

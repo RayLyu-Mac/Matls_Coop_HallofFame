@@ -15,11 +15,15 @@ Map<String, String> fieldPic = {
 };
 
 Map<String, List> contact = {
-  "email": [Icons.email, "Contact Through Email"],
-  "discord": [FontAwesomeIcons.discord, "Find me on Discord!"],
+  "email": [Icons.email, "Contact Through Email", "ast/em.png"],
+  "discord": [FontAwesomeIcons.discord, "Find me on Discord!", "ast/di.png"],
   "linkedin": [FontAwesomeIcons.linkedinIn, "Contact me through LinkedIn"],
-  "person": [Icons.chat, "Hey, Lets meet up in person!"],
-  "messenger": [FontAwesomeIcons.facebook, "Chat me through facebook!"]
+  "person": [Icons.chat, "Hey, Lets meet up in person!", "ast/me.png"],
+  "messenger": [
+    FontAwesomeIcons.facebook,
+    "Chat me through facebook!",
+    "ast/fb.png"
+  ]
 };
 
 List<String> fonts = [

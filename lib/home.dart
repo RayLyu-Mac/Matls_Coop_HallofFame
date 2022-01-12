@@ -1,10 +1,13 @@
 import 'package:coop_hall_of_fame/biomat/indi_detaio.dart';
+import 'package:coop_hall_of_fame/computation/comp_main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'back.dart';
 import 'decroation/boxfile.dart';
-
+import 'computation/comp_main.dart';
+import 'Research/resmain.dart';
+import 'package:coop_hall_of_fame/smartMat/smartassemble.dart';
 import 'manufact/manu_assemble.dart';
 
 class home_page extends StatefulWidget {
@@ -36,7 +39,7 @@ class _home_pageState extends State<home_page> {
       "Matls Student can also handle code!",
       "Go Code!",
       FontAwesomeIcons.laptopCode,
-      bio_page()
+      code_page()
     ],
   ];
 
@@ -55,7 +58,7 @@ class _home_pageState extends State<home_page> {
       "Fancy Material",
       "Go Smart",
       FontAwesomeIcons.atom,
-      bio_page()
+      smr_page()
     ],
   ];
   @override
@@ -144,7 +147,7 @@ class _home_pageState extends State<home_page> {
                   img: "ast/1.png",
                   buttonIcon: Icon(FontAwesomeIcons.flask),
                   labelName: "Go Research!",
-                  pageto: bio_page(),
+                  pageto: res_page(),
                   height: _screenH / 1.7,
                   width: _screenWidth / 3,
                   content: "Explore research opportuinty in MSE",

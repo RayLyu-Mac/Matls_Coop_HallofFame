@@ -24,17 +24,18 @@ class _code_pageState extends State<code_page> {
       scrollDirection: Axis.vertical,
       children: [
         header(
-            back_pic: "ast/9.png",
-            buttonName: "Explore Biomaterials",
+            right: "true",
+            back_pic: "ast/bg/cp1.jpg",
+            buttonName: "Explore Compuation",
             cont:
-                "The fundamental understanding of material structure, particularly at the nano- and micro-scale, allow us to modify materials to control interactions at biointerfaces, develop advanced characterization tools and create new biofunctional materials. The area of Biomaterials is rapidly growing and offers many opportunities for Materials Engineers to put their problem solving skills to work to improve materials used in a range of health applications.",
+                "Materials Engineers are leveraging the ever increasing computational power that is available to us in order to speed up the design cycle and improve materials. They are applying data analytics and machine learning and AI to revolutionize the healthcare, manufacturing, and energy sectors. McMaster Materials Engineering students have completed co-ops on topics including process simulation and optimization, modeling decarbonization strategies, accelerated materials discovery and design, image and data processing, and more!",
             pageTo: ElevatedButton(
               child: Text("Go Code!"),
               onPressed: load_res,
             ),
-            title: "Biomaterials"),
+            title: "Computation"),
         gen_mode(
-          appTitle: "Biomaterial",
+          appTitle: "Computation & Code",
           fileName: "ast/csv/code.csv",
         )
       ],

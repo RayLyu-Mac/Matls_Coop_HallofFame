@@ -28,7 +28,7 @@ class _bio_pageState extends State<bio_page> {
             back_pic: "ast/9.png",
             buttonName: "Explore Biomaterials",
             cont:
-                "The fundamental understanding of material structure, particularly at the nano- and micro-scale, allow us to modify materials to control interactions at biointerfaces, develop advanced characterization tools and create new biofunctional materials. The area of Biomaterials is rapidly growing and offers many opportunities for Materials Engineers to put their problem solving skills to work to improve materials used in a range of health applications.",
+                "Biomaterials are essential in engineering devices to solve today’s healthcare challenges. Materials Engineers design and develop new biomaterials for applications in implants, tissue engineering, drug-delivery and biosensing. McMaster Materials Engineering students have completed co-ops on topics including material processing and surface modification, healthcare statistics and administration, advanced manufacturing, sensor development, and more!",
             pageTo: ElevatedButton(
               child: Text("Go Bio!"),
               onPressed: load_res,

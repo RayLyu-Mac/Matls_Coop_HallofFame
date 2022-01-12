@@ -28,6 +28,24 @@ class gen_mode extends StatefulWidget {
 
 class _gen_modeState extends State<gen_mode> {
   List<List> datas = [];
+  List<List> datax = [
+    [
+      "11/21/2021",
+      "Ray Lyu",
+      "Email+person+LinkedIn+Facebook",
+      "jeremywilsonudd@gmail.com+person+https://www.linkedin.com/in/jeremy-w-711002134/+https://www.facebook.com/jeremywilsonudd",
+      "Apotex",
+      "3rd",
+      "12 month",
+      "Manufacutirng+Pharmeutical",
+      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/r.jpg?raw=true",
+      "Phar",
+      "g1",
+      "Indigo",
+      "ZXC",
+      "1. Practice good manufacturing process in cleaning validation\n2. Created python code for documentation management\n3. Push the digitization process in maufacturing field"
+    ],
+  ];
   List<List> data = [];
   // List<List> data = [
   //   [
@@ -61,22 +79,6 @@ class _gen_modeState extends State<gen_mode> {
   //     "orange",
   //     "ZXC",
   //     "I work on the development of new products either collecting analyzing and organizing data within excel or through preparing and imaging samples using various techniques."
-  //   ],
-  //   [
-  //     "01/04/2022",
-  //     "Jeremy Wilson",
-  //     "Email+person+LinkedIn+Facebook",
-  //     "jeremywilsonudd@gmail.com+person+https://www.linkedin.com/in/jeremy-w-711002134/+https://www.facebook.com/jeremywilsonudd",
-  //     "Fibics Inc",
-  //     "3rd year",
-  //     "4 months",
-  //     "Demystifiying",
-  //     "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/jw.jpg?raw=true",
-  //     "demystifying",
-  //     "g1",
-  //     "indigo",
-  //     "X",
-  //     " 1. Utilized statistical methods for determining performance of various image registration algorithms on SEM images. \n2. Developed excel based model of SEM hardware for cost estimation based on various hardware specifications."
   //   ],
   //   [
   //     "01/04/2022",
@@ -198,7 +200,6 @@ class _gen_modeState extends State<gen_mode> {
     final bio_data = await rootBundle.loadString(widget.fileName!);
     setState(() {
       datas = const CsvToListConverter().convert(bio_data);
-
       datasplit = datas[0].toString().split("*");
       for (var k = 1; k < datasplit.length - 1; k++) {
         data.add(datasplit[k].toString().split(","));
@@ -233,7 +234,6 @@ class _gen_modeState extends State<gen_mode> {
         imgs.add(data[o][8].toString().replaceAll(" ", ""));
         cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
         back_pics.add(data[o][9].toString().toLowerCase().replaceAll(" ", ""));
-
         comp.add(data[o][4]);
         typ.add(RotateAnimatedText(data[o][5]));
         typ.add(RotateAnimatedText(data[o][4]));
@@ -346,6 +346,8 @@ class _gen_modeState extends State<gen_mode> {
                                 profile_img: imgs[index]),
                             back: Container(
                               decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(imgs[index])),
                                   color: colorL[cols[index]]!.withOpacity(0.9),
                                   borderRadius: BorderRadius.circular(25),
                                   border: Border.all(
@@ -357,8 +359,7 @@ class _gen_modeState extends State<gen_mode> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Text(
-                                        "Co-op Hall of Fame: ${widget.appTitle}",
+                                    Text("MSE Co-op Honor:${widget.appTitle}",
                                         style: TextStyle(
                                             fontFamily: "s2",
                                             fontWeight: FontWeight.bold,
@@ -386,7 +387,7 @@ class _gen_modeState extends State<gen_mode> {
           children: [
             Text(datas.toString()),
             CircularProgressIndicator(),
-            Text("ZZZ" + data.toString() + "QQQ\n" + datas.toString())
+            Text(data.toString() + "QQQ\n" + datas.toString())
           ],
         ),
       );

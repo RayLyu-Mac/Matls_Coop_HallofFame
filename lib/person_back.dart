@@ -4,6 +4,7 @@ import 'package:coop_hall_of_fame/data_load/data_main.dart';
 import 'package:coop_hall_of_fame/button.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:coop_hall_of_fame/frameback.dart';
 import 'dart:math';
@@ -116,7 +117,7 @@ class _Person_backState extends State<Person_back> {
                   width: _screenWidth / 2.8,
                   child: Text(
                     widget.info!,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontFamily: "b1",
                       fontWeight: FontWeight.bold,
                     ),
@@ -127,7 +128,7 @@ class _Person_backState extends State<Person_back> {
                 ),
                 Text(
                   "# " + widget.has_tag!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontFamily: "b1",
                     fontWeight: FontWeight.bold,
                   ),
@@ -147,7 +148,7 @@ class _Person_backState extends State<Person_back> {
                       alignment: Alignment.center,
                       title: Row(
                         children: [
-                          Icon(FontAwesomeIcons.medal),
+                          const Icon(FontAwesomeIcons.medal),
                           Text(
                             " MATLS Co-op Hall of Fame Honor ",
                             style: TextStyle(
@@ -217,7 +218,8 @@ class _Person_backState extends State<Person_back> {
                                           tooltip: contact[widget
                                               .contactType![i]
                                               .toString()
-                                              .toLowerCase()]![1],
+                                              .toLowerCase()
+                                              .replaceAll(" ", "")]![1],
                                           onPressed: () {
                                             if (widget.contactType![i]
                                                         .toString()
@@ -232,8 +234,9 @@ class _Person_backState extends State<Person_back> {
                                               showGeneralDialog(
                                                   barrierColor: Colors.black
                                                       .withOpacity(0.5),
-                                                  transitionDuration: Duration(
-                                                      milliseconds: 300),
+                                                  transitionDuration:
+                                                      const Duration(
+                                                          milliseconds: 300),
                                                   barrierDismissible: true,
                                                   barrierLabel: '',
                                                   context: context,
@@ -249,12 +252,67 @@ class _Person_backState extends State<Person_back> {
                                                         child: Opacity(
                                                             opacity: a1.value,
                                                             child: SimpleDialog(
-                                                              title: Text(
-                                                                  "Contact me through email!"),
+                                                              shape: RoundedRectangleBorder(
+                                                                  side: BorderSide(
+                                                                      width: 7,
+                                                                      color: widget
+                                                                          .border_c!),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              10)),
                                                               children: [
-                                                                SelectableText(
-                                                                    widget.contactInfo![
-                                                                        i])
+                                                                Container(
+                                                                  child:
+                                                                      Container(
+                                                                    padding: EdgeInsets.symmetric(
+                                                                        horizontal:
+                                                                            _screenWidth /
+                                                                                10,
+                                                                        vertical:
+                                                                            _screenH /
+                                                                                15),
+                                                                    child:
+                                                                        SelectableText(
+                                                                      "\n\n" +
+                                                                          contact[widget
+                                                                              .contactType![i]
+                                                                              .toString()
+                                                                              .toLowerCase()
+                                                                              .replaceAll(" ", "")]![1] +
+                                                                          "  " +
+                                                                          "\n\n" +
+                                                                          widget.contactInfo![i] +
+                                                                          "\n\n",
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: TextStyle(
+                                                                          fontFamily:
+                                                                              "b1",
+                                                                          fontSize: _screenH /
+                                                                              30,
+                                                                          fontWeight:
+                                                                              FontWeight.bold),
+                                                                    ),
+                                                                  ),
+                                                                  decoration: BoxDecoration(
+                                                                      image: DecorationImage(
+                                                                          scale:
+                                                                              2,
+                                                                          colorFilter: ColorFilter.mode(
+                                                                              Colors.white.withOpacity(
+                                                                                  0.4),
+                                                                              BlendMode
+                                                                                  .dstATop),
+                                                                          fit: BoxFit
+                                                                              .cover,
+                                                                          image: AssetImage(contact[widget
+                                                                              .contactType![i]
+                                                                              .toString()
+                                                                              .toLowerCase()
+                                                                              .replaceAll(" ", "")]![2]))),
+                                                                ),
                                                               ],
                                                             )));
                                                   });
@@ -263,7 +321,8 @@ class _Person_backState extends State<Person_back> {
                                           icon: Icon(contact[widget
                                               .contactType![i]
                                               .toString()
-                                              .toLowerCase()]![0]))
+                                              .toLowerCase()
+                                              .replaceAll(" ", "")]![0]))
                                   ],
                                 ),
                                 // SelectableText(

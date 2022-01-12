@@ -94,6 +94,19 @@ flutter:
     - ast/u1.jpg
     - ast/rd.jpg
     - ast/p1.jpg
+    - ast/bg/c1.png
+    - ast/bg/c2.png
+    - ast/bg/cp1.jpg
+    - ast/bg/m1.jpg
+    - ast/bg/q1.png
+    - ast/bg/s1.png
+    - ast/bg/s2.png
+    - ast/bg/i1.png
+    - ast/bg/e1.png
+    - ast/em.png
+    - ast/me.png
+    - ast/fb.png
+    - ast/di.png
     
 
     - ast/csv/bio.csv
