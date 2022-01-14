@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:sprung/sprung.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -92,7 +93,6 @@ class _box_fileState extends State<box_file> {
                     ),
                     ElevatedButton.icon(
                         style: ButtonStyle(
-                          
                           elevation: _hovering
                               ? MaterialStateProperty.resolveWith(
                                   (states) => 5.0)
@@ -101,11 +101,14 @@ class _box_fileState extends State<box_file> {
                         ),
                         icon: widget.buttonIcon!,
                         label: Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: _screenH / 30,
-                              horizontal: _screenWidth / 15),
-                          child: Text(widget.labelName!),
-                        ),
+                            padding: EdgeInsets.symmetric(
+                                vertical: _screenH / 35,
+                                horizontal: _screenWidth / 22),
+                            child: Text(
+                              widget.labelName!,
+                              style: TextStyle(
+                                  fontFamily: "g2", fontSize: _screenH / 28),
+                            )),
                         onPressed: () {
                           Navigator.push(
                               context,

@@ -89,20 +89,20 @@ flutter:
     - ast/d1.jpg
     - ast/d2.png
     - ast/d4.png
-    - ast/s1.png
+    - ast/silicon1.png
     - ast/res.jpg
     - ast/u1.jpg
     - ast/rd.jpg
     - ast/p1.jpg
-    - ast/bg/c1.png
-    - ast/bg/c2.png
-    - ast/bg/cp1.jpg
-    - ast/bg/m1.jpg
-    - ast/bg/q1.png
-    - ast/bg/s1.png
-    - ast/bg/s2.png
-    - ast/bg/i1.png
-    - ast/bg/e1.png
+    - ast/bg/cor1.png
+    - ast/bg/comp2.png
+    - ast/bg/comp1.jpg
+    - ast/bg/manufact1.jpg
+    - ast/bg/quality1.png
+    - ast/bg/steelm1.png
+    - ast/bg/steelm2.png
+    - ast/bg/indus1.png
+    - ast/bg/elem1.png
     - ast/em.png
     - ast/me.png
     - ast/fb.png

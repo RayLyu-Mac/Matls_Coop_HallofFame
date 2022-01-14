@@ -12,14 +12,17 @@ Map<String, String> fieldPic = {
   "rd": "ast/rd.jpg",
   "business": "ast/bu1.png",
   "powder": "ast/p1.jpg",
-  "corrosion": "ast/bg/c1.png",
-  "comput1": "ast/bg/c2.png",
-  "industry": "ast/bg/i1.png",
-  "manufact1": "ast/bg/m1.jpg",
-  "qa": "ast/bg/q1.png",
-  "steel1": "ast/bg/s1.png",
-  "steel2": "ast/bg/s2.png",
-  "cpu": "ast/s1.png"
+  "corrosion": "ast/bg/cor1.png",
+  "comput1": "ast/bg/comp1.png",
+  "comput2": "ast/bg/comp2.png",
+  "industry": "ast/bg/indus1.png",
+  "manufact1": "ast/bg/manufact1.jpg",
+  "qa": "ast/bg/quality1.png",
+  "steel1": "ast/bg/steelm1.png",
+  "steel2": "ast/bg/steelm2.png",
+  "cpu": "ast/silicon1.png",
+  "avaiation": "ast/8.png",
+  "datana": "ast/d1.png"
 };
 
 Map<String, List> contact = {

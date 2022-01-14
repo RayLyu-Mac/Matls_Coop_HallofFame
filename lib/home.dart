@@ -28,15 +28,15 @@ class _home_pageState extends State<home_page> {
     [
       "ast/2.png",
       "Bio-Material",
-      "Bio+Material=Future",
-      "Go Bio",
+      "Solving global health challenges by developing materials to diagnose and treat diseases",
+      "Go Bio!",
       FontAwesomeIcons.biohazard,
       bio_page()
     ],
     [
       "ast/3.png",
       "Data & Computation",
-      "Matls Student can also handle code!",
+      "Applying data analytics and machine learning algorithms to evaluate, improve, and discover materials",
       "Go Code!",
       FontAwesomeIcons.laptopCode,
       code_page()
@@ -47,7 +47,7 @@ class _home_pageState extends State<home_page> {
     [
       "ast/4.png",
       "Manufacturing",
-      "Opportunity in manufacutring system",
+      "Materials processing and research & development for infrastructure materials",
       "Go Making!",
       FontAwesomeIcons.industry,
       manu_page()
@@ -55,8 +55,8 @@ class _home_pageState extends State<home_page> {
     [
       "ast/5.png",
       "Smart Material",
-      "Fancy Material",
-      "Go Smart",
+      "Tackling the world’s electrical challenges with smart multifunctional materials to accelerate solar, battery, and more technologies",
+      "Go Smart!",
       FontAwesomeIcons.atom,
       smr_page()
     ],
@@ -150,7 +150,8 @@ class _home_pageState extends State<home_page> {
                   pageto: res_page(),
                   height: _screenH / 1.7,
                   width: _screenWidth / 3,
-                  content: "Explore research opportuinty in MSE",
+                  content:
+                      "Explore research opportuinty and make advancement in Science!",
                   title: "Research")),
           Positioned(
             left: _screenWidth / 1.4,
