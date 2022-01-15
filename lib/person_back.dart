@@ -15,6 +15,7 @@ class Person_back extends StatefulWidget {
   final Color? border_c;
   final String? name;
   final String? info;
+  final double? backtr;
   final String? profile_img;
   final String? typ;
   final String? join_date;
@@ -32,6 +33,7 @@ class Person_back extends StatefulWidget {
       @optionalTypeArgs this.width,
       @optionalTypeArgs this.heigt,
       @required this.nameFont,
+      @optionalTypeArgs this.backtr,
       @required this.spec,
       @required this.has_tag,
       @required this.contactType,
@@ -69,9 +71,11 @@ class _Person_backState extends State<Person_back> {
       margin: EdgeInsets.symmetric(
           horizontal: widget.width!, vertical: widget.heigt!),
       decoration: BoxDecoration(
+          color: Colors.grey.shade100,
           image: DecorationImage(
               colorFilter: ColorFilter.mode(
-                  Colors.white.withOpacity(0.3), BlendMode.dstATop),
+                  Colors.white.withOpacity(widget.backtr ?? 0.3),
+                  BlendMode.dstATop),
               fit: BoxFit.cover,
               image: AssetImage(fieldPic[widget.typ]!)),
           border: Border.all(

@@ -105,7 +105,7 @@ class _home_pageState extends State<home_page> {
                         left: _screenWidth / 10,
                         child: Image(
                           fit: BoxFit.fitWidth,
-                          height: _screenH / 15,
+                          height: _screenH / 13,
                           width: _screenWidth / 5,
                           image: NetworkImage(
                               "https://github.com/RayLyu-Mac/MMA_MaterialScienceEng/blob/main/assest/logocolor.png?raw=true"),

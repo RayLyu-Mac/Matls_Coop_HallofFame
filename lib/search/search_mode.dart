@@ -31,8 +31,8 @@ class _search_mainState extends State<search_main> {
     Icon(FontAwesomeIcons.industry),
   ];
   List<Color> tc = [
-    Colors.red.shade200,
-    Colors.grey.shade300,
+    Colors.orangeAccent.shade200,
+    Colors.lightBlueAccent.shade200,
   ];
   double _screenWidth = 0;
   double _screenH = 0;
@@ -99,7 +99,7 @@ class _search_mainState extends State<search_main> {
                         margin: EdgeInsets.only(top: _screenH / 65),
                         decoration: BoxDecoration(
                             color: tc[sresult[index][1]],
-                            borderRadius: BorderRadius.circular(15),
+                            borderRadius: BorderRadius.circular(12),
                             border: Border.all(
                                 width: 5, color: tc[sresult[index][1]])),
                         child: InkWell(
@@ -108,33 +108,20 @@ class _search_mainState extends State<search_main> {
                             title: Center(
                               child: Row(
                                 children: [
-                                  Container(
-                                    width: _screenWidth / 14,
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        border: Border.all(
-                                            width: 3,
-                                            color: tc[sresult[index][1]]
-                                                .withOpacity(0.6)),
-                                        image: DecorationImage(
-                                            fit: BoxFit.cover,
-                                            image: NetworkImage(
-                                                sresult[index][0][6]))),
-                                  ),
-                                  SizedBox(
-                                    width: _screenWidth / 40,
-                                  ),
                                   Text(
                                     sresult[index][0][1].toString(),
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: _screenH / 22,
-                                        fontFamily: sresult[index][0][8]),
+                                        fontSize: _screenH / 25,
+                                        fontFamily: sresult[index][0][10]
+                                            .toString()
+                                            .toLowerCase()
+                                            .replaceAll(" ", "")),
                                   ),
                                   Text(
                                     "   --${sresult[index][2]}",
                                     style: TextStyle(
-                                        fontSize: _screenH / 35,
+                                        fontSize: _screenH / 38,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.grey.shade800),
                                   )
@@ -143,30 +130,39 @@ class _search_mainState extends State<search_main> {
                             ),
                           ),
                           onTap: () {
-                            
                             showDialog(
                                 context: context,
                                 builder: (BuildContext context) {
                                   return Person_back(
+                                      backtr: 0.5,
                                       width: _screenWidth / 4,
                                       heigt: _screenH / 4,
+                                      spec: sresult[index][0][13].toString(),
+                                      year: sresult[index][0][5].toString(),
+                                      length: sresult[index][0][6].toString(),
+                                      has_tag: sresult[index][0][7].toString(),
                                       border_c: colorL[sresult[index][0][11]
                                           .toString()
                                           .toLowerCase()
                                           .replaceAll(" ", "")],
-                                      nameFont: sresult[index][0][10],
+                                      nameFont: sresult[index][0][10]
+                                          .toString()
+                                          .toLowerCase()
+                                          .replaceAll(" ", ""),
                                       info:
                                           "Company: ${sresult[index][0][4]} \n${sresult[index][0][5]}",
                                       name: sresult[index][0][1],
                                       typ: sresult[index][0][9],
-                                      join_date: "11/17/21",
+                                      join_date: sresult[index][0].toString(),
                                       contactType: sresult[index][0][2]
                                           .toString()
-                                          .split(","),
+                                          .split("+"),
                                       contactInfo: sresult[index][0][3]
                                           .toString()
-                                          .split(","),
-                                      profile_img: sresult[index][0][8]);
+                                          .split("+"),
+                                      profile_img: sresult[index][0][8]
+                                          .toString()
+                                          .replaceAll(" ", ""));
                                 });
                           },
                         ),
