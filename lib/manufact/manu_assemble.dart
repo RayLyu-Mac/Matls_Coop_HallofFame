@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:coop_hall_of_fame/header_mode.dart';
 import 'package:coop_hall_of_fame/gen_mode.dart';
@@ -29,7 +30,10 @@ class _manu_pageState extends State<manu_page> {
             cont:
                 "Materials Engineers are pushing the envelope in how we change manufacturing to optimize for efficiency, and to increase the quality of products used in industry and infrastructure. They are tackling unique challenges with 3D printing, industry 4.0, and clean energy. McMaster Materials Engineering students have completed co-ops on topics including material production, processing and heat-treating, manufacturing, failure and forensic analysis, and more!",
             pageTo: ElevatedButton(
-              child: Text("Go Manufacturing!"),
+              child: const Text(
+                "Go Manufacturing!",
+                style: TextStyle(fontFamily: "g2", fontWeight: FontWeight.bold),
+              ),
               onPressed: load_res,
             ),
             title: "Manufacturing"),

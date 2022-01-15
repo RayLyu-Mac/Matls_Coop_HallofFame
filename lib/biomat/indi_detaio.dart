@@ -30,7 +30,9 @@ class _bio_pageState extends State<bio_page> {
             cont:
                 "Biomaterials are essential in engineering devices to solve today’s healthcare challenges. Materials Engineers design and develop new biomaterials for applications in implants, tissue engineering, drug-delivery and biosensing. McMaster Materials Engineering students have completed co-ops on topics including material processing and surface modification, healthcare statistics and administration, advanced manufacturing, sensor development, and more!",
             pageTo: ElevatedButton(
-              child: Text("Go Bio!"),
+              child: Text("Go Bio!",
+                  style:
+                      TextStyle(fontFamily: "g2", fontWeight: FontWeight.bold)),
               onPressed: load_res,
             ),
             title: "Biomaterials"),

@@ -66,3 +66,13 @@ Map<String, Color> colorL = {
   "orange": Colors.orange.shade50,
   "indigo": Colors.indigo.shade100
 };
+
+Map<String, Color> colorS = {
+  "blue": Colors.blue.shade200,
+  "green": Colors.green.shade200,
+  "red": Colors.red.shade200,
+  "purple": Colors.purple.shade200,
+  "orange": Colors.orange.shade200,
+  "indigo": Colors.indigo.shade200,
+  "lime": Colors.lime.shade200
+};

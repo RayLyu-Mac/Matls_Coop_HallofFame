@@ -2,6 +2,7 @@
 // In Visual Studio: Ctrl+K+C will comment, Ctrl+K+U Will uncomment
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:coop_hall_of_fame/data_load/data_main.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -175,6 +176,22 @@ class _gen_modeState extends State<gen_mode> {
       "green",
       "X",
       "1. Failure Analysis of Failed Rotor Parts \n2. Analysis of Heat Treatments Cycles on Powder Metals \n3. Material Development for Automotive Applications "
+    ],
+    [
+      "01/14/2022",
+      "Viraj Whabi",
+      "Messenger+Linkedin+Email",
+      "Message me in Messenger!+https://www.linkedin.com/in/viraj-whabi/+virajwhabi@gmail.com",
+      "Celestica",
+      "3 rd year",
+      "16 month",
+      "challenging+game-changing+novel+action-oriented",
+      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/vw.jpeg?raw=true",
+      "cpu",
+      "l1",
+      "purple",
+      "X",
+      "1. I had the great opportunity to work in a laboratory environment to evaluate quality of electronic components using optical, x-ray and cross-sectional analysis.\n2. I grew experienced with testing physical properties of polymers, metals, and ceramics through the use of an Instron mechanical tester and other mechanical apparatus.\n3.I gained a proficiency in using energy dispersive X-ray spectroscopy (EDX) and Fourier-transform infrared spectroscopy (FTIR) to conduct unknown residue and material failure investigations on customer products."
     ]
   ];
   List<String> comp = [];
@@ -188,8 +205,8 @@ class _gen_modeState extends State<gen_mode> {
   List<String> contact = [];
   List<String> cols = [];
   List<String> contactD = [];
-  Color b = colorL[
-      colorL.keys.toList()[Random().nextInt(colorL.keys.toList().length)]]!;
+  Color b = colorS[
+      colorS.keys.toList()[Random().nextInt(colorS.keys.toList().length)]]!;
 
   bool isLoad = true;
   double _screenWidth = 0;
@@ -235,7 +252,7 @@ class _gen_modeState extends State<gen_mode> {
         cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
         back_pics.add(data[o][9].toString().toLowerCase().replaceAll(" ", ""));
         comp.add(data[o][4]);
-        typ.add(RotateAnimatedText(data[o][5]));
+        typ.add(RotateAnimatedText(data[o][7]));
         typ.add(RotateAnimatedText(data[o][4]));
         hash.add(data[o][7]);
       }
@@ -281,7 +298,11 @@ class _gen_modeState extends State<gen_mode> {
                                     ),
                                     title: Row(
                                       children: [
-                                        const Text("Looking for: "),
+                                        const Text(
+                                          " Looking for: ",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
                                         SizedBox(
                                             width: 10, height: _screenH / 8),
                                         AnimatedTextKit(

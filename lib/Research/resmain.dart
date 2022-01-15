@@ -30,7 +30,10 @@ class _res_pageState extends State<res_page> {
             cont:
                 "Materials Engineers are leveraging their fundamental understanding up to the atomic scale in order to develop, and discover the materials of tomorrow for the future today. They are directly applying their classroom knowledge to challenges in manufacturing, metallurgical process development, biomaterials, automation with machine learning, and novel semiconductors. McMaster Materials Engineering students have completed co-ops on topics including phase formation analysis, silicon development, biocompatible implants, machine learning for autonomous materials development, and more!",
             pageTo: ElevatedButton(
-              child: const Text("Go Research"),
+              child: const Text(
+                "Go Research",
+                style: TextStyle(fontFamily: "g2", fontWeight: FontWeight.bold),
+              ),
               onPressed: load_res,
             ),
             title: "Research"),

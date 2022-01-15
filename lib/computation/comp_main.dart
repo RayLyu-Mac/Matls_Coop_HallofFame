@@ -30,7 +30,10 @@ class _code_pageState extends State<code_page> {
             cont:
                 "Materials Engineers are leveraging the ever increasing computational power that is available to us in order to speed up the design cycle and improve materials. They are applying data analytics and machine learning and AI to revolutionize the healthcare, manufacturing, and energy sectors. McMaster Materials Engineering students have completed co-ops on topics including process simulation and optimization, modeling decarbonization strategies, accelerated materials discovery and design, image and data processing, and more!",
             pageTo: ElevatedButton(
-              child: Text("Go Code!"),
+              child: Text(
+                "Go Code!",
+                style: TextStyle(fontFamily: "g2", fontWeight: FontWeight.bold),
+              ),
               onPressed: load_res,
             ),
             title: "Computation"),
