@@ -103,11 +103,17 @@ flutter:
     - ast/bg/steelm2.png
     - ast/bg/indus1.png
     - ast/bg/elem1.png
+    - ast/bg/sem.jpg
     - ast/em.png
     - ast/me.png
     - ast/fb.png
     - ast/di.png
     - ast/back.png
+    - ast/bg/bios1.jpg
+    - ast/bg/bios2.jpg
+    - ast/bg/ene1.jpg
+    - ast/bg/ene2.jpg
+    - ast/bg/met.jpg
     
 
     - ast/csv/bio.csv

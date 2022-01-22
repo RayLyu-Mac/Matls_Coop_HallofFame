@@ -36,21 +36,37 @@ class _gen_modeState extends State<gen_mode> {
   List<List> datas = [];
   List<List> data = [
     [
-      "11/21/2021",
-      "Ray Lyu",
-      "Email",
-      "lyuz11@mcmaster.ca",
-      "Apotex + CCEM",
-      "3rd + 2 nd",
-      "12 month + 4 month",
-      "Manufacutirng+Pharmeutical",
-      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/r.jpg?raw=true",
-      "Phar",
-      "g1",
-      "Indigo",
+      "01/21/2021",
+      "Jessica Wan",
+      "Email+messenger+linkedin+facebook",
+      "jessica.wan0825@gmail.com+Send me a message in messenger+www.linkedin.com/in/jessicawan0825+https://www.facebook.com/jessica.wan.8",
+      "Tianjin Zhongwang Aluminium co. ltd",
+      "2 nd",
+      "4 month",
+      "hands-on+SEM",
+      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/jyw.jpg?raw=true",
+      "sem",
+      "f1",
+      "purple",
       "ZXC",
-      "qqq + wew"
+      "1. Performed failure and fracture analysis for 2000 series aluminum coils and plates \n2. Operated the scanning electron microscope (SEM) on over 50 specimens for microstructure and chemical composition analysis (EDS)\n3.Developed and updated Standard Operating Procedures (SOPs) for the manufacture of 2024-T3 and 7075-T4 aluminum alloys"
     ],
+    [
+      "01/21/2022",
+      "Melaina Del Grosso",
+      "Messenger+linkedin+Email+facebook+discord",
+      "Send me a message on messenger+www.linkedin.com/in/melaina-delgrosso+melaina.delgrosso@gmail.com+https://www.facebook.com/melaina.delgrosso/+Melaina#1900",
+      "biotechfield",
+      "1 st",
+      "4 month",
+      "experiential",
+      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/md.jpg?raw=true",
+      "biosen",
+      "f1",
+      "blue",
+      "ZXC",
+      "1. Designed, preformed and analyzed experiments on product failure\n2.Organized team projects by managing, filling, and scheduling product production"
+    ]
   ];
   // List<List> data = [
   //   [
