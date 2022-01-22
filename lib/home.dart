@@ -31,7 +31,8 @@ class _home_pageState extends State<home_page> {
       "Solving global health challenges by developing materials to diagnose and treat diseases",
       "Go Bio!",
       FontAwesomeIcons.biohazard,
-      bio_page()
+      bio_page(),
+      MaterialStateProperty.all(Color.fromARGB(255, 102, 215, 209))
     ],
     [
       "ast/3.png",
@@ -39,7 +40,8 @@ class _home_pageState extends State<home_page> {
       "Applying data analytics and machine learning algorithms to evaluate, improve, and discover materials",
       "Go Code!",
       FontAwesomeIcons.laptopCode,
-      code_page()
+      code_page(),
+      MaterialStateProperty.all(Color.fromARGB(255, 20, 54, 66))
     ],
   ];
 
@@ -50,7 +52,8 @@ class _home_pageState extends State<home_page> {
       "Materials processing and research & development for infrastructure materials",
       "Go Making!",
       FontAwesomeIcons.industry,
-      manu_page()
+      manu_page(),
+      MaterialStateProperty.all(Color.fromARGB(255, 238, 110, 74))
     ],
     [
       "ast/5.png",
@@ -58,7 +61,8 @@ class _home_pageState extends State<home_page> {
       "Tackling the world’s electrical challenges with smart multifunctional materials to accelerate solar, battery, and more technologies",
       "Go Smart!",
       FontAwesomeIcons.atom,
-      smr_page()
+      smr_page(),
+      MaterialStateProperty.all(Color.fromARGB(255, 209, 204, 93))
     ],
   ];
   @override
@@ -136,6 +140,7 @@ class _home_pageState extends State<home_page> {
                       labelName: image_list1[index][3],
                       pageto: image_list1[index][5],
                       buttonIcon: Icon(image_list1[index][4]),
+                      but_col: image_list1[index][6],
                       title: image_list1[index][1])
               ],
             ),
@@ -150,6 +155,8 @@ class _home_pageState extends State<home_page> {
                   pageto: res_page(),
                   height: _screenH / 1.7,
                   width: _screenWidth / 3,
+                  but_col: MaterialStateProperty.all(
+                      Color.fromARGB(255, 192, 124, 187)),
                   content:
                       "Explore research opportuinty and make advancement in Science!",
                   title: "Research")),
@@ -167,13 +174,14 @@ class _home_pageState extends State<home_page> {
                       labelName: image_list2[index][3],
                       pageto: image_list2[index][5],
                       buttonIcon: Icon(image_list2[index][4]),
+                      but_col: image_list2[index][6],
                       title: image_list2[index][1])
               ],
             ),
           ),
         ],
       ),
-      pic: "ast/5.png",
+      pic: "ast/back.png",
       transp: 0.4,
     ));
   }

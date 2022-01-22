@@ -107,6 +107,7 @@ flutter:
     - ast/me.png
     - ast/fb.png
     - ast/di.png
+    - ast/back.png
     
 
     - ast/csv/bio.csv
@@ -138,6 +139,9 @@ flutter:
     - family:          s1
       fonts:
       - asset:        ast/ft/s.ttf
+    - family:          s5
+      fonts:
+      - asset:        ast/ft/s4.ttf
     - family:          t1
       fonts:
       - asset:        ast/ft/t.ttf

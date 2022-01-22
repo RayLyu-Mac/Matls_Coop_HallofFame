@@ -30,6 +30,9 @@ class _bio_pageState extends State<bio_page> {
             cont:
                 "Biomaterials are essential in engineering devices to solve today’s healthcare challenges. Materials Engineers design and develop new biomaterials for applications in implants, tissue engineering, drug-delivery and biosensing. McMaster Materials Engineering students have completed co-ops on topics including material processing and surface modification, healthcare statistics and administration, advanced manufacturing, sensor development, and more!",
             pageTo: ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                      Color.fromARGB(255, 102, 215, 209))),
               child: Text("Go Bio!",
                   style:
                       TextStyle(fontFamily: "g2", fontWeight: FontWeight.bold)),
@@ -37,6 +40,7 @@ class _bio_pageState extends State<bio_page> {
             ),
             title: "Biomaterials"),
         gen_mode(
+          bandcol: Color.fromARGB(255, 102, 215, 209),
           appTitle: "Biomaterial",
           fileName: "ast/csv/bio.csv",
         )

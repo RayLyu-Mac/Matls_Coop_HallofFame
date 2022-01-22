@@ -30,14 +30,22 @@ class _code_pageState extends State<code_page> {
             cont:
                 "Materials Engineers are leveraging the ever increasing computational power that is available to us in order to speed up the design cycle and improve materials. They are applying data analytics and machine learning and AI to revolutionize the healthcare, manufacturing, and energy sectors. McMaster Materials Engineering students have completed co-ops on topics including process simulation and optimization, modeling decarbonization strategies, accelerated materials discovery and design, image and data processing, and more!",
             pageTo: ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                Color.fromARGB(255, 20, 54, 66),
+              )),
               child: Text(
                 "Go Code!",
-                style: TextStyle(fontFamily: "g2", fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontFamily: "g2",
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               onPressed: load_res,
             ),
             title: "Computation"),
         gen_mode(
+          bandcol: Color.fromARGB(255, 20, 54, 66),
           appTitle: "Computation & Code",
           fileName: "ast/csv/code.csv",
         )

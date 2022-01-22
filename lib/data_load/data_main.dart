@@ -76,3 +76,13 @@ Map<String, Color> colorS = {
   "indigo": Colors.indigo.shade200,
   "lime": Colors.lime.shade400
 };
+
+List<Color> colorX = [
+  Color.fromARGB(255, 33, 23, 223),
+  Colors.deepPurple,
+  Color.fromARGB(255, 11, 140, 18),
+  Color.fromARGB(255, 167, 31, 31),
+  Color.fromARGB(255, 130, 12, 151),
+  Color.fromARGB(255, 47, 63, 150),
+  Color.fromARGB(255, 175, 189, 46)
+];

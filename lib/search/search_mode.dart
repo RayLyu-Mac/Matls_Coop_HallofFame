@@ -78,7 +78,7 @@ class _search_mainState extends State<search_main> {
                   size: _screenH / 24,
                 ),
                 contentPadding: EdgeInsets.fromLTRB(10, 1, 1, 1),
-                hintText: "Search Hash Tag...",
+                hintText: "Search Hash Tag, name, company...",
                 hintStyle: TextStyle(color: Colors.grey.shade100)),
             onChanged: search,
           ),
@@ -149,10 +149,12 @@ class _search_mainState extends State<search_main> {
                                           .toString()
                                           .toLowerCase()
                                           .replaceAll(" ", ""),
-                                      info:
-                                          "Company: ${sresult[index][0][4]} \n${sresult[index][0][5]}",
-                                      name: sresult[index][0][1],
-                                      typ: sresult[index][0][9],
+                                      info: "Company: ${sresult[index][0][4]}",
+                                      name: sresult[index][0][1].toString(),
+                                      typ: sresult[index][0][9]
+                                          .toString()
+                                          .toLowerCase()
+                                          .replaceAll(" ", ""),
                                       join_date: sresult[index][0].toString(),
                                       contactType: sresult[index][0][2]
                                           .toString()

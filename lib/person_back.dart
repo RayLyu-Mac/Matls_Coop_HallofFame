@@ -67,6 +67,9 @@ class _Person_backState extends State<Person_back> {
 
   @override
   Widget build(BuildContext context) {
+    List<String> hashs = widget.has_tag!.split("+");
+    print(widget.year!.split("+").length);
+
     return Container(
       margin: EdgeInsets.symmetric(
           horizontal: widget.width!, vertical: widget.heigt!),
@@ -121,290 +124,288 @@ class _Person_backState extends State<Person_back> {
                   width: _screenWidth / 2.8,
                   child: Text(
                     widget.info!,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontFamily: "b1",
+                      fontSize: _screenH / 40,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: _screenH / 45,
+                  height: _screenH / 65,
                 ),
-                Text(
-                  "# " + widget.has_tag!,
-                  style: const TextStyle(
-                    fontFamily: "b1",
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Button(
-                    buttonIcon: FontAwesomeIcons.ad,
-                    dialog: true,
-                    pageTo: SimpleDialog(
-                      shape: RoundedRectangleBorder(
-                          side: BorderSide(width: 8, color: widget.border_c!),
-                          borderRadius: BorderRadius.circular(35)),
-                      clipBehavior: Clip.hardEdge,
-                      backgroundColor: widget.border_c!.withOpacity(0.8),
-                      contentPadding: EdgeInsets.symmetric(
-                          horizontal: _screenWidth / 28,
-                          vertical: _screenH / 18),
-                      alignment: Alignment.center,
-                      title: Row(
-                        children: [
-                          const Icon(FontAwesomeIcons.medal),
-                          Text(
-                            " MATLS Co-op Hall of Fame Honor ",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: _screenH / 25,
-                                fontFamily:
-                                    fonts[Random().nextInt(fonts.length)]),
-                          )
-                        ],
+                for (var t = 0; t < hashs.length; t++)
+                  Text("# " + hashs[t],
+                      style: TextStyle(
+                          fontFamily: "b1",
+                          fontSize: _screenH / 40,
+                          fontWeight: FontWeight.bold,
+                          color: colorX[t])
+                      // colorX[Random().nextInt(colorX.length)])  colorX[t],
                       ),
-                      children: [
-                        Row(
-                          children: [
-                            framepic(profile: widget.profile_img),
-                            SizedBox(
-                              width: _screenWidth / 35,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                SizedBox(
+                  height: _screenH / 65,
+                ),
+                Column(
+                  children: [
+                    for (var k = 0; k < widget.year!.split("+").length; k++)
+                      Button(
+                          buttonIcon: FontAwesomeIcons.info,
+                          dialog: true,
+                          pageTo: SimpleDialog(
+                            shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                    width: 8, color: widget.border_c!),
+                                borderRadius: BorderRadius.circular(35)),
+                            clipBehavior: Clip.hardEdge,
+                            backgroundColor: widget.border_c!.withOpacity(0.8),
+                            contentPadding: EdgeInsets.symmetric(
+                                horizontal: _screenWidth / 28,
+                                vertical: _screenH / 18),
+                            alignment: Alignment.center,
+                            title: Row(
                               children: [
+                                const Icon(FontAwesomeIcons.medal),
                                 Text(
-                                  widget.name!,
+                                  " MATLS Co-op Hall of Fame Honor ",
                                   style: TextStyle(
-                                      fontSize: widget.nameFont != "o1"
-                                          ? _screenH / 15
-                                          : _screenH / 22,
-                                      fontFamily: widget.nameFont
-                                          .toString()
-                                          .toLowerCase()
-                                          .replaceAll(" ", "")),
-                                ),
-
-                                SizedBox(
-                                  height: _screenH / 40,
-                                ),
-
-                                Container(
-                                  width: _screenWidth / 2.8,
-                                  child: SelectableText(
-                                    "${widget.info}",
-                                    style: TextStyle(
-                                      fontFamily: "b1",
-                                      fontSize: _screenH / mainInfoFS,
                                       fontWeight: FontWeight.bold,
-                                    ),
+                                      fontSize: _screenH / 25,
+                                      fontFamily: fonts[
+                                          Random().nextInt(fonts.length)]),
+                                )
+                              ],
+                            ),
+                            children: [
+                              Row(
+                                children: [
+                                  framepic(profile: widget.profile_img),
+                                  SizedBox(
+                                    width: _screenWidth / 35,
                                   ),
-                                ),
-
-                                SizedBox(
-                                  height: _screenH / 70,
-                                ),
-                                Text(
-                                  "Got this Co-op @${widget.year}\nFor ${widget.length}",
-                                  style: TextStyle(
-                                    fontFamily: "b1",
-                                    fontSize: _screenH / mainInfoFS,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: _screenH / 70,
-                                ),
-                                Row(
-                                  children: [
-                                    for (var i = 0;
-                                        i < widget.contactType!.length;
-                                        i++)
-                                      IconButton(
-                                          tooltip: contact[widget
-                                              .contactType![i]
-                                              .toString()
-                                              .toLowerCase()
-                                              .replaceAll(" ", "")]![1],
-                                          onPressed: () {
-                                            if (widget.contactType![i]
-                                                        .toString()
-                                                        .toLowerCase() ==
-                                                    "linkedin" ||
-                                                widget.contactType![i]
-                                                        .toString()
-                                                        .toLowerCase() ==
-                                                    "facebook") {
-                                              launch(widget.contactInfo![i]);
-                                            } else {
-                                              showGeneralDialog(
-                                                  barrierColor: Colors.black
-                                                      .withOpacity(0.5),
-                                                  transitionDuration:
-                                                      const Duration(
-                                                          milliseconds: 300),
-                                                  barrierDismissible: true,
-                                                  barrierLabel: '',
-                                                  context: context,
-                                                  pageBuilder: (context,
-                                                      animation,
-                                                      secondaryAnimation) {
-                                                    return Container();
-                                                  },
-                                                  transitionBuilder: (context,
-                                                      a1, a2, widgets) {
-                                                    return Transform.scale(
-                                                        scale: a1.value,
-                                                        child: Opacity(
-                                                            opacity: a1.value,
-                                                            child: SimpleDialog(
-                                                              shape: RoundedRectangleBorder(
-                                                                  side: BorderSide(
-                                                                      width: 7,
-                                                                      color: widget
-                                                                          .border_c!),
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              10)),
-                                                              children: [
-                                                                Container(
-                                                                  child:
-                                                                      Container(
-                                                                    padding: EdgeInsets.symmetric(
-                                                                        horizontal:
-                                                                            _screenWidth /
-                                                                                10,
-                                                                        vertical:
-                                                                            _screenH /
-                                                                                15),
-                                                                    child:
-                                                                        SelectableText(
-                                                                      "\n\n" +
-                                                                          contact[widget
-                                                                              .contactType![i]
-                                                                              .toString()
-                                                                              .toLowerCase()
-                                                                              .replaceAll(" ", "")]![1] +
-                                                                          "  " +
-                                                                          "\n\n" +
-                                                                          widget.contactInfo![i] +
-                                                                          "\n\n",
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: TextStyle(
-                                                                          fontFamily:
-                                                                              "b1",
-                                                                          fontSize: _screenH /
-                                                                              30,
-                                                                          fontWeight:
-                                                                              FontWeight.bold),
-                                                                    ),
-                                                                  ),
-                                                                  decoration: BoxDecoration(
-                                                                      image: DecorationImage(
-                                                                          scale:
-                                                                              2,
-                                                                          colorFilter: ColorFilter.mode(
-                                                                              Colors.white.withOpacity(
-                                                                                  0.4),
-                                                                              BlendMode
-                                                                                  .dstATop),
-                                                                          fit: BoxFit
-                                                                              .cover,
-                                                                          image: AssetImage(contact[widget
-                                                                              .contactType![i]
-                                                                              .toString()
-                                                                              .toLowerCase()
-                                                                              .replaceAll(" ", "")]![2]))),
-                                                                ),
-                                                              ],
-                                                            )));
-                                                  });
-                                            }
-                                          },
-                                          icon: Icon(contact[widget
-                                              .contactType![i]
-                                              .toString()
-                                              .toLowerCase()
-                                              .replaceAll(" ", "")]![0]))
-                                  ],
-                                ),
-                                // SelectableText(
-                                //   "${widget.contactType![i]}: ${widget.contactInfo![i]}",
-                                //   style: TextStyle(
-                                //     fontFamily: "b1",
-                                //     fontSize: _screenH / mainInfoFS,
-                                //     fontWeight: FontWeight.bold,
-                                //   ),
-                                // ),
-                                SizedBox(
-                                  height: _screenH / 25,
-                                ),
-                                Row(
-                                  children: [
-                                    Text("Highlight  ",
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        widget.name!,
                                         style: TextStyle(
                                             fontSize: widget.nameFont != "o1"
-                                                ? _screenH / 17
-                                                : _screenH / 24,
+                                                ? _screenH / 15
+                                                : _screenH / 22,
                                             fontFamily: widget.nameFont
                                                 .toString()
                                                 .toLowerCase()
-                                                .replaceAll(" ", ""))),
-                                    Icon(FontAwesomeIcons.meteor)
-                                  ],
-                                ),
+                                                .replaceAll(" ", "")),
+                                      ),
 
-                                SizedBox(
-                                  height: _screenH / 45,
-                                ),
-                                Container(
-                                  width: _screenWidth / 2.8,
-                                  child: Text(
-                                    widget.spec!,
-                                    style: TextStyle(
-                                      fontFamily: "b1",
-                                      fontSize: _screenH / (mainInfoFS + 8),
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                      SizedBox(
+                                        height: _screenH / 40,
+                                      ),
+
+                                      Container(
+                                        width: _screenWidth / 2.8,
+                                        child: SelectableText(
+                                          widget.info!.split("+")[k],
+                                          style: TextStyle(
+                                            fontFamily: "b1",
+                                            fontSize: _screenH / mainInfoFS,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+
+                                      SizedBox(
+                                        height: _screenH / 70,
+                                      ),
+                                      Text(
+                                        "Got this Co-op @${widget.year!.split("+")[k]}\nFor ${widget.length!.split("+")[k]}",
+                                        style: TextStyle(
+                                          fontFamily: "b1",
+                                          fontSize: _screenH / mainInfoFS,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: _screenH / 70,
+                                      ),
+                                      Row(
+                                        children: [
+                                          for (var i = 0;
+                                              i < widget.contactType!.length;
+                                              i++)
+                                            IconButton(
+                                                color: widget.border_c,
+                                                tooltip: contact[widget
+                                                    .contactType![i]
+                                                    .toString()
+                                                    .toLowerCase()
+                                                    .replaceAll(" ", "")]![1],
+                                                onPressed: () {
+                                                  if (widget.contactType![i]
+                                                              .toString()
+                                                              .toLowerCase() ==
+                                                          "linkedin" ||
+                                                      widget.contactType![i]
+                                                              .toString()
+                                                              .toLowerCase() ==
+                                                          "facebook") {
+                                                    launch(
+                                                        widget.contactInfo![i]);
+                                                  } else {
+                                                    showGeneralDialog(
+                                                        barrierColor: Colors
+                                                            .black
+                                                            .withOpacity(0.5),
+                                                        transitionDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    300),
+                                                        barrierDismissible:
+                                                            true,
+                                                        barrierLabel: '',
+                                                        context: context,
+                                                        pageBuilder: (context,
+                                                            animation,
+                                                            secondaryAnimation) {
+                                                          return Container();
+                                                        },
+                                                        transitionBuilder:
+                                                            (context, a1, a2,
+                                                                widgets) {
+                                                          return Transform.scale(
+                                                              scale: a1.value,
+                                                              child: Opacity(
+                                                                  opacity: a1.value,
+                                                                  child: SimpleDialog(
+                                                                    shape: RoundedRectangleBorder(
+                                                                        side: BorderSide(
+                                                                            width:
+                                                                                7,
+                                                                            color: widget
+                                                                                .border_c!),
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(10)),
+                                                                    children: [
+                                                                      Container(
+                                                                        child:
+                                                                            Container(
+                                                                          padding: EdgeInsets.symmetric(
+                                                                              horizontal: _screenWidth / 10,
+                                                                              vertical: _screenH / 15),
+                                                                          child:
+                                                                              SelectableText(
+                                                                            "\n\n" +
+                                                                                contact[widget.contactType![i].toString().toLowerCase().replaceAll(" ", "")]![1] +
+                                                                                "  " +
+                                                                                "\n\n" +
+                                                                                widget.contactInfo![i] +
+                                                                                "\n\n",
+                                                                            textAlign:
+                                                                                TextAlign.center,
+                                                                            style: TextStyle(
+                                                                                fontFamily: "b1",
+                                                                                fontSize: _screenH / 30,
+                                                                                fontWeight: FontWeight.bold),
+                                                                          ),
+                                                                        ),
+                                                                        decoration: BoxDecoration(
+                                                                            image: DecorationImage(
+                                                                                scale: 2,
+                                                                                colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.4), BlendMode.dstATop),
+                                                                                fit: BoxFit.cover,
+                                                                                image: AssetImage(contact[widget.contactType![i].toString().toLowerCase().replaceAll(" ", "")]![2]))),
+                                                                      ),
+                                                                    ],
+                                                                  )));
+                                                        });
+                                                  }
+                                                },
+                                                icon: Icon(contact[widget
+                                                    .contactType![i]
+                                                    .toString()
+                                                    .toLowerCase()
+                                                    .replaceAll(" ", "")]![0]))
+                                        ],
+                                      ),
+                                      // SelectableText(
+                                      //   "${widget.contactType![i]}: ${widget.contactInfo![i]}",
+                                      //   style: TextStyle(
+                                      //     fontFamily: "b1",
+                                      //     fontSize: _screenH / mainInfoFS,
+                                      //     fontWeight: FontWeight.bold,
+                                      //   ),
+                                      // ),
+                                      SizedBox(
+                                        height: _screenH / 25,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text("Highlight  ",
+                                              style: TextStyle(
+                                                  fontSize:
+                                                      widget.nameFont != "o1"
+                                                          ? _screenH / 17
+                                                          : _screenH / 24,
+                                                  fontFamily: widget.nameFont
+                                                      .toString()
+                                                      .toLowerCase()
+                                                      .replaceAll(" ", ""))),
+                                          Icon(FontAwesomeIcons.meteor)
+                                        ],
+                                      ),
+
+                                      SizedBox(
+                                        height: _screenH / 45,
+                                      ),
+                                      Container(
+                                        width: _screenWidth / 2.8,
+                                        child: Text(
+                                          widget.spec!.split("+")[k],
+                                          style: TextStyle(
+                                            fontFamily: "b1",
+                                            fontSize:
+                                                _screenH / (mainInfoFS + 8),
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+
+                                      SizedBox(
+                                        height: _screenH / 45,
+                                      ),
+                                      // RotationTransition(
+                                      //   turns: AlwaysStoppedAnimation(340 / 360),
+                                      //   child: Container(
+                                      //     padding: EdgeInsets.all(10),
+                                      //     decoration: BoxDecoration(
+                                      //         borderRadius: BorderRadius.circular(15),
+                                      //         border: Border.all(
+                                      //             width: 5,
+                                      //             color:
+                                      //                 Colors.black.withOpacity(0.4))),
+                                      //     child: Text(
+                                      //       "Coop Hall Of Fame",
+                                      //       style: TextStyle(
+                                      //           fontFamily: "s2",
+                                      //           fontWeight: FontWeight.bold,
+                                      //           fontSize: _screenH / 25,
+                                      //           color: Colors.black.withOpacity(0.4)),
+                                      //     ),
+                                      //   ),
+                                      // )
+                                    ],
                                   ),
-                                ),
-
-                                SizedBox(
-                                  height: _screenH / 45,
-                                ),
-                                // RotationTransition(
-                                //   turns: AlwaysStoppedAnimation(340 / 360),
-                                //   child: Container(
-                                //     padding: EdgeInsets.all(10),
-                                //     decoration: BoxDecoration(
-                                //         borderRadius: BorderRadius.circular(15),
-                                //         border: Border.all(
-                                //             width: 5,
-                                //             color:
-                                //                 Colors.black.withOpacity(0.4))),
-                                //     child: Text(
-                                //       "Coop Hall Of Fame",
-                                //       style: TextStyle(
-                                //           fontFamily: "s2",
-                                //           fontWeight: FontWeight.bold,
-                                //           fontSize: _screenH / 25,
-                                //           color: Colors.black.withOpacity(0.4)),
-                                //     ),
-                                //   ),
-                                // )
-                              ],
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                    fontSize: _screenH / 40,
-                    title: "More Info",
-                    titleColor: widget.border_c)
+                                ],
+                              )
+                            ],
+                          ),
+                          fontSize: _screenH / 45,
+                          title: "Coop # $k",
+                          titleColor: widget.border_c)
+                  ],
+                )
               ],
             ),
           )

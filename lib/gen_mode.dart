@@ -19,8 +19,13 @@ class gen_mode extends StatefulWidget {
   final String? appTitle;
 
   final String? fileName;
+  final Color? bandcol;
 
-  const gen_mode({@required this.appTitle, @required this.fileName, Key? key})
+  const gen_mode(
+      {@required this.appTitle,
+      @required this.fileName,
+      @required this.bandcol,
+      Key? key})
       : super(key: key);
 
   @override
@@ -29,25 +34,24 @@ class gen_mode extends StatefulWidget {
 
 class _gen_modeState extends State<gen_mode> {
   List<List> datas = [];
-  List<List> datax = [
+  List<List> data = [
     [
       "11/21/2021",
       "Ray Lyu",
-      "Email+person+LinkedIn+Facebook",
-      "jeremywilsonudd@gmail.com+person+https://www.linkedin.com/in/jeremy-w-711002134/+https://www.facebook.com/jeremywilsonudd",
-      "Apotex",
-      "3rd",
-      "12 month",
+      "Email",
+      "lyuz11@mcmaster.ca",
+      "Apotex + CCEM",
+      "3rd + 2 nd",
+      "12 month + 4 month",
       "Manufacutirng+Pharmeutical",
       "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/r.jpg?raw=true",
       "Phar",
       "g1",
       "Indigo",
       "ZXC",
-      "1. Practice good manufacturing process in cleaning validation\n2. Created python code for documentation management\n3. Push the digitization process in maufacturing field"
+      "qqq + wew"
     ],
   ];
-  List<List> data = [];
   // List<List> data = [
   //   [
   //     "11/21/2021",
@@ -127,7 +131,7 @@ class _gen_modeState extends State<gen_mode> {
   //     'f1',
   //     "indigo",
   //     "X",
-  //     "•	Provide support to engineers by performing project management duties such as ressourcing allocation, tracking financials, and develping test programs and/or systems in the electricty and nuclear industry \n•	Provide technical lab support by performing a variety of activies such as strain gauging, mechanical testing, monitoring and operation of different systems and more\n•    Orange Badge, Strain Gauge, Working at Heights, Incoming Inspector qualified "
+  //     "1. Provide support to engineers by performing project management duties such as ressourcing allocation, tracking financials, and develping test programs and/or systems in the electricty and nuclear industry \n2. Provide technical lab support by performing a variety of activies such as strain gauging, mechanical testing, monitoring and operation of different systems and more\n3. Orange Badge, Strain Gauge, Working at Heights, Incoming Inspector qualified "
   //   ],
   //   [
   //     "01/08/2022",
@@ -213,25 +217,25 @@ class _gen_modeState extends State<gen_mode> {
   double _screenH = 0;
   TextEditingController controller = TextEditingController();
 
-  load() async {
-    final bio_data = await rootBundle.loadString(widget.fileName!);
-    setState(() {
-      datas = const CsvToListConverter().convert(bio_data);
-      datasplit = datas[0].toString().split("*");
-      for (var k = 1; k < datasplit.length - 1; k++) {
-        data.add(datasplit[k].toString().split(","));
-      }
-      for (var o = 0; o < data.length; o++) {
-        imgs.add(data[o][8].toString().replaceAll(" ", ""));
-        cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
-        comp.add(data[o][4]);
-        back_pics.add(data[o][9].toString().toLowerCase().replaceAll(" ", ""));
-        typ.add(RotateAnimatedText(data[o][5]));
-        typ.add(RotateAnimatedText(data[o][4]));
-        hash.add(data[o][7]);
-      }
-    });
-  }
+  // load() async {
+  //   final bio_data = await rootBundle.loadString(widget.fileName!);
+  //   setState(() {
+  //     datas = const CsvToListConverter().convert(bio_data);
+  //     datasplit = datas[0].toString().split("*");
+  //     for (var k = 1; k < datasplit.length - 1; k++) {
+  //       data.add(datasplit[k].toString().split(","));
+  //     }
+  //     for (var o = 0; o < data.length; o++) {
+  //       imgs.add(data[o][8].toString().replaceAll(" ", ""));
+  //       cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
+  //       comp.add(data[o][4]);
+  //       back_pics.add(data[o][9].toString().toLowerCase().replaceAll(" ", ""));
+  //       typ.add(RotateAnimatedText(data[o][5]));
+  //       typ.add(RotateAnimatedText(data[o][4]));
+  //       hash.add(data[o][7]);
+  //     }
+  //   });
+  // }
 
   @override
   void didChangeDependencies() {
@@ -244,7 +248,7 @@ class _gen_modeState extends State<gen_mode> {
   @override
   void initState() {
     // TODO: implement initState
-    load();
+    // load();
     super.initState();
     setState(() {
       for (var o = 0; o < data.length; o++) {
@@ -264,6 +268,7 @@ class _gen_modeState extends State<gen_mode> {
     if (data.isNotEmpty) {
       return Scaffold(
           appBar: AppBar(
+            backgroundColor: widget.bandcol!,
             title: SelectableText(
               widget.appTitle!,
               style: TextStyle(fontFamily: "b1"),
@@ -384,8 +389,8 @@ class _gen_modeState extends State<gen_mode> {
                                         "McMaster MSE Co-op Honor\n${widget.appTitle} :#${data[index][12].toString()}",
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
-                                            fontFamily: "s2",
-                                            fontWeight: FontWeight.bold,
+                                            fontFamily: "s5",
+                                            fontWeight: FontWeight.w800,
                                             fontSize: _screenH / 24,
                                             color:
                                                 Colors.black.withOpacity(0.4))),

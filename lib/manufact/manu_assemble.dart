@@ -30,6 +30,9 @@ class _manu_pageState extends State<manu_page> {
             cont:
                 "Materials Engineers are pushing the envelope in how we change manufacturing to optimize for efficiency, and to increase the quality of products used in industry and infrastructure. They are tackling unique challenges with 3D printing, industry 4.0, and clean energy. McMaster Materials Engineering students have completed co-ops on topics including material production, processing and heat-treating, manufacturing, failure and forensic analysis, and more!",
             pageTo: ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                      Color.fromARGB(255, 238, 110, 74))),
               child: const Text(
                 "Go Manufacturing!",
                 style: TextStyle(fontFamily: "g2", fontWeight: FontWeight.bold),
@@ -38,6 +41,7 @@ class _manu_pageState extends State<manu_page> {
             ),
             title: "Manufacturing"),
         gen_mode(
+          bandcol: Color.fromARGB(255, 238, 110, 74),
           appTitle: "Manufacturing",
           fileName: "ast/csv/manu.csv",
         )

@@ -13,10 +13,12 @@ class box_file extends StatefulWidget {
   final String? labelName;
   final Widget? pageto;
   final Icon? buttonIcon;
+  final MaterialStateProperty<Color>? but_col;
   box_file(
       {@required this.img,
       @required this.buttonIcon,
       @required this.labelName,
+      @required this.but_col,
       @required this.pageto,
       @required this.height,
       @required this.width,
@@ -93,6 +95,7 @@ class _box_fileState extends State<box_file> {
                     ),
                     ElevatedButton.icon(
                         style: ButtonStyle(
+                          backgroundColor: widget.but_col!,
                           elevation: _hovering
                               ? MaterialStateProperty.resolveWith(
                                   (states) => 5.0)
