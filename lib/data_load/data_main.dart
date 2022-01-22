@@ -28,7 +28,10 @@ Map<String, String> fieldPic = {
   "eneg1": "ast/bg/ene2.jpg",
   "biosen": "ast/bg/bios1.jpg",
   "biosen1": "ast/bg/bios2.jpg",
-  "metlab": "ast/bg/met.jpg"
+  "metlab": "ast/bg/met.jpg",
+  "chem1": "ast/bg/che1.jpg",
+  "chem2": "ast/bg/che1.png",
+  "chem3": "ast/bg/che3.jpg"
 };
 
 Map<String, List> contact = {

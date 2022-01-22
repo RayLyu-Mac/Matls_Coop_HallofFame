@@ -66,6 +66,22 @@ class _gen_modeState extends State<gen_mode> {
       "blue",
       "ZXC",
       "1. Designed, preformed and analyzed experiments on product failure\n2.Organized team projects by managing, filling, and scheduling product production"
+    ],
+    [
+      "01/22/2022",
+      "Lily Baker",
+      "Email + Messenger + linkedin + facebook",
+      "lilyannebaker33@gmail.com + Send me a message on messenger+www.linkedin.com/in/lilybaker+https://www.facebook.com/profile.php?id=100007672845726",
+      "Collins Aerospace",
+      "3 rd year",
+      "8 month",
+      "Chemical compliance + environmental sustainability",
+      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/lb.jpg?raw=true",
+      "chem1",
+      "l1",
+      "blue",
+      "x",
+      "1. Chemical compliance, ensuring that all the materials in our designs comply with global environmental, health, and sustainability standards\n2.Identify materials of concern in the products, processes and parts we use, design and manufacture \n3.Research alternative products and materials to replace any hazardous substances we are trying to reduce, depending on global environmental, health, and sustainability guidelines"
     ]
   ];
   // List<List> data = [

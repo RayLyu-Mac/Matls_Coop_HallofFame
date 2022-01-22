@@ -114,6 +114,9 @@ flutter:
     - ast/bg/ene1.jpg
     - ast/bg/ene2.jpg
     - ast/bg/met.jpg
+    - ast/bg/che1.jpg
+    - ast/bg/che2.png
+    - ast/bg/che3.jpg
     
 
     - ast/csv/bio.csv
