@@ -72,16 +72,16 @@ class _gen_modeState extends State<gen_mode> {
       "Lily Baker",
       "Email + Messenger + linkedin + facebook",
       "lilyannebaker33@gmail.com + Send me a message on messenger+www.linkedin.com/in/lilybaker+https://www.facebook.com/profile.php?id=100007672845726",
-      "Collins Aerospace",
-      "3 rd year",
-      "8 month",
+      "Collins Aerospace + CAMC",
+      "3 rd year + 3 rd year",
+      "8 month + 2 month",
       "Chemical compliance + environmental sustainability",
       "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/lb.jpg?raw=true",
       "chem1",
       "l1",
       "blue",
       "x",
-      "1. Chemical compliance, ensuring that all the materials in our designs comply with global environmental, health, and sustainability standards\n2.Identify materials of concern in the products, processes and parts we use, design and manufacture \n3.Research alternative products and materials to replace any hazardous substances we are trying to reduce, depending on global environmental, health, and sustainability guidelines"
+      "1. Chemical compliance, ensuring that all the materials in our designs comply with global environmental, health, and sustainability standards\n2.Identify materials of concern in the products, processes and parts we use, design and manufacture \n3.Research alternative products and materials to replace any hazardous substances we are trying to reduce, depending on global environmental, health, and sustainability guidelines + 1.Formal training in cutting, cold mounting, polishing and etching corroded Aluminum alloy samples \n2.Metallurgical examination with SEM and Light Optical Spectroscopy\n3. Research on corrosion, corrosion prevention and related matters in the field of Materials Engineering at the Centre for Automotive Materials and Corrosion (CAMC) at McMaster."
     ]
   ];
   // List<List> data = [
@@ -262,8 +262,14 @@ class _gen_modeState extends State<gen_mode> {
   //       cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
   //       comp.add(data[o][4]);
   //       back_pics.add(data[o][9].toString().toLowerCase().replaceAll(" ", ""));
-  //       typ.add(RotateAnimatedText(data[o][5]));
-  //       typ.add(RotateAnimatedText(data[o][4]));
+  //       typ.add(RotateAnimatedText(data[o][7],
+  //           textStyle: TextStyle(
+  //               color: Colors.grey.shade100,
+  //               fontSize: _screenH / 30)));
+  //       typ.add(RotateAnimatedText(data[o][4],
+  //           textStyle: TextStyle(
+  //               color: Colors.grey.shade100,
+  //               fontSize: _screenH / 30)));
   //       hash.add(data[o][7]);
   //     }
   //   });
@@ -288,8 +294,12 @@ class _gen_modeState extends State<gen_mode> {
         cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
         back_pics.add(data[o][9].toString().toLowerCase().replaceAll(" ", ""));
         comp.add(data[o][4]);
-        typ.add(RotateAnimatedText(data[o][7]));
-        typ.add(RotateAnimatedText(data[o][4]));
+        typ.add(RotateAnimatedText(data[o][7],
+            textStyle: TextStyle(
+                color: Colors.grey.shade100, fontWeight: FontWeight.bold)));
+        typ.add(RotateAnimatedText(data[o][4],
+            textStyle: TextStyle(
+                color: Colors.grey.shade100, fontWeight: FontWeight.bold)));
         hash.add(data[o][7]);
       }
     });
@@ -335,13 +345,16 @@ class _gen_modeState extends State<gen_mode> {
                                     ),
                                     title: Row(
                                       children: [
-                                        const Text(
+                                        Text(
                                           " Looking for: ",
                                           style: TextStyle(
+                                              fontFamily: "b1",
+                                              color: Colors.grey.shade100,
+                                              fontSize: _screenH / 28,
                                               fontWeight: FontWeight.bold),
                                         ),
                                         SizedBox(
-                                            width: 10, height: _screenH / 8),
+                                            width: 15, height: _screenH / 8),
                                         AnimatedTextKit(
                                             repeatForever: true,
                                             animatedTexts: typ)
@@ -387,6 +400,7 @@ class _gen_modeState extends State<gen_mode> {
                             front: Person_back(
                                 width: 0,
                                 heigt: 0,
+                                iconcolor: colorD[cols[index]],
                                 year: data[index][5].toString(),
                                 length: data[index][6].toString(),
                                 spec: data[index][13].toString(),

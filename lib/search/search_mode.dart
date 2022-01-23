@@ -54,12 +54,11 @@ class _search_mainState extends State<search_main> {
 
   @override
   Widget build(BuildContext context) {
-    List<List> data = widget.whole!;
     return Column(
       children: [
         Container(
           decoration: BoxDecoration(
-              border: Border.all(width: 12, color: Colors.grey.shade100),
+              border: Border.all(width: 12, color: Colors.grey.shade200),
               borderRadius: BorderRadius.circular(15),
               color: widget.border!.withOpacity(0.6)),
           child: TextField(
@@ -67,7 +66,7 @@ class _search_mainState extends State<search_main> {
             style: TextStyle(
               fontSize: _screenH / 25,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: Colors.grey.shade200,
             ),
             decoration: InputDecoration(
                 border: InputBorder.none,
@@ -79,7 +78,7 @@ class _search_mainState extends State<search_main> {
                 ),
                 contentPadding: EdgeInsets.fromLTRB(10, 1, 1, 1),
                 hintText: "Search Hash Tag, name, company...",
-                hintStyle: TextStyle(color: Colors.grey.shade100)),
+                hintStyle: TextStyle(color: Colors.grey.shade200)),
             onChanged: search,
           ),
         ),
@@ -111,6 +110,7 @@ class _search_mainState extends State<search_main> {
                                   Text(
                                     sresult[index][0][1].toString(),
                                     style: TextStyle(
+                                        color: Colors.grey.shade100,
                                         fontWeight: FontWeight.bold,
                                         fontSize: _screenH / 25,
                                         fontFamily: sresult[index][0][10]
@@ -123,7 +123,7 @@ class _search_mainState extends State<search_main> {
                                     style: TextStyle(
                                         fontSize: _screenH / 38,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.grey.shade800),
+                                        color: Colors.grey.shade100),
                                   )
                                 ],
                               ),
@@ -137,6 +137,10 @@ class _search_mainState extends State<search_main> {
                                       backtr: 0.5,
                                       width: _screenWidth / 4,
                                       heigt: _screenH / 4,
+                                      iconcolor: colorD[sresult[index][0][11]
+                                          .toString()
+                                          .toLowerCase()
+                                          .replaceAll(" ", "")],
                                       spec: sresult[index][0][13].toString(),
                                       year: sresult[index][0][5].toString(),
                                       length: sresult[index][0][6].toString(),

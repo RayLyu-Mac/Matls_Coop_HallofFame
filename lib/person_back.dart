@@ -20,6 +20,8 @@ class Person_back extends StatefulWidget {
   final String? typ;
   final String? join_date;
   final List? contactType;
+  final Color? iconcolor;
+
   final List? contactInfo;
   final String? has_tag;
   final String? nameFont;
@@ -35,6 +37,7 @@ class Person_back extends StatefulWidget {
       @required this.nameFont,
       @optionalTypeArgs this.backtr,
       @required this.spec,
+      @required this.iconcolor,
       @required this.has_tag,
       @required this.contactType,
       @required this.year,
@@ -68,7 +71,6 @@ class _Person_backState extends State<Person_back> {
   @override
   Widget build(BuildContext context) {
     List<String> hashs = widget.has_tag!.split("+");
-    print(widget.year!.split("+").length);
 
     return Container(
       margin: EdgeInsets.symmetric(
@@ -103,7 +105,7 @@ class _Person_backState extends State<Person_back> {
                     DecorationImage(image: NetworkImage(widget.profile_img!))),
           ),
           SizedBox(
-            width: _screenWidth / 15,
+            width: _screenWidth / 25,
           ),
           Container(
             width: _screenWidth / 4.2,
@@ -146,7 +148,7 @@ class _Person_backState extends State<Person_back> {
                 SizedBox(
                   height: _screenH / 65,
                 ),
-                Column(
+                Row(
                   children: [
                     for (var k = 0; k < widget.year!.split("+").length; k++)
                       Button(
@@ -155,10 +157,10 @@ class _Person_backState extends State<Person_back> {
                           pageTo: SimpleDialog(
                             shape: RoundedRectangleBorder(
                                 side: BorderSide(
-                                    width: 8, color: widget.border_c!),
-                                borderRadius: BorderRadius.circular(35)),
+                                    width: 10, color: widget.iconcolor!),
+                                borderRadius: BorderRadius.circular(45)),
                             clipBehavior: Clip.hardEdge,
-                            backgroundColor: widget.border_c!.withOpacity(0.8),
+                            backgroundColor: widget.border_c!.withOpacity(0.95),
                             contentPadding: EdgeInsets.symmetric(
                                 horizontal: _screenWidth / 28,
                                 vertical: _screenH / 18),
@@ -181,7 +183,7 @@ class _Person_backState extends State<Person_back> {
                                 children: [
                                   framepic(profile: widget.profile_img),
                                   SizedBox(
-                                    width: _screenWidth / 35,
+                                    width: _screenWidth / 45,
                                   ),
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
@@ -236,7 +238,7 @@ class _Person_backState extends State<Person_back> {
                                               i < widget.contactType!.length;
                                               i++)
                                             IconButton(
-                                                color: widget.border_c,
+                                                color: widget.iconcolor,
                                                 tooltip: contact[widget
                                                     .contactType![i]
                                                     .toString()
@@ -402,7 +404,7 @@ class _Person_backState extends State<Person_back> {
                             ],
                           ),
                           fontSize: _screenH / 45,
-                          title: "Coop # $k",
+                          title: "Coop # ${k + 1}",
                           titleColor: widget.border_c)
                   ],
                 )

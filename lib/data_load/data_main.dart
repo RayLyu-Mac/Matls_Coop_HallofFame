@@ -76,6 +76,16 @@ Map<String, Color> colorL = {
   "indigo": Colors.indigo.shade100
 };
 
+Map<String, Color> colorD = {
+  "blue": Colors.blue.shade800,
+  "white": Colors.grey.shade800,
+  "green": Colors.green.shade800,
+  "red": Colors.red.shade800,
+  "purple": Colors.purple.shade800,
+  "orange": Colors.orange.shade600,
+  "indigo": Colors.indigo.shade800
+};
+
 Map<String, Color> colorS = {
   "blue": Colors.blue.shade200,
   "green": Colors.green.shade300,
@@ -83,7 +93,7 @@ Map<String, Color> colorS = {
   "purple": Colors.purple.shade200,
   "orange": Colors.orange.shade300,
   "indigo": Colors.indigo.shade200,
-  "lime": Colors.lime.shade400
+  "lime": Colors.lime
 };
 
 List<Color> colorX = [
