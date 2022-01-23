@@ -34,56 +34,7 @@ class gen_mode extends StatefulWidget {
 
 class _gen_modeState extends State<gen_mode> {
   List<List> datas = [];
-  List<List> data = [
-    [
-      "01/21/2021",
-      "Jessica Wan",
-      "Email+messenger+linkedin+facebook",
-      "jessica.wan0825@gmail.com+Send me a message in messenger+www.linkedin.com/in/jessicawan0825+https://www.facebook.com/jessica.wan.8",
-      "Tianjin Zhongwang Aluminium co. ltd",
-      "2 nd",
-      "4 month",
-      "hands-on+SEM",
-      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/jyw.jpg?raw=true",
-      "sem",
-      "f1",
-      "purple",
-      "ZXC",
-      "1. Performed failure and fracture analysis for 2000 series aluminum coils and plates \n2. Operated the scanning electron microscope (SEM) on over 50 specimens for microstructure and chemical composition analysis (EDS)\n3.Developed and updated Standard Operating Procedures (SOPs) for the manufacture of 2024-T3 and 7075-T4 aluminum alloys"
-    ],
-    [
-      "01/21/2022",
-      "Melaina Del Grosso",
-      "Messenger+linkedin+Email+facebook+discord",
-      "Send me a message on messenger+www.linkedin.com/in/melaina-delgrosso+melaina.delgrosso@gmail.com+https://www.facebook.com/melaina.delgrosso/+Melaina#1900",
-      "biotechfield",
-      "1 st",
-      "4 month",
-      "experiential",
-      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/md.jpg?raw=true",
-      "biosen",
-      "f1",
-      "blue",
-      "ZXC",
-      "1. Designed, preformed and analyzed experiments on product failure\n2.Organized team projects by managing, filling, and scheduling product production"
-    ],
-    [
-      "01/22/2022",
-      "Lily Baker",
-      "Email + Messenger + linkedin + facebook",
-      "lilyannebaker33@gmail.com + Send me a message on messenger+www.linkedin.com/in/lilybaker+https://www.facebook.com/profile.php?id=100007672845726",
-      "Collins Aerospace + CAMC",
-      "3 rd year + 3 rd year",
-      "8 month + 2 month",
-      "Chemical compliance + environmental sustainability",
-      "https://github.com/RayLyu-Mac/Matls_Coop_HallofFame/blob/main/ast/profile/lb.jpg?raw=true",
-      "chem1",
-      "l1",
-      "blue",
-      "x",
-      "1. Chemical compliance, ensuring that all the materials in our designs comply with global environmental, health, and sustainability standards\n2.Identify materials of concern in the products, processes and parts we use, design and manufacture \n3.Research alternative products and materials to replace any hazardous substances we are trying to reduce, depending on global environmental, health, and sustainability guidelines + 1.Formal training in cutting, cold mounting, polishing and etching corroded Aluminum alloy samples \n2.Metallurgical examination with SEM and Light Optical Spectroscopy\n3. Research on corrosion, corrosion prevention and related matters in the field of Materials Engineering at the Centre for Automotive Materials and Corrosion (CAMC) at McMaster."
-    ]
-  ];
+  List<List> data = [];
   // List<List> data = [
   //   [
   //     "11/21/2021",
@@ -249,31 +200,31 @@ class _gen_modeState extends State<gen_mode> {
   double _screenH = 0;
   TextEditingController controller = TextEditingController();
 
-  // load() async {
-  //   final bio_data = await rootBundle.loadString(widget.fileName!);
-  //   setState(() {
-  //     datas = const CsvToListConverter().convert(bio_data);
-  //     datasplit = datas[0].toString().split("*");
-  //     for (var k = 1; k < datasplit.length - 1; k++) {
-  //       data.add(datasplit[k].toString().split(","));
-  //     }
-  //     for (var o = 0; o < data.length; o++) {
-  //       imgs.add(data[o][8].toString().replaceAll(" ", ""));
-  //       cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
-  //       comp.add(data[o][4]);
-  //       back_pics.add(data[o][9].toString().toLowerCase().replaceAll(" ", ""));
-  //       typ.add(RotateAnimatedText(data[o][7],
-  //           textStyle: TextStyle(
-  //               color: Colors.grey.shade100,
-  //               fontSize: _screenH / 30)));
-  //       typ.add(RotateAnimatedText(data[o][4],
-  //           textStyle: TextStyle(
-  //               color: Colors.grey.shade100,
-  //               fontSize: _screenH / 30)));
-  //       hash.add(data[o][7]);
-  //     }
-  //   });
-  // }
+  load() async {
+    final bio_data = await rootBundle.loadString(widget.fileName!);
+    setState(() {
+      datas = const CsvToListConverter().convert(bio_data);
+      datasplit = datas[0].toString().split("*");
+      for (var k = 1; k < datasplit.length - 1; k++) {
+        data.add(datasplit[k].toString().split(","));
+      }
+      for (var o = 0; o < data.length; o++) {
+        imgs.add(data[o][8].toString().replaceAll(" ", ""));
+        cols.add(data[o][11].toString().toLowerCase().replaceAll(" ", ""));
+        comp.add(data[o][4]);
+        back_pics.add(data[o][9].toString().toLowerCase().replaceAll(" ", ""));
+        typ.add(RotateAnimatedText(data[o][7],
+            textStyle: TextStyle(
+              color: Colors.grey.shade100,
+            )));
+        typ.add(RotateAnimatedText(data[o][4],
+            textStyle: TextStyle(
+              color: Colors.grey.shade100,
+            )));
+        hash.add(data[o][7]);
+      }
+    });
+  }
 
   @override
   void didChangeDependencies() {
@@ -286,7 +237,7 @@ class _gen_modeState extends State<gen_mode> {
   @override
   void initState() {
     // TODO: implement initState
-    // load();
+    load();
     super.initState();
     setState(() {
       for (var o = 0; o < data.length; o++) {
@@ -432,7 +383,7 @@ class _gen_modeState extends State<gen_mode> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Text(
-                                        "McMaster MSE Co-op Honor\n${widget.appTitle} :#${data[index][12].toString()}",
+                                        "McMaster MSE Co-op Honor\n${widget.appTitle} :${data[index][12].toString()}",
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             fontFamily: "s5",
